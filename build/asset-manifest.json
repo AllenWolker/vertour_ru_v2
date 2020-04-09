@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.16e4871f.chunk.css",
+    "main.js": "/static/js/main.493235bf.chunk.js",
+    "main.js.map": "/static/js/main.493235bf.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.0cdf7008.js",
+    "runtime-main.js.map": "/static/js/runtime-main.0cdf7008.js.map",
+    "static/js/2.1b24a10d.chunk.js": "/static/js/2.1b24a10d.chunk.js",
+    "static/js/2.1b24a10d.chunk.js.map": "/static/js/2.1b24a10d.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.afc92e2b463339346908e21e4d6ac352.js": "/precache-manifest.afc92e2b463339346908e21e4d6ac352.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.16e4871f.chunk.css.map": "/static/css/main.16e4871f.chunk.css.map",
+    "static/js/2.1b24a10d.chunk.js.LICENSE": "/static/js/2.1b24a10d.chunk.js.LICENSE",
+    "static/media/App.css": "/static/media/GothamPro.c31a8e09.eot"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0cdf7008.js",
+    "static/js/2.1b24a10d.chunk.js",
+    "static/css/main.16e4871f.chunk.css",
+    "static/js/main.493235bf.chunk.js"
+  ]
+}
