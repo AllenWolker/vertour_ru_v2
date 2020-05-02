@@ -1,0 +1,268 @@
+@font-face{
+
+    font-family: 'GothamPro';
+
+    src: url('../fonts/Gotham Pro/GothamPro.eot');
+
+    src: url('../fonts/Gotham Pro/GothamPro.eot?iefix') format('eot'),
+
+    url('../fonts/Gotham Pro/GothamPro.woff') format('woff'),
+
+    url('../fonts/Gotham Pro/GothamPro.ttf') format('truetype');
+
+    font-weight: normal;
+
+    font-style: normal;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+li {
+    list-style-type: none;
+}
+
+ul {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+body {
+    font-family: GothamPro, monospace, sans-serif;
+    color:  #FFFFFF;
+    background-image: url("../images/wallpaperflare.com_wallpaper.jpg");
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position: 0 0;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid rgba(196, 196, 196, 0.2);
+    height: 100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 307px minmax(auto, 1233px) minmax(auto, 380px);
+}
+
+.header-logo {
+    grid-column: span;
+    background: url("../images/logo6 1.png") no-repeat 35px center;
+}
+
+.header-menu_wrapper {
+    grid-column: span;
+    padding-left: 154px;
+}
+
+.header-menu {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+}
+
+.header-menu div {
+    grid-column: span;
+    padding: 36px 25px 47px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 17px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header-menu div:hover {
+    background: rgba(67, 67, 67, 0.6);
+}
+
+.user_wrapper {
+    grid-column: span;
+    padding-left: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    margin-right: 10px;
+}
+
+.username {
+    font-size: 18px;
+}
+
+.bot {
+    font-size: 16px;
+    color: #FFE500;
+}
+
+.user-icon {
+    background: url("../images/Logo.png") no-repeat center center;
+    width: 50px;
+    height: 50px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 307px minmax(auto, 1613px);
+}
+
+aside {
+    grid-column: span;
+    background: rgba(0, 0, 0, 0.6);
+    border-right: 1px solid rgba(196, 196, 196, 0.2);
+    min-height: 100vh;
+}
+
+.games {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 17px;
+    color: rgba(255, 255, 255, 0.8);
+    padding-left: 35px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.sidebar li {
+    height: 42px;
+    box-sizing: border-box;
+    padding-left: 35px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 14px;
+    line-height: 13px;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    background: rgba(37, 35, 35, 0.5);
+}
+
+.sidebar li:before {
+    margin-right: 22px;
+    vertical-align: -20%;
+    display: inline-block;
+}
+
+.sidebar li:nth-child(1):before {
+    content: url("../images/sidebar/csgo-icon.png");
+}
+
+.sidebar li:nth-child(2):before {
+    content: url("../images/sidebar/dota-2-icon.png");
+}
+
+.sidebar li:nth-child(3):before {
+    content: url("../images/sidebar/icons8-fortnite-48.png");
+}
+
+.sidebar li:nth-child(4):before {
+    content: url("../images/sidebar/icons8-league-of-legends-144.png");
+}
+
+.sidebar li:nth-child(5):before {
+    content: url("../images/sidebar/icons8-starcraft-ii-96.png");
+}
+
+.content-block {
+    grid-column: span;
+    padding-left: 7%;
+    padding-top: 40px;
+}
+
+.actions-block {
+    background: rgba(29, 24, 28, 0.7);
+    display: inline-block;
+    min-height: 400px;
+    height: auto;
+}
+
+.actions-menu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.actions-menu div {
+    padding: 20px 40px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.2em;
+    line-height: 1.1em;
+    border: 1px solid rgba(196, 196, 196, 0.2);
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.actions-menu div:hover {
+    background: rgba(67, 67, 67, 0.6);
+}
+
+.events-line {
+    margin-left: 85px;
+    margin-right: 85px;
+    margin-bottom: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: auto;
+}
+
+.events-line:first-child {
+    margin-top: 33px;
+}
+
+.event-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+}
+
+.event-picture {
+    width: 10vw;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.event-block:nth-child(1) .event-picture {
+    content: url("../images/events/Rectangle 4.4-1.png");
+}
+
+.event-block:nth-child(2) .event-picture {
+    content: url("../images/events/Rectangle 4.4-2.png");
+}
+
+.event-block:nth-child(3) .event-picture {
+    content: url("../images/events/Rectangle 4.4-3.png");
+}
+
+.event-block:nth-child(4) .event-picture {
+    content: url("../images/events/Rectangle 4.4.png");
+}
+
+.event-name {
+    width: 10vw;
+    text-align: center;
+    font-size: .7em;
+    line-height: .7em;
+    margin-bottom: 10px;
+}
+
+.event-date {
+    width: 10vw;
+    text-align: left;
+    font-size: .6em;
+    line-height: .7em;
+}
