@@ -1,11 +1,10 @@
 const ButtonTextColor = 'white';
 const ButtonColor = '#840318';
 const fontColor = '#FFFFFF';
-
+const N = 30;
 const ContainerLogin = {
-    backgroundImage: 'url("/assets/background.png")',
+    backgroundImage: 'url("/assets/background4.jpg")',
     backgroundRepeat: 'no-repeat',
-    minWidth: '1845px',
     maxHeight: '1080px',
 }
 
@@ -46,7 +45,7 @@ const LoginComponents = {
     position: 'relative',
     width: '75px',
     height: '17px',
-    left: '1128px',
+    left: `${870+ N}px`,
     top: '36px',
     fontFamily: '"Gotham Pro", Serif, Verdana, fantasy',
     fontStyle: 'normal',
@@ -54,6 +53,7 @@ const LoginComponents = {
     fontSize: '18px',
     lineHeight: '17px',
     color: fontColor,
+    borderLeft: '2px solid white',
 }
 const MenuLogoImg = {
     position: 'relative',
@@ -452,6 +452,23 @@ const ConfirmEmailRecoveryDiv = {
     background: '#FFFFFF',
     borderRadius: '10px',
 }
+const RegistrationHref = {
+    position: 'relative',
+    width: '75px',
+    height: '17px',
+    left: `${830+ N}px`,
+    top: '36px',
+    fontFamily: '"Gotham Pro", Serif, Verdana, fantasy',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    fontSize: '18px',
+    lineHeight: '17px',
+    color: fontColor,
+
+}
+const LeftMenu = {
+
+}
 const styles = {
     LoginComponent: LoginComponent,
     FooterStyle: FooterStyle,
@@ -492,6 +509,8 @@ const styles = {
     LinkRecoveryLogin: LinkRecoveryLogin,
     SubmitRecoveryEmail: SubmitRecoveryEmail,
     ConfirmEmailRecoveryDiv: ConfirmEmailRecoveryDiv,
+    RegistrationHref:RegistrationHref,
+    LeftMenu:LeftMenu,
 };
 export default styles;
 

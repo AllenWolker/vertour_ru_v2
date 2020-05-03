@@ -7,10 +7,12 @@ export default class Footer extends Component {
         return (
             <div className="footer" style={styles.FooterStyle}>
                 <div className="companyLogo">
+                    <Link to='/' style={styles.HrefDecoration}>
                     <img src="/assets/vertour-logo.png" alt="JScorp"
                          style={styles.VertourFooterLogo}/>
-                    <img src="/assets/JScorp.png" alt="JScorp"
-                         style={styles.JScorpFooterLogo}/>
+                    </Link>
+                    <a href="https://jscorp.ru"><img src="/assets/JScorp.png" alt="JScorp"
+                                                     style={styles.JScorpFooterLogo}/></a>
                 </div>
                 <div className='footerMenu' style={{display: 'flex'}}>
                     <div className="information-menu" style={styles.InformationMenu}>

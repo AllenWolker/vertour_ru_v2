@@ -444,3 +444,6 @@ html{
   margin-right: -130px;
   margin-top: -37px;
 }
+div a:hover{
+  color: #840318;
+}
