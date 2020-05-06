@@ -113,7 +113,7 @@ const LoginEnter = {
 const PageRegister = {
     position: 'relative',
     width: '333px',
-    height: ' 340px',
+    height: ' 375px',
     margin: '0 auto',
     top: '125px',
     fontFamily: 'Gotham Pro',
@@ -297,7 +297,7 @@ const InputLoginStyle = {
     position: 'relative',
     width: '300px',
     height: '40px',
-
+    marginTop:'5px',
     border: '1px solid #343434',
     boxSizing: 'border-box',
     borderRadius: '5px',
@@ -305,7 +305,7 @@ const InputLoginStyle = {
 const LogInButton = {
     position: 'relative',
     width: '132px',
-    height: '35px',
+    height: '40px',
     color: ButtonTextColor,
     background: ButtonColor,
     borderRadius: '5px',
@@ -318,7 +318,7 @@ const LogInButton = {
 const ForgotPassButton = {
     position: 'relative',
     width: '162px',
-    height: '35px',
+    height: '40px',
     color: ButtonTextColor,
     background: '#5F5F5F',
     borderRadius: '5px',
