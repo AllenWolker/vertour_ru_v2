@@ -122,16 +122,15 @@ export default class Login extends Component {
                 body: JSON.stringify(users_data)
             });
 
-        }
 
-        fetch(loginRequest)
-            .then(response => {
-                if (response.status === 422) {
-                    alert('Пользователь с таким логином уже существует, пожалуйста придумайте другой логин!');
-                }
-                console.log('response', response);
-                response.json()
-                    .then(data => {
+            fetch(loginRequest)
+                .then(response => {
+                    if (response.status === 422) {
+                        alert('Пользователь с таким логином уже существует, пожалуйста придумайте другой логин!');
+                    }
+                    console.log('response', response);
+                    response.json()
+                        .then(data => {
                             let users = that.state.users;
                             users.push(users_data);
                             that.setState({
@@ -139,15 +138,15 @@ export default class Login extends Component {
                             });
                             alert('Регистрация прошла успешно');
                             console.log('data reg', data);
-                        
-                      //  console.log('data', data);
-                    })
-                    .catch(err => {
-                        console.log('err', err);
-                    })
 
-            })
+                            //  console.log('data', data);
+                        })
+                        .catch(err => {
+                            console.log('err', err);
+                        })
 
+                })
+        }
     }
 
 
