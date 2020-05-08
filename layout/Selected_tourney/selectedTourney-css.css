@@ -33,9 +33,10 @@ body {
     font-family: GothamPro, monospace, sans-serif;
     color:  #FFFFFF;
     background-image: url("../images/wallpaperflare.com_wallpaper.jpg");
-    background-repeat:no-repeat;
-    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-position: 0 0;
+    background-size: cover;
 }
 
 header {
@@ -43,28 +44,36 @@ header {
     border-bottom: 1px solid rgba(196, 196, 196, 0.2);
     height: 100px;
     width: 100%;
-    display: grid;
-    grid-template-columns: 307px minmax(auto, 1233px) minmax(auto, 380px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .header-logo {
-    grid-column: span;
+    width: 307px;
+    height: 100px;
     background: url("../images/logo6 1.png") no-repeat 35px center;
 }
 
 .header-menu_wrapper {
-    grid-column: span;
-    padding-left: 154px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 135px;
 }
 
 .header-menu {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
+    flex-grow: 2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .header-menu div {
-    grid-column: span;
+    box-sizing: border-box;
+    height: 100px;
     padding: 36px 25px 47px;
+    margin-right: 10px;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -78,8 +87,8 @@ header {
 }
 
 .user_wrapper {
-    grid-column: span;
-    padding-left: 15px;
+    flex-grow: 1;
+    padding-left: 150px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -109,15 +118,18 @@ header {
 }
 
 main {
-    display: grid;
-    grid-template-columns: 307px minmax(auto, 1613px);
+    min-height: 1000px;
+    height: 100%;
+    position: relative;
 }
 
 aside {
-    grid-column: span;
     background: rgba(0, 0, 0, 0.6);
     border-right: 1px solid rgba(196, 196, 196, 0.2);
-    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 307px;
 }
 
 .games {
@@ -175,14 +187,19 @@ aside {
 }
 
 .content-block {
-    grid-column: span;
-    padding-left: 7%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 307px;
+    right: 0;
     padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .actions-block {
     background: rgba(29, 24, 28, 0.7);
-    display: inline-block;
     min-height: 400px;
     height: auto;
 }
@@ -197,8 +214,8 @@ aside {
     padding: 20px 40px;
     font-style: normal;
     font-weight: normal;
-    font-size: 1.2em;
-    line-height: 1.1em;
+    font-size: 18px;
+    line-height: 17px;
     border: 1px solid rgba(196, 196, 196, 0.2);
     box-sizing: border-box;
     cursor: pointer;
@@ -216,8 +233,8 @@ aside {
 }
 
 .tourney-picture {
-    width: 20vw;
-    height: auto;
+    width: 300px;
+    height: 320px;
     content: url("../images/tourney/Rectangle 126.png");
     margin-right: 69px;
 }
@@ -227,7 +244,8 @@ aside {
 }
 
 .tourney-name {
-    font-size: 1.4em;
+    font-size: 24px;
+    line-height: 23px;
     text-transform: uppercase;
     margin-bottom: 20px;
 }
@@ -236,14 +254,16 @@ aside {
 .regulations,
 .entrance,
 .tourney-date {
-    font-size: 1.1em;
-    margin-bottom: 20px;
+    font-size: 16px;
+    margin-bottom: 18px;
 }
 
 .tourney-specification {
-    margin: 0 50px 102px;
+    margin: 0 50px 21px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-row-gap: 47px;
 }
 
 .participants,
@@ -263,7 +283,8 @@ aside {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1em;
+    font-size: 14px;
+    line-height: 13px;
 }
 
 .participants-list,
@@ -287,12 +308,12 @@ aside {
 
 .participant-name,
 .sponsor-name {
-    font-size: .9em;
+    font-size: 14px;
 }
 
 .participant-index,
 .sponsor-sum {
-    font-size: .9em;
+    font-size: 14px;
     color: #FF0000;
 }
 
@@ -314,5 +335,23 @@ aside {
     width: 130px;
     height: 80px;
     color: #FFE500;
-    font-size: 1.2em;
+    font-size: 18px;
+}
+
+.participate {
+    grid-column: span 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.participate div {
+    font-size: 14px;
+    line-height: 13px;
+    background: #840318;
+    border-radius: 5px;
+    color: #FFFFFF;
+    padding: 11px 30px;
+    box-sizing: border-box;
+    cursor: pointer;
 }

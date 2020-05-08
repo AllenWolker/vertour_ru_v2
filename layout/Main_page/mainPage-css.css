@@ -33,9 +33,10 @@ body {
     font-family: GothamPro, monospace, sans-serif;
     color:  #FFFFFF;
     background-image: url("../images/wallpaperflare.com_wallpaper.jpg");
-    background-repeat:no-repeat;
-    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-position: 0 0;
+    background-size: cover;
 }
 
 header {
@@ -43,28 +44,36 @@ header {
     border-bottom: 1px solid rgba(196, 196, 196, 0.2);
     height: 100px;
     width: 100%;
-    display: grid;
-    grid-template-columns: 307px minmax(auto, 1233px) minmax(auto, 380px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .header-logo {
-    grid-column: span;
+    width: 307px;
+    height: 100px;
     background: url("../images/logo6 1.png") no-repeat 35px center;
 }
 
 .header-menu_wrapper {
-    grid-column: span;
-    padding-left: 154px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 135px;
 }
 
 .header-menu {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
+    flex-grow: 2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .header-menu div {
-    grid-column: span;
+    box-sizing: border-box;
+    height: 100px;
     padding: 36px 25px 47px;
+    margin-right: 10px;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -78,8 +87,8 @@ header {
 }
 
 .user_wrapper {
-    grid-column: span;
-    padding-left: 15px;
+    flex-grow: 1;
+    padding-left: 150px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -109,15 +118,18 @@ header {
 }
 
 main {
-    display: grid;
-    grid-template-columns: 307px minmax(auto, 1613px);
+    min-height: 1000px;
+    height: 100%;
+    position: relative;
 }
 
 aside {
-    grid-column: span;
     background: rgba(0, 0, 0, 0.6);
     border-right: 1px solid rgba(196, 196, 196, 0.2);
-    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 307px;
 }
 
 .games {
@@ -175,14 +187,19 @@ aside {
 }
 
 .content-block {
-    grid-column: span;
-    padding-left: 7%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 307px;
+    right: 0;
     padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .actions-block {
     background: rgba(29, 24, 28, 0.7);
-    display: inline-block;
     min-height: 400px;
     height: auto;
 }
@@ -197,8 +214,8 @@ aside {
     padding: 20px 40px;
     font-style: normal;
     font-weight: normal;
-    font-size: 1.2em;
-    line-height: 1.1em;
+    font-size: 18px;
+    line-height: 17px;
     border: 1px solid rgba(196, 196, 196, 0.2);
     box-sizing: border-box;
     cursor: pointer;
@@ -214,8 +231,8 @@ aside {
     border: 1px solid rgba(196, 196, 196, 0.2);
     font-style: normal;
     font-weight: normal;
-    font-size: .9em;
-    line-height: .7em;
+    font-size: 14px;
+    line-height: 13px;
     height: 50px;
 }
 
@@ -278,8 +295,8 @@ aside {
 
 .index {
     color: #686868;
-    font-size: .7em;
-    line-height: .6em;
+    font-size: 11px;
+    line-height: 9px;
     padding: 0 5px;
 }
 
@@ -320,8 +337,8 @@ aside {
 }
 
 .participate div {
-    font-size: .8em;
-    line-height: .6em;
+    font-size: 11px;
+    line-height: 10px;
     background: #840318;
     border-radius: 5px;
     color: #FFFFFF;
