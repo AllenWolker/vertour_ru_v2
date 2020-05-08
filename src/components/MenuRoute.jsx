@@ -7,7 +7,9 @@ export default class MenuRoute extends Component {
     render() {
         return (
             <div className="MenuRoute" style={styles.MenuStyleRoute}>
-                <img className='menuLogo' src="/assets/vertour-logo.png" alt="Logo" style={styles.MenuLogoImg}/>
+                <Link to='/' style={styles.HrefDecoration}>
+                    <img className='menuLogo' src="/assets/vertour-logo.png" alt="Logo"
+                         style={styles.MenuLogoImg}/></Link>
                 <div className='main-page' style={styles.MenuComponents}>
                     <Link to='/' style={styles.HrefDecoration}>Главная</Link></div>
                 <div className='pro' style={styles.MenuComponents}>
@@ -16,8 +18,11 @@ export default class MenuRoute extends Component {
                     <Link to='/news' style={styles.HrefDecoration}> Новости</Link></div>
                 <div className='faq' style={styles.MenuComponents}>
                     <Link to='/faq' style={styles.HrefDecoration}> FAQ</Link></div>
+                <div className='login' style={styles.RegistrationHref}>
+                    <Link to='/login' style={styles.HrefDecoration}> Регистрация</Link></div>
                 <div className='login' style={styles.LoginComponents}>
                     <Link to='/login' style={styles.HrefDecoration}> Вход</Link></div>
+
             </div>
         )
     }
