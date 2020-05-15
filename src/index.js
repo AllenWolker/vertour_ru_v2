@@ -22,6 +22,9 @@ import {mainReducer} from "./store/reducers/reducers";
 import PaymentMethods from "./components/PaymentMethods";
 import WithdrawalOfMoney from "./components/WithdrawalOfMoney";
 import AnotherWithdrawalOfMoney from "./components/AnotherWithdrawalOfMoney";
+import QIWIWallet from "./components/QIWIWallet";
+import YandexWallet from "./components/YandexWallet";
+import PayPalWallet from "./components/PayPalWallet";
 
 
 export const ACTION_CHANGE_FIRSTNAME = 'ACTION_CHANGE_FIRSTNAME';
@@ -60,6 +63,9 @@ ReactDOM.render(
                     <Route path='/payment_methods' component={PaymentMethods}/>
                     <Route path='/withdrawal' component={WithdrawalOfMoney}/>
                     <Route path='/another_withdrawal' component={AnotherWithdrawalOfMoney}/>
+                    <Route path='/qiwi_wallet' component={QIWIWallet}/>
+                    <Route path='/yandex_wallet' component={YandexWallet}/>
+                    <Route path='/paypal_wallet' component={PayPalWallet}/>
                     <Footer/>
                 </div>
             </div>

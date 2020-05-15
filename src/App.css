@@ -466,7 +466,7 @@ div a:hover{
 }
 
 /*цвет placeholder  */
-input[type="text"]::-webkit-input-placeholder { color: #ffd595; }
-input[type="text"]:-ms-input-placeholder { color: #ffd595; }
-input[type="text"]::-ms-input-placeholder { color: #ffd595; }
-input[type="text"]::placeholder { color: #ffd595; }
+input[type="text"]::-webkit-input-placeholder { color: gray; }
+input[type="text"]:-ms-input-placeholder { color: gray; }
+input[type="text"]::-ms-input-placeholder { color: gray; }
+input[type="text"]::placeholder { color: gray; }

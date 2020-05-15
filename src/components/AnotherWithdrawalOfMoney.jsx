@@ -37,16 +37,21 @@ export default class AnotherWithdrawalOfMoney extends Component {
                     </div>
                 <div className="flex">
                     <div className="flex-column" style={AnotherWithdrawalMethodsStyles.AnotherPaymentsBox}>
-                        <div className="logoQIWI" style={AnotherWithdrawalMethodsStyles.LogoQIWI}/>
-                        <div className="textQIWI" style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>QIWI Кошелек</div>
+                        <Link to='/qiwi_wallet' style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>
+                            <div className="logoQIWI" style={AnotherWithdrawalMethodsStyles.LogoQIWI}/>
+                            <div className="textQIWI" style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>QIWI Кошелек</div>
+                        </Link>
+
                     </div>
                     <div className="flex-column" style={AnotherWithdrawalMethodsStyles.AnotherPaymentsBox}>
+                        <Link to='/yandex_wallet' style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>
                         <div className="logoYandex" style={AnotherWithdrawalMethodsStyles.LogoYandex}/>
-                        <div className="textYandex" style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>Яндекс Деньги</div>
+                            <div className="textYandex" style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>Яндекс Деньги</div></Link>
                     </div>
                     <div className="flex-column" style={AnotherWithdrawalMethodsStyles.AnotherPaymentsBox}>
+                        <Link to='/paypal_wallet' style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>
                         <div className="logoPayPal" style={AnotherWithdrawalMethodsStyles.LogoPayPal}/>
-                        <div className="textPayPal" style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>PayPal</div>
+                            <div className="textPayPal" style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>PayPal</div></Link>
                     </div>
                 </div>
                 </div>
