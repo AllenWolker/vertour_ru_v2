@@ -260,7 +260,6 @@ const SocialNetwork = {
     fontWeight: 'normal',
     fontSize: '16px',
     lineHeight: '15px',
-
     color: fontColor,
 }
 const ReferenceFooterCompany = {
