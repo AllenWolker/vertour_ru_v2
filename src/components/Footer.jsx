@@ -11,8 +11,6 @@ export default class Footer extends Component {
                     <img src="/assets/vertour-logo.png" alt="JScorp"
                          style={styles.VertourFooterLogo}/>
                     </Link>
-                    <a href="https://jscorp.ru"><img src="/assets/JScorp.png" alt="JScorp"
-                                                     style={styles.JScorpFooterLogo}/></a>
                 </div>
                 <div className='footerMenu' style={{display: 'flex'}}>
                     <div className="information-menu" style={styles.InformationMenu}>

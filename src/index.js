@@ -19,7 +19,9 @@ import FAQ from "./components/FAQ";
 import NewsPage from "./components/NewsPage";
 import Calendary from './components/Calendar'
 import {mainReducer} from "./store/reducers/reducers";
-
+import PaymentMethods from "./components/PaymentMethods";
+import WithdrawalOfMoney from "./components/WithdrawalOfMoney";
+import AnotherWithdrawalOfMoney from "./components/AnotherWithdrawalOfMoney";
 
 
 export const ACTION_CHANGE_FIRSTNAME = 'ACTION_CHANGE_FIRSTNAME';
@@ -45,16 +47,21 @@ ReactDOM.render(
     <Provider store={store}>
         <Router>
             <div className='Routing' style={styles.ContainerLogin}>
-                <MenuRoute/>
-                <Route exact path='/' component={App}/>
-                <Route path='/login' component={Login}/>
-                <Route path='/recovery' component={PasswordRecovery}/>
-                <Route path='/new_password' component={NewPassword}/>
-                <Route path='/confirm_recovery_email' component={ConfirmSendRecoveryEmail}/>
-                <Route path='/faq' component={FAQ}/>
-                <Route path='/news' component={NewsPage}/>
-                <Route path='/calendar' component={Calendary}/>
-                <Footer/>
+                <div className="shadow-box"  style={styles.ShadowBox}>
+                    <MenuRoute/>
+                    <Route exact path='/' component={App}/>
+                    <Route path='/login' component={Login}/>
+                    <Route path='/recovery' component={PasswordRecovery}/>
+                    <Route path='/new_password' component={NewPassword}/>
+                    <Route path='/confirm_recovery_email' component={ConfirmSendRecoveryEmail}/>
+                    <Route path='/faq' component={FAQ}/>
+                    <Route path='/news' component={NewsPage}/>
+                    <Route path='/calendar' component={Calendary}/>
+                    <Route path='/payment_methods' component={PaymentMethods}/>
+                    <Route path='/withdrawal' component={WithdrawalOfMoney}/>
+                    <Route path='/another_withdrawal' component={AnotherWithdrawalOfMoney}/>
+                    <Footer/>
+                </div>
             </div>
         </Router>
     </Provider>

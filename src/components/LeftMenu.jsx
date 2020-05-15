@@ -9,49 +9,47 @@ export default class LeftMenu extends Component {
             users: [],
         };
     }
+
     render() {
         return (
-            <div className='leftMenu flex' style={leftMenuStyles.LeftMenuFlex}>
-                <div className='account' style={leftMenuStyles.LHrefMenu}>
-                    <Link to='/account' style={styles.HrefDecoration}>Учетная запись</Link></div>
-                <div className='paymentMethod' style={leftMenuStyles.LHrefMenu}>
-                    <Link to='/payment' style={styles.HrefDecoration}> Способ оплаты</Link></div>
-                <div className='history' style={leftMenuStyles.LHrefMenu}>
-                    <Link to='/history' style={styles.HrefDecoration}> История</Link></div>
-                <div className='calendar' style={leftMenuStyles.LHrefMenu}>
-                    <Link to='/calendar' style={styles.HrefDecoration}> Календарь</Link></div>
-            </div> );
+            <div className='leftMenu flex ' style={leftMenuStyles.LeftMenuFlex}>
+                <div className='account flex flex-center' style={leftMenuStyles.LHrefMenu}>
+                        <Link to='/account ' style={leftMenuStyles.LHrefDecoration}>Учетная запись</Link></div>
+                <div className='paymentMethod flex flex-center' style={leftMenuStyles.LHrefMenu}>
+                    <Link to='/payment' style={leftMenuStyles.LHrefDecoration}><p>Способ оплаты</p> </Link></div>
+                <div className='history flex flex-center' style={leftMenuStyles.LHrefMenu}>
+                    <Link to='/history' style={leftMenuStyles.LHrefDecoration}> История</Link></div>
+                <div className='calendar flex flex-center' style={leftMenuStyles.LHrefMenu}>
+                    <Link to='/calendar' style={leftMenuStyles.LHrefDecoration}> Календарь</Link></div>
+            </div>);
     }
 };
 
 
-
 //Styles
-const  LeftMenuFlex = {
+const LeftMenuFlex = {
     flexDirection: 'column',
-    maxWidth:'300px',
+    maxWidth: '300px',
     maxHeight: '900px',
-    minHeight:'600px',
+    minHeight: '600px',
     background: 'rgba(0, 0, 0, 0.65)',
 
 };
+
 const LHrefMenu = {
     position: 'relative',
     width: '150px',
-    height: '17px',
+    height: '40px',
     marginLeft: '45px',
     marginTop: '40px',
     top: '36px',
-
-
-    fontFamily: '"Gotham Pro", Serif, Verdana, fantasy',
-    fontStyle: 'normal',
-    fontWeight: 'normal',
-    fontSize: '18px',
-    lineHeight: '17px',
 };
 
+const LHrefDecoration = Object.assign({}, styles.HrefDecoration);
+LHrefDecoration.fontSize = '16px';
+
 const leftMenuStyles = {
-    LeftMenuFlex:LeftMenuFlex,
-    LHrefMenu:LHrefMenu,
+    LeftMenuFlex: LeftMenuFlex,
+    LHrefMenu: LHrefMenu,
+    LHrefDecoration: LHrefDecoration
 }

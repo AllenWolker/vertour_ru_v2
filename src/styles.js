@@ -5,7 +5,7 @@ const N = 30;
 const ContainerLogin = {
     backgroundImage: 'url("/assets/background4.jpg")',
     backgroundRepeat: 'no-repeat',
-    maxHeight: '1080px',
+    minHeight: '1080px',
 }
 
 const HrefDecoration = {
@@ -31,7 +31,7 @@ const MenuComponents = {
     position: 'relative',
     width: '75px',
     height: '17px',
-    left: '441px',
+   // left: '441px',
     marginRight: '40px',
     top: '36px',
     fontFamily: '"Gotham Pro", Serif, Verdana, fantasy',
@@ -45,8 +45,9 @@ const LoginComponents = {
     position: 'relative',
     width: '75px',
     height: '17px',
-    left: `${870+ N}px`,
+   // left: `${870+ N}px`,
     top: '36px',
+    marginLeft:'40px',
     fontFamily: '"Gotham Pro", Serif, Verdana, fantasy',
     fontStyle: 'normal',
     fontWeight: 'normal',
@@ -59,7 +60,7 @@ const MenuLogoImg = {
     position: 'relative',
     width: '202px',
     height: '68px',
-    left: '373px',
+    left: '35px',
     top: '16px',
 }
 const MenuStyleRoute = {
@@ -70,6 +71,7 @@ const MenuStyleRoute = {
     lineHeight: '42px',
     textAlign: 'left',
     display: 'flex',
+    justifyContent:'space-between',
     maxWidth: '1920px',
     height: '100px',
     background: 'rgba(0, 0, 0, 0.65)',
@@ -79,12 +81,13 @@ const LoginComponent = {
     position: 'relative',
     width: '717px',
     height: '690px',
-    left: '1027px',
-    margin: '8px',
+    marginRight: '200px',
+    marginBottom: '33px',
+     marginTop: '8px',
+    marginLeft: '1px',
     background: 'rgba(255, 255, 255, 0.95)',
     opacity: '0.9',
     borderRadius: '10px',
-
     //backgroundColor: "#44014C",
     minHeight: "200px",
     boxSizing: "border-box",
@@ -456,7 +459,7 @@ const RegistrationHref = {
     position: 'relative',
     width: '75px',
     height: '17px',
-    left: `${830+ N}px`,
+   // left: `${830+ N}px`,
     top: '36px',
     fontFamily: '"Gotham Pro", Serif, Verdana, fantasy',
     fontStyle: 'normal',
@@ -466,8 +469,8 @@ const RegistrationHref = {
     color: fontColor,
 
 }
-const LeftMenu = {
-
+const ShadowBox = {
+    backgroundColor: 'rgba(0, 0, 0, 0.45)',
 }
 const styles = {
     LoginComponent: LoginComponent,
@@ -510,7 +513,7 @@ const styles = {
     SubmitRecoveryEmail: SubmitRecoveryEmail,
     ConfirmEmailRecoveryDiv: ConfirmEmailRecoveryDiv,
     RegistrationHref:RegistrationHref,
-    LeftMenu:LeftMenu,
+    ShadowBox:ShadowBox,
 };
 export default styles;
 
