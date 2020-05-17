@@ -202,6 +202,7 @@ aside {
     background: rgba(29, 24, 28, 0.7);
     min-height: 400px;
     height: auto;
+    margin-bottom: 40px;
 }
 
 .actions-menu {
