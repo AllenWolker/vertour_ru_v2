@@ -125,6 +125,7 @@ const mapStateToProps = (store, ownProps) => {
     }
 };
 
+
 const mapDispatchToProps = dispatch => ({
     showNewGamesBlockAction: show => dispatch(showNewGamesBlock(show)),
     showDeleteAccountBlockAction: show => dispatch(showDeleteAccountBlock(show)),
