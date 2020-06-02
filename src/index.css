@@ -7,4 +7,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face{
 
+  font-family: 'GothamPro';
+
+  src: url('./app/fonts/Gotham Pro/GothamPro.eot');
+
+  src: url('./app/fonts/Gotham Pro/GothamPro.eot?iefix') format('eot'),
+
+  url('./app/fonts/Gotham Pro/GothamPro.woff') format('woff'),
+
+  url('./app/fonts/Gotham Pro/GothamPro.ttf') format('truetype');
+
+  font-weight: normal;
+
+  font-style: normal;
+}

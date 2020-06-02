@@ -52,7 +52,7 @@ header {
 .header-logo {
     width: 307px;
     height: 100px;
-    background: url("../images/logo6 1.png") no-repeat 35px center;
+    background: url("../images/headerMenu/logo6 1.png") no-repeat 35px center;
 }
 
 .header-menu_wrapper {
@@ -112,7 +112,7 @@ header {
 }
 
 .user-icon {
-    background: url("../images/Logo.png") no-repeat center center;
+    background: url("../images/headerMenu/user-logo.png") no-repeat center center;
     width: 50px;
     height: 50px;
 }

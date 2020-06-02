@@ -1,16 +1,30 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { Route, Switch } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-        ГЛАВНАЯ
-        </p>
-      </header>
-    </div>
-  );
+import PrivateOffice from './app/view/pages/PrivateOffice';
+
+const AppComponent = styled.div`
+  font-family: GothamPro, monospace, sans-serif;
+  color:  #FFFFFF;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 0 0;
+  background-size: cover;
+`;
+
+
+class App extends Component{
+    render() {
+        return (
+            <AppComponent>
+                <Switch>
+                    <Route exact path={'/'} component={PrivateOffice}/>
+                    <Route path={'*'} component={Error} />
+                </Switch>
+            </AppComponent>
+        );
+    }
 }
 
 export default App;
