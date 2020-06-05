@@ -1,5 +1,4 @@
-import React, { PureComponent } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 import styled from 'styled-components';
 
 const HeaderWrapper = styled.header`
@@ -80,44 +79,36 @@ const UserIcon =styled.div`
     height: 50px;
 `;
 
-class Header extends PureComponent {
+const Header = (props) => {
 
-    render() {
-        const {
-            menuPoints,
-            user,
-            headerLogoPath,
-            userIconPath
-        } = this.props.headerMenu;
+    const {
+        headerMenuPoints,
+        user,
+        headerLogoPath,
+        userIconPath
+    } = props.headerMenu;
 
-        const points = menuPoints.map((point, index) => {
-            return <MenuPoint key={index}>{point}</MenuPoint>
-        });
+    const points = headerMenuPoints.map((point, index) => {
+        return <MenuPoint key={index}>{point}</MenuPoint>
+    });
 
-        return(
-            <HeaderWrapper>
-                <HeaderLogo headerLogoPath={process.env.PUBLIC_URL + headerLogoPath}/>
-                <HeaderMenuWrapper>
-                    <HeaderMenu>
-                        {points}
-                    </HeaderMenu>
-                    <UserWrapper>
-                        <User>
-                            <UserName>{user[0]}</UserName>
-                            <Bot>{user[1]}</Bot>
-                        </User>
-                        <UserIcon userIconPath={process.env.PUBLIC_URL + userIconPath} />
-                    </UserWrapper>
-                </HeaderMenuWrapper>
-            </HeaderWrapper>
-        )
-    }
-}
-
-const mapStateToProps = (store) => {
-    return {
-        headerMenu: store.headerMenu
-    }
+    return(
+        <HeaderWrapper>
+            <HeaderLogo headerLogoPath={process.env.PUBLIC_URL + headerLogoPath}/>
+            <HeaderMenuWrapper>
+                <HeaderMenu>
+                    {points}
+                </HeaderMenu>
+                <UserWrapper>
+                    <User>
+                        <UserName>{user[0]}</UserName>
+                        <Bot>{user[1]}</Bot>
+                    </User>
+                    <UserIcon userIconPath={process.env.PUBLIC_URL + userIconPath} />
+                </UserWrapper>
+            </HeaderMenuWrapper>
+        </HeaderWrapper>
+    )
 };
 
-export default connect(mapStateToProps)(Header);
+export default Header;

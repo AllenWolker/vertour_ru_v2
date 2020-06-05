@@ -11,10 +11,41 @@ const MainWrapper = styled.div`
 
 export default class Main extends Component {
     render() {
+        const {
+            aside,
+            contentBlock,
+            personalData,
+            gamesList,
+            newGamesList,
+            showNewGamesBlock,
+            showDeleteAccountBlock,
+            addNewGame,
+            delGame
+        } = this.props;
+
         return(
             <MainWrapper>
-                <Aside/>
-                <ContentBlock/>
+                <Aside
+                    menuPoints={aside.asideMenuPoints}
+                />
+                <ContentBlock
+                    state={contentBlock.state}
+                    team={contentBlock.team}
+                    rating={contentBlock.rating}
+                    gamerImgPath={contentBlock.gamerImgPath}
+                    starIconPath={contentBlock.starIconPath}
+                    basketIconPath={contentBlock.basketIconPath}
+                    addText={contentBlock.addText}
+                    hookUpNewGamesBlock={contentBlock.hookUpNewGamesBlock}
+                    hookUpDeleteAccountBlock={contentBlock.hookUpDeleteAccountBlock}
+                    formFields={personalData.formFields}
+                    gamesOfPlayer={gamesList.gamesOfPlayer}
+                    newGamesList={newGamesList.newGamesList}
+                    showNewGamesBlock={showNewGamesBlock}
+                    showDeleteAccountBlock={showDeleteAccountBlock}
+                    addNewGame={addNewGame}
+                    delGame={delGame}
+                />
             </MainWrapper>
         )
     }

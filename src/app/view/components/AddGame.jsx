@@ -23,30 +23,30 @@ const Add = styled.div`
     line-height: 15px;
     cursor: pointer;
     z-index: 999;
-    opacity: ${props => props.showDeleteAccountBlock ? 0 : 1};
+    display: ${props => props.hookUpDeleteAccountBlock ? 'none' : 'block'};
     transition: 1.2s;
     webkit-transition: 1.2s;
 `;
 
 const AddGame = (props) => {
     const {
+        hookUpDeleteAccountBlock,
+        hookUpNewGamesBlock,
         showNewGamesBlock,
-        showDeleteAccountBlock,
-        showGamesBlock,
         addText
     } = props;
 
     const showBlock = () =>{
-        showGamesBlock(!showNewGamesBlock);
+        showNewGamesBlock(!hookUpNewGamesBlock);
     };
 
-    const text = showNewGamesBlock ? addText[1] : addText[0];
+    const text = hookUpNewGamesBlock ? addText[1] : addText[0];
 
     return(
         <AddGameWrapper>
             <Games>Игры</Games>
             <Add
-                showDeleteAccountBlock={showDeleteAccountBlock}
+                hookUpDeleteAccountBlock={hookUpDeleteAccountBlock}
                 onClick={showBlock}>{text}</Add>
         </AddGameWrapper>
     )

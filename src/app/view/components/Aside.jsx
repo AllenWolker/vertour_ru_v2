@@ -1,6 +1,7 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import {connect} from "react-redux";
+
+import PropTypes from 'prop-types';
 
 const AsideWrapper = styled.div`
     background: rgba(0, 0, 0, 0.6);
@@ -34,25 +35,21 @@ const SidebarLi = styled.li`
   }
 `;
 
-class Aside extends PureComponent {
-    render() {
-        const { menuPoints } = this.props.aside;
-        const points = menuPoints.map((point, index) => {
-            return <SidebarLi key={index}>{point}</SidebarLi>
-        });
+const Aside = (props) => {
+    const { menuPoints } = props;
+    const points = menuPoints.map((point, index) => {
+        return <SidebarLi key={index}>{point}</SidebarLi>
+    });
 
-        return(
-            <AsideWrapper>
-                <Sidebar>{points}</Sidebar>
-            </AsideWrapper>
-        )
-    }
-}
-
-const mapStateToProps = (store) => {
-    return {
-        aside: store.aside
-    }
+    return(
+        <AsideWrapper>
+            <Sidebar>{points}</Sidebar>
+        </AsideWrapper>
+    )
 };
 
-export default connect(mapStateToProps)(Aside);
+export default Aside;
+
+Aside.propTypes = {
+    menuPoints: PropTypes.array.isRequired
+};

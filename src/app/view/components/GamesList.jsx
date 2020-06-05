@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import GameBlock from './GamesBlock';
+import GameBlock from './GameBlock';
 
 const BlockWrapper = styled.div`
     grid-area: games_list;
@@ -34,25 +34,25 @@ const BlockWrapper = styled.div`
 `;
 
 
-const GamesList = (props) => {
-    const {
-        gamesOfPlayer,
-        delGame
-    } = props;
+export default class GamesList extends Component {
+    render() {
+        const {
+            gamesOfPlayer,
+            delGame
+        } = this.props;
 
-    const games = gamesOfPlayer.map((game, index) => {
-        return (
-            <GameBlock
-                key={index}
-                icon={process.env.PUBLIC_URL + game.icon}
-                title={game.title}
-                gamesOfPlayer={gamesOfPlayer}
-                delGame={delGame}
-            />
-        )
-    });
+        const games = gamesOfPlayer.map((game, index) => {
+            return (
+                <GameBlock
+                    key={index}
+                    icon={process.env.PUBLIC_URL + game.icon}
+                    title={game.title}
+                    gamesOfPlayer={gamesOfPlayer}
+                    delGame={delGame}
+                />
+            )
+        });
 
-    return <BlockWrapper>{games}</BlockWrapper>
-};
-
-export default GamesList;
+        return <BlockWrapper>{games}</BlockWrapper>
+    }
+}

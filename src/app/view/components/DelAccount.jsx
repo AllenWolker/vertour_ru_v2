@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const BlockWrapper = styled.div`
-    display: ${props => props.showDeleteAccountBlock ? 'flex' : 'none'};
     width: 342px;
     height: 146px;
     background: #FFFFFF;
@@ -12,9 +11,25 @@ const BlockWrapper = styled.div`
     position: absolute;
     left: 550px;
     top: 430px;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
+    opacity: 0; 
+    transition: .3s;
+    animation: show 1s 1;
+    animation-fill-mode: forwards;
+    animation-delay: .1s;
+    
+    @keyframes show{
+        0%{
+            opacity:0;
+        }
+        100% {
+            opacity:1;
+        }
+    }
 `;
 
 const Question = styled.p`
@@ -56,19 +71,19 @@ const Btn = styled.button`
 const DelAccount = (props) => {
     const {
         showDeleteAccountBlock,
-        showDelBlock
+        hookUpDeleteAccountBlock
     } = props;
 
     const showBlock = () =>{
-        if(showDeleteAccountBlock) {
-            showDelBlock(!showDeleteAccountBlock);
+        if(hookUpDeleteAccountBlock) {
+            showDeleteAccountBlock(!hookUpDeleteAccountBlock);
         }else{
-            showDelBlock(showDeleteAccountBlock);
+            showDeleteAccountBlock(hookUpDeleteAccountBlock);
         }
     };
 
     return(
-        <BlockWrapper showDeleteAccountBlock={showDeleteAccountBlock}>
+        <BlockWrapper>
             <Question>
                 Вы действительно хотите<br/>
                 удалить аккаунт?

@@ -5,6 +5,9 @@ import { reducer as formReducer } from 'redux-form';
 import { headerMenu } from './headerMenu';
 import { aside } from './aside';
 import { contentBlock } from './contentBlock';
+import { personalData } from './personalData';
+import { gamesList } from './gamesList';
+import { newGamesList } from "./newGamesList";
 
 export default history =>
     combineReducers({
@@ -12,5 +15,8 @@ export default history =>
         form: formReducer,
         headerMenu: headerMenu,
         aside: aside,
-        contentBlock: contentBlock
+        contentBlock: contentBlock,
+        personalData: personalData,
+        gamesList: gamesList,
+        newGamesList: newGamesList,
     });

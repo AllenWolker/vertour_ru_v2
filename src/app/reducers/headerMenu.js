@@ -1,5 +1,5 @@
 const initialState = {
-    menuPoints: [
+    headerMenuPoints: [
         'Главная',
         'PRO',
         'Новости',

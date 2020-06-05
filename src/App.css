@@ -437,9 +437,4 @@ input[type="text"]::placeholder { color: gray; }
 body {
   font-family: GothamPro, monospace, sans-serif;
   color:  #FFFFFF;
-  background-image: url("app/img/wallpaperflare.com_wallpaper.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 0 0;
-  background-size: cover;
 }

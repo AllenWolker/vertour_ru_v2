@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
-import { reduxForm } from 'redux-form';
-import { validate } from "../../utils/formControl/formValidate";
 import styled from 'styled-components';
+
+import PropTypes from 'prop-types';
 
 import Status from './Status';
 import TeamBlock from './TeamBlock';
@@ -15,12 +13,6 @@ import GamesList from './GamesList';
 import NewGames from './NewGames';
 import DelAccount from './DelAccount';
 
-import {
-    showNewGamesBlock,
-    showDeleteAccountBlock,
-    addNewGame,
-    delGame
-} from '../../actions/ContentBlockActions'
 
 const ContentBlockWrapper = styled.div`
     position: absolute;
@@ -52,7 +44,11 @@ const ActionBlock = styled.div`
     ;
 `;
 
-class ContentBlock extends Component {
+const DisplayNoneBlock = styled.div`
+    display: none;
+`;
+
+export default class ContentBlock extends Component {
     render() {
         const {
             state,
@@ -62,12 +58,42 @@ class ContentBlock extends Component {
             starIconPath,
             basketIconPath,
             addText,
-            showNewGamesBlock,
-            showDeleteAccountBlock,
+            hookUpNewGamesBlock,
+            hookUpDeleteAccountBlock,
+            formFields,
             gamesOfPlayer,
             newGamesList,
-            formFields,
-        } = this.props.contentBlock;
+            showNewGamesBlock,
+            showDeleteAccountBlock,
+            addNewGame,
+            delGame
+        } = this.props;
+
+        const PopUpBlock = (props) => {
+            if(props.hookUpNewGamesBlock){
+                return(
+                    <NewGames
+                        newGamesList={newGamesList}
+                        gamesOfPlayer={gamesOfPlayer}
+                        addNewGame={addNewGame}
+                    />
+                );
+            }else{
+                if(props.hookUpDeleteAccountBlock){
+                    return (
+                        <DelAccount
+                            showDeleteAccountBlock={showDeleteAccountBlock}
+                            hookUpDeleteAccountBlock={hookUpDeleteAccountBlock}
+                        />
+                    );
+                }else {
+                    return <DisplayNoneBlock/>
+                }
+            }
+
+
+        };
+
         return(
             <ContentBlockWrapper>
                 <ActionBlock>
@@ -84,60 +110,63 @@ class ContentBlock extends Component {
                         gamerImgPath={gamerImgPath}
                         basketIconPath={basketIconPath}
                         showDeleteAccountBlock={showDeleteAccountBlock}
-                        showDelBlock={this.props.showDeleteAccountBlockAction}
+                        hookUpDeleteAccountBlock={hookUpDeleteAccountBlock}
+                        hookUpNewGamesBlock={hookUpNewGamesBlock}
                     />
 
                     <PersonalData formFields={formFields}/>
 
                     <AddGame
+                        hookUpDeleteAccountBlock={hookUpDeleteAccountBlock}
                         showNewGamesBlock={showNewGamesBlock}
-                        showDeleteAccountBlock={showDeleteAccountBlock}
-                        showGamesBlock={this.props.showNewGamesBlockAction}
+                        hookUpNewGamesBlock={hookUpNewGamesBlock}
                         addText={addText}
                     />
 
                     <GamesList
                         gamesOfPlayer={gamesOfPlayer}
-                        delGame={this.props.delGameAction}
+                        delGame={delGame}
                     />
 
-                    <NewGames
-                        showNewGamesBlock={showNewGamesBlock}
-                        newGamesList={newGamesList}
-                        gamesOfPlayer={gamesOfPlayer}
-                        addNewGame={this.props.addNewGameAction}
+                    <PopUpBlock
+                        hookUpNewGamesBlock={hookUpNewGamesBlock}
+                        hookUpDeleteAccountBlock={hookUpDeleteAccountBlock}
                     />
 
-                    <DelAccount
-                        showDeleteAccountBlock={showDeleteAccountBlock}
-                        showDelBlock={this.props.showDeleteAccountBlockAction}
-                    />
                 </ActionBlock>
             </ContentBlockWrapper>
         )
     }
 }
 
-const mapStateToProps = (store, ownProps) => {
-    return {
-        contentBlock: store.contentBlock,
-        form: ownProps.formName
-    }
+ContentBlock.propTypes = {
+    state: PropTypes.string.isRequired,
+    team: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
+    gamerImgPath: PropTypes.string.isRequired,
+    basketIconPath: PropTypes.string.isRequired,
+    addText: PropTypes.array.isRequired,
+    hookUpNewGamesBlock: PropTypes.bool.isRequired,
+    hookUpDeleteAccountBlock: PropTypes.bool.isRequired,
+    formFields: PropTypes.arrayOf(PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+        placeholder: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
+        disabled:  PropTypes.bool.isRequired,
+        normalize: PropTypes.array.isRequired,
+        btnLabel: PropTypes.string.isRequired
+    })),
+    gamesOfPlayer: PropTypes.arrayOf(PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        icon: PropTypes.string.isRequired
+    })),
+    newGamesList: PropTypes.arrayOf(PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        icon: PropTypes.string.isRequired
+    })),
+    showNewGamesBlock: PropTypes.func.isRequired,
+    showDeleteAccountBlock: PropTypes.func.isRequired,
+    addNewGame: PropTypes.func.isRequired,
+    delGame: PropTypes.func.isRequired
 };
-
-
-const mapDispatchToProps = dispatch => ({
-    showNewGamesBlockAction: show => dispatch(showNewGamesBlock(show)),
-    showDeleteAccountBlockAction: show => dispatch(showDeleteAccountBlock(show)),
-    addNewGameAction: list => dispatch(addNewGame(list)),
-    delGameAction: list => dispatch(delGame(list))
-});
-
-export default compose(
-    connect(mapStateToProps,
-        mapDispatchToProps
-        ),
-    reduxForm({
-        validate
-    })
-)(ContentBlock);

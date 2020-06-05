@@ -37,7 +37,7 @@ const Btn = styled.div`
     cursor: pointer
 `;
 
-const GamesBlock = (props) => {
+const GameBlock = (props) => {
     const{
         title,
         icon,
@@ -46,17 +46,7 @@ const GamesBlock = (props) => {
     } = props;
 
     const removeGame = () => {
-        let index;
-        gamesOfPlayer.forEach((item, i) => {
-            if(item.title === title) index = i;
-        });
-
-
-        if(typeof index == 'number') {
-            gamesOfPlayer.splice(index, 1);
-            delGame(gamesOfPlayer);
-        }
-
+        delGame(gamesOfPlayer.filter(item => item.title !== title));
     };
 
     return(
@@ -67,4 +57,4 @@ const GamesBlock = (props) => {
     )
 };
 
-export default GamesBlock;
+export default GameBlock;

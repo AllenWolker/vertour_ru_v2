@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import NewGameBlock from './NewGameBlock';
 
 const BlockWrapper = styled.div`
-    display: ${props => props.showNewGamesBlock ? 'block' : 'none'};
     position: absolute;
     width: 700px;
     height: 305px;
@@ -14,6 +13,21 @@ const BlockWrapper = styled.div`
     border-radius: 15px;
     box-sizing: border-box;
     padding: 32px 20px 16px 40px;
+    
+    opacity: 0; 
+    transition: .3s;
+    animation: show 1s 1;
+    animation-fill-mode: forwards;
+    animation-delay: .1s;
+    
+    @keyframes show{
+        0%{
+            opacity:0;
+        }
+        100% {
+            opacity:1;
+        }
+    }
 `;
 
 const GamesList = styled.div`

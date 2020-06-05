@@ -1,5 +1,5 @@
 const initialState = {
-    menuPoints: [
+    asideMenuPoints: [
         'Учетная запись',
         'Способы оплаты',
         'История',

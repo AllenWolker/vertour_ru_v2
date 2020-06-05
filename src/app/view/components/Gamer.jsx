@@ -30,14 +30,17 @@ const Gamer = (props) => {
         gamerImgPath,
         basketIconPath,
         showDeleteAccountBlock,
-        showDelBlock
+        hookUpDeleteAccountBlock,
+        hookUpNewGamesBlock
     } = props;
 
     const showBlock = () =>{
-        if(!showDeleteAccountBlock) {
-            showDelBlock(!showDeleteAccountBlock);
-        }else{
-            showDelBlock(showDeleteAccountBlock);
+        if (!hookUpNewGamesBlock) {
+            if(!hookUpDeleteAccountBlock) {
+                showDeleteAccountBlock(!hookUpDeleteAccountBlock);
+            }else{
+                showDeleteAccountBlock(hookUpDeleteAccountBlock);
+            }
         }
     };
 

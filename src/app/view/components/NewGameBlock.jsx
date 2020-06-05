@@ -47,21 +47,16 @@ const NewGameBlock = (props) => {
     } = props;
 
     const addGame = () => {
-        let object = {
-            title: title,
-            icon: icon
-        };
+        if(gamesOfPlayer.findIndex(item => item.title === title) === -1){
+            let object = {
+                title: title,
+                icon: icon
+            };
+            let arr= [];
 
-        let overlap = false;
+            addNewGame(arr.concat(object,gamesOfPlayer));
+        }
 
-        gamesOfPlayer.forEach((item) =>{
-            if (item.title === object.title) overlap = !overlap;
-        });
-
-       if(!overlap){
-           gamesOfPlayer.unshift(object);
-           addNewGame(gamesOfPlayer);
-       }
     };
 
     return(

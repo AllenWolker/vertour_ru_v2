@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component} from 'react';
 import { Field } from 'redux-form';
 import styled from 'styled-components';
 
@@ -158,8 +158,8 @@ const TipBlockInside = styled.div`
   }
 `;
 
-const PersonalData = (props) => {
-    const renderField = () => ({
+export default class PersonalData extends Component {
+    renderField = () => ({
                        input,
                        placeholder,
                        type,
@@ -181,33 +181,33 @@ const PersonalData = (props) => {
         );
     };
 
-    const { formFields } = props;
+    render(){
+        const { formFields } = this.props;
 
-    const fields = formFields.map((field, index) => {
-        return(
-            <InputFieldBlock key={index}>
-                <InputFieldLabel>{field.label}</InputFieldLabel>
+        const fields = formFields.map((field, index) => {
+            return(
+                <InputFieldBlock key={index}>
+                    <InputFieldLabel>{field.label}</InputFieldLabel>
 
-                <Field
-                    name={field.name}
-                    placeholder={field.placeholder}
-                    type={field.type}
-                    normalize={field.normalize.length > 0 ? field.normalize[0] : undefined}
-                    component={renderField}
-                    input = {{disabled: field.disabled}}
-                />
+                    <Field
+                        name={field.name}
+                        placeholder={field.placeholder}
+                        type={field.type}
+                        normalize={field.normalize.length > 0 ? field.normalize[0] : undefined}
+                        component={this.renderField}
+                        input = {{disabled: field.disabled}}
+                    />
 
-                <SubmitBtnLabel>{field.btnLabel}</SubmitBtnLabel>
-            </InputFieldBlock>
+                    <SubmitBtnLabel>{field.btnLabel}</SubmitBtnLabel>
+                </InputFieldBlock>
+            )
+        });
+
+        return (
+            <PersonalDataWrapper>
+                {fields}
+                <SubmitBtn/>
+            </PersonalDataWrapper>
         )
-    });
-
-    return (
-        <PersonalDataWrapper>
-            {fields}
-            <SubmitBtn/>
-        </PersonalDataWrapper>
-    )
+    }
 };
-
-export default PersonalData;
