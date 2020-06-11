@@ -20,7 +20,9 @@ export default class Main extends Component {
             showNewGamesBlock,
             showDeleteAccountBlock,
             addNewGame,
-            delGame
+            delGame,
+            handleSubmit,
+            initialValues
         } = this.props;
 
         return(
@@ -38,7 +40,9 @@ export default class Main extends Component {
                     addText={contentBlock.addText}
                     hookUpNewGamesBlock={contentBlock.hookUpNewGamesBlock}
                     hookUpDeleteAccountBlock={contentBlock.hookUpDeleteAccountBlock}
-                    formFields={personalData.formFields}
+                    personalData={personalData}
+                    initialValues={initialValues}
+                    handleSubmit={handleSubmit}
                     gamesOfPlayer={gamesList.gamesOfPlayer}
                     newGamesList={newGamesList.newGamesList}
                     showNewGamesBlock={showNewGamesBlock}

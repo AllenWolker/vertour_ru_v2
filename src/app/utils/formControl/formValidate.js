@@ -15,7 +15,7 @@ export const validate = values => {
                 ? 'Некорректный email!'
                 : undefined;
         }
-        if (values[field] && index > 4) {
+        if (values[field] && index === 2) {
             errors[
                 field
                 ] = !/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).[0-9a-zA-Z!@#$%^&]/g.test(

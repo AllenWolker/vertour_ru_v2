@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { compose } from 'redux';
-import { reduxForm } from 'redux-form';
-import { validate } from "../../utils/formControl/formValidate";
+import submit from '../../utils/submit/userDataSubmit';
 
 import Header from '../components/Header';
 import Main from '../components/Main'
@@ -25,7 +23,18 @@ const Body = styled.div`
     background-size: cover;
 `;
 
+
+
 class PrivateOffice extends Component{
+    getInitialValues  = () => {
+        return {
+            "email": "vertour@gmail.com",
+            "phone": "+7 (978) 123 36 69",
+            "password": "dbkmZV13",
+            "payment": "532 руб."
+        }
+    };
+
     render(){
         const {
             headerMenu,
@@ -37,7 +46,7 @@ class PrivateOffice extends Component{
             showNewGamesBlockAction,
             showDeleteAccountBlockAction,
             addNewGameAction,
-            delGameAction
+            delGameAction,
         } = this.props;
 
         return(
@@ -49,8 +58,10 @@ class PrivateOffice extends Component{
                     aside={aside}
                     contentBlock={contentBlock}
                     personalData={personalData}
+                    handleSubmit={submit}
                     gamesList={gamesList}
                     newGamesList={newGamesList}
+                    initialValues={this.getInitialValues()}
                     showNewGamesBlock={showNewGamesBlockAction}
                     showDeleteAccountBlock={showDeleteAccountBlockAction}
                     addNewGame={addNewGameAction}
@@ -61,9 +72,8 @@ class PrivateOffice extends Component{
     }
 }
 
-const mapStateToProps = (store, ownProps) => {
+const mapStateToProps = (store) => {
     return {
-        form: ownProps.formName,
         headerMenu: store.headerMenu,
         aside: store.aside,
         contentBlock: store.contentBlock,
@@ -77,15 +87,10 @@ const mapDispatchToProps = dispatch => ({
     showNewGamesBlockAction: show => dispatch(showNewGamesBlock(show)),
     showDeleteAccountBlockAction: show => dispatch(showDeleteAccountBlock(show)),
     addNewGameAction: list => dispatch(addNewGame(list)),
-    delGameAction: list => dispatch(delGame(list))
+    delGameAction: list => dispatch(delGame(list)),
 });
 
-export default compose(
-    connect(
-        mapStateToProps,
-        mapDispatchToProps
-    ),
-    reduxForm({
-        validate
-    })
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
 )(PrivateOffice);

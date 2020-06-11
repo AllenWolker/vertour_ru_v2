@@ -60,13 +60,15 @@ export default class ContentBlock extends Component {
             addText,
             hookUpNewGamesBlock,
             hookUpDeleteAccountBlock,
-            formFields,
+            personalData,
+            handleSubmit,
             gamesOfPlayer,
             newGamesList,
             showNewGamesBlock,
             showDeleteAccountBlock,
             addNewGame,
-            delGame
+            delGame,
+            initialValues
         } = this.props;
 
         const PopUpBlock = (props) => {
@@ -90,8 +92,6 @@ export default class ContentBlock extends Component {
                     return <DisplayNoneBlock/>
                 }
             }
-
-
         };
 
         return(
@@ -114,7 +114,11 @@ export default class ContentBlock extends Component {
                         hookUpNewGamesBlock={hookUpNewGamesBlock}
                     />
 
-                    <PersonalData formFields={formFields}/>
+                    <PersonalData
+                        formFields={personalData.formFields}
+                        handleSubmit={handleSubmit}
+                        initialValues={initialValues}
+                    />
 
                     <AddGame
                         hookUpDeleteAccountBlock={hookUpDeleteAccountBlock}
@@ -151,7 +155,6 @@ ContentBlock.propTypes = {
     formFields: PropTypes.arrayOf(PropTypes.shape({
         name: PropTypes.string.isRequired,
         label: PropTypes.string.isRequired,
-        placeholder: PropTypes.string.isRequired,
         type: PropTypes.string.isRequired,
         disabled:  PropTypes.bool.isRequired,
         normalize: PropTypes.array.isRequired,
@@ -168,5 +171,6 @@ ContentBlock.propTypes = {
     showNewGamesBlock: PropTypes.func.isRequired,
     showDeleteAccountBlock: PropTypes.func.isRequired,
     addNewGame: PropTypes.func.isRequired,
-    delGame: PropTypes.func.isRequired
+    delGame: PropTypes.func.isRequired,
+    switchOnField: PropTypes.func.isRequired
 };
