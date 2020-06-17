@@ -25,11 +25,12 @@ const FormFieldInput = styled.input`
     font-weight: normal;
     font-size: 16px;
     line-height: 15px;
-    color: #FFFFFF;
+    color: #6D6D6D;
     text-align: center;
     
     :focus, input:focus{
         outline: none;
+        color: #FFFFFF;
     }
 `;
 
