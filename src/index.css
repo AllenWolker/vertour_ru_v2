@@ -23,3 +23,16 @@ body {
 
   font-style: normal;
 }
+
+@font-face{
+
+  font-family: 'Roboto';
+
+  src: url('./app/fonts/Roboto/Roboto.woff'),
+
+  url('./app/fonts/Roboto/Roboto.ttf') format('truetype');
+
+  font-weight: normal;
+
+  font-style: normal;
+}

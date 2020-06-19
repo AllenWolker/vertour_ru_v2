@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import submit from '../../utils/submit/userDataSubmit';
 
-import Header from '../components/Header';
-import Main from '../components/Main'
+import Header from '../components/PrivateOffice/Header';
+import Main from '../components/PrivateOffice/Main'
 import {
     showDeleteAccountBlock,
     showNewGamesBlock

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Route, Switch } from 'react-router-dom';
 
 import PrivateOffice from './app/view/pages/PrivateOffice';
+import Landing from './app/view/pages/Landing';
 
 const AppComponent = styled.div`
   font-family: GothamPro, monospace, sans-serif;
@@ -20,6 +21,7 @@ class App extends Component{
             <AppComponent>
                 <Switch>
                     <Route exact path={'/'} component={PrivateOffice}/>
+                    <Route path={'/landing'} component={Landing}/>
                     <Route path={'*'} component={Error} />
                 </Switch>
             </AppComponent>

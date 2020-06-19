@@ -8,6 +8,7 @@ import { contentBlock } from './contentBlock';
 import { personalData } from './personalData';
 import { gamesList } from './gamesList';
 import { newGamesList } from "./newGamesList";
+import { landing } from './landing';
 
 export default history =>
     combineReducers({
@@ -19,4 +20,5 @@ export default history =>
         personalData: personalData,
         gamesList: gamesList,
         newGamesList: newGamesList,
+        landing: landing,
     });
