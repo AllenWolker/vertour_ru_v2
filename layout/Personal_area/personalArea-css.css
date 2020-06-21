@@ -1,0 +1,515 @@
+@font-face{
+
+    font-family: 'GothamPro';
+
+    src: url('../fonts/Gotham Pro/GothamPro.eot');
+
+    src: url('../fonts/Gotham Pro/GothamPro.eot?iefix') format('eot'),
+
+    url('../fonts/Gotham Pro/GothamPro.woff') format('woff'),
+
+    url('../fonts/Gotham Pro/GothamPro.ttf') format('truetype');
+
+    font-weight: normal;
+
+    font-style: normal;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+li {
+    list-style-type: none;
+}
+
+ul {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+body {
+    font-family: GothamPro, monospace, sans-serif;
+    color:  #FFFFFF;
+    background-image: url("../images/wallpaperflare.com_wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 0 0;
+    background-size: cover;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid rgba(196, 196, 196, 0.2);
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header-logo {
+    width: 307px;
+    height: 100px;
+    background: url("../images/logo6 1.png") no-repeat 35px center;
+}
+
+.header-menu_wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 135px;
+}
+
+.header-menu {
+    flex-grow: 2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header-menu div {
+    box-sizing: border-box;
+    height: 100px;
+    padding: 36px 25px 47px;
+    margin-right: 10px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 17px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header-menu div:hover {
+    background: rgba(67, 67, 67, 0.6);
+}
+
+.user_wrapper {
+    flex-grow: 1;
+    padding-left: 150px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    margin-right: 10px;
+}
+
+.username {
+    font-size: 18px;
+}
+
+.bot {
+    font-size: 16px;
+    color: #FFE500;
+}
+
+.user-icon {
+    background: url("../images/Logo.png") no-repeat center center;
+    width: 50px;
+    height: 50px;
+}
+
+main {
+    min-height: 1000px;
+    height: 100%;
+    position: relative;
+}
+
+aside {
+    background: rgba(0, 0, 0, 0.6);
+    border-right: 1px solid rgba(196, 196, 196, 0.2);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 307px;
+}
+
+.sidebar li {
+    height: 42px;
+    box-sizing: border-box;
+    padding-left: 35px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    line-height: 13px;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    background: rgba(37, 35, 35, 0.5);
+}
+
+.content-block {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 307px;
+    right: 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.actions-block {
+    position: relative;
+    background: rgba(0, 0, 0, 0.8);
+    width: 994px;
+    padding: 40px;
+    box-sizing: border-box;
+    display: grid;
+    grid-column-gap: 60px;
+    grid-row-gap: 40px;
+    grid-template-areas:
+            "status team place gamer"
+            "personal_data personal_data personal_data gamer"
+            "add_game add_game add_game add_game"
+            "games_list games_list games_list games_list"
+;
+}
+
+.status {
+    grid-area: status;
+    width: 218px;
+    height: 69px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.state-block {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.state,
+.team-header,
+.place-header {
+    font-size: 18px;
+    line-height: 17px;
+    text-align: left;
+}
+
+.team-header,
+.place-header {
+    margin-bottom: 20px;
+}
+
+.stars-block {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 8px;
+}
+
+.star {
+    content: url("../images/personal_area/star-icon.png");
+    margin-left: 4px;
+}
+
+.condition {
+    font-size: 18px;
+    line-height: 17px;
+    width: 118px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #C4C4C4;
+}
+
+.team {
+    grid-area: team;
+    width: 118px;
+    height: 69px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.team-name {
+    font-size: 18px;
+    line-height: 17px;
+    width: 118px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #C4C4C4;
+}
+
+.place {
+    grid-area: place;
+    width: 68px;
+    height: 69px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.rating {
+    font-size: 18px;
+    line-height: 17px;
+    width: 68px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #C4C4C4;
+}
+
+.gamer {
+    grid-area: gamer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.gamer-icon {
+    content: url("../images/personal_area/Rectangle 172.png");
+    margin-bottom: 25px;
+}
+
+.del_account:after {
+    content: url("../images/personal_area/basket-icon.png");
+    display: inline-block;
+    margin-left: 16px;
+    vertical-align: -40%;
+    cursor: pointer;
+}
+
+.personal_data {
+    grid-area: personal_data;
+}
+
+.personal_data div {
+    width: 570px;
+    height: 50px;
+    border: 1px solid #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 12px;
+    padding-right: 14px;
+    margin-bottom: 16px;
+}
+
+#submit {
+    display: none;
+}
+
+.submit {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 13px;
+    text-align: right;
+    color: #6D6D6D;
+    cursor: pointer;
+}
+
+.form-field {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 13px;
+}
+
+input {
+    background-color: transparent;
+    border: 0 solid transparent;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 15px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.add_game {
+    grid-area: add_game;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 40px;
+}
+
+.games {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 23px;
+}
+
+.add {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 15px;
+}
+
+.games_list {
+    grid-area: games_list;
+    height: 200px;
+    overflow: auto;
+}
+
+.games_list::-webkit-scrollbar-track {
+    background-color: #6D6D6D;
+    box-shadow:0 0 3px #000 inset;
+    border-radius: 50px;
+}
+
+.games_list::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color: rgba(37, 35, 35, 0.5);
+    background-image: url('https://yraaa.ru/_pu/24/59610063.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.games_list::-webkit-resizer{
+    width: 7px;
+    height: 0;
+}
+
+.games_list::-webkit-scrollbar{
+    width: 11px;
+}
+
+.game_block {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 750px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 15px;
+}
+
+.game:before {
+    content: url("../images/personal_area/Ellipse 4.png");
+    margin-right: 40px;
+    vertical-align: -190%;
+}
+
+.button {
+    width: 200px;
+    height: 50px;
+    background: #840318;
+    color: #FFFFFF;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new_games {
+    display: none;
+    position: absolute;
+    width: 700px;
+    height: 305px;
+    left: 310px;
+    top: 490px;
+    background: #FFFFFF;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 32px 20px 16px 40px;
+}
+
+.new_games_list {
+    overflow: auto;
+    height: 257px;
+}
+
+.new_games_list::-webkit-scrollbar-track {
+    background-color: #E4E4E4;
+    box-shadow:0 0 3px #000 inset;
+    border-radius: 50px;
+}
+
+.new_games_list::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color: rgba(37, 35, 35, 0.5);
+    background-image: url('https://yraaa.ru/_pu/24/59610063.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.new_games_list::-webkit-resizer{
+    width: 7px;
+    height: 0;
+}
+
+.new_games_list::-webkit-scrollbar{
+    width: 11px;
+}
+
+.new_games_list .game_block {
+    margin-bottom: 16px;
+    width: 600px;
+    color: #000000;
+}
+
+.delete_account {
+    display: none;
+    width: 342px;
+    height: 146px;
+    background: #FFFFFF;
+    color: #000000;
+    text-align: center;
+    border-radius: 15px 0 15px 15px;
+    position: absolute;
+    left: 550px;
+    top: 430px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.del_account p {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 17px;
+    margin-bottom: 24px;
+}
+
+.btn_block {
+    width: 202px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn_block button {
+    width: 66px;
+    height: 37px;
+    background: #840318;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    cursor: pointer;
+}
