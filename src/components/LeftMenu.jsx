@@ -18,7 +18,7 @@ export default class LeftMenu extends Component {
                 <div className='paymentMethod flex flex-center' style={leftMenuStyles.LHrefMenu}>
                     <Link to='/payment_methods' style={leftMenuStyles.LHrefDecoration}><p>Способ оплаты</p> </Link></div>
                 <div className='history flex flex-center' style={leftMenuStyles.LHrefMenu}>
-                    <Link to='/history' style={leftMenuStyles.LHrefDecoration}> История</Link></div>
+                    <Link to='/tournament_history' style={leftMenuStyles.LHrefDecoration}> История</Link></div>
                 <div className='calendar flex flex-center' style={leftMenuStyles.LHrefMenu}>
                     <Link to='/calendar' style={leftMenuStyles.LHrefDecoration}> Календарь</Link></div>
             </div>);

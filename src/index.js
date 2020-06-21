@@ -25,6 +25,7 @@ import AnotherWithdrawalOfMoney from "./components/AnotherWithdrawalOfMoney";
 import QIWIWallet from "./components/QIWIWallet";
 import YandexWallet from "./components/YandexWallet";
 import PayPalWallet from "./components/PayPalWallet";
+import TournamentHistory from "./components/TournamentHistory";
 
 
 export const ACTION_CHANGE_FIRSTNAME = 'ACTION_CHANGE_FIRSTNAME';
@@ -66,6 +67,7 @@ ReactDOM.render(
                     <Route path='/qiwi_wallet' component={QIWIWallet}/>
                     <Route path='/yandex_wallet' component={YandexWallet}/>
                     <Route path='/paypal_wallet' component={PayPalWallet}/>
+                    <Route path='/tournament_history' component={TournamentHistory}/>
                     <Footer/>
                 </div>
             </div>
