@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import styles from '../styles'
 import LeftMenu from "./LeftMenu";
 import {Link} from "react-router-dom";
-
+import PropTypes from 'prop-types';
 export default class AnotherWithdrawalOfMoney extends Component {
+
     state = {
         currBalance: '      100 р',
     };

@@ -40,6 +40,8 @@ export const ACTION_SAVE_HANDLE = 'ACTION_SAVE_HANDLE';
 const initialState = {
     login: '',
     email: '',
+    currBalance: '',
+
 };
 const rootReducer = (state = initialState, action) => {
     return state;
