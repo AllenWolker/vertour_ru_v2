@@ -1,4 +1,4 @@
-import normalizePhone from '../utils/formControl/normalizePhone';
+import normalizePhone from '../../utils/formControl/normalizePhone';
 
 const initialState = {
     formName: 'gamerData',

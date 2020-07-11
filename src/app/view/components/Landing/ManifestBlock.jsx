@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
-import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const BlockWrapper = styled.div`
     width: 100%;
@@ -67,8 +66,10 @@ const ManifestText = styled.p`
     font-size: calc( (100vw - 1366px)/(1920 - 1366) * (36 - 28) + 28px);
 `;
 
-const CheckIn = styled.div`
+const CheckIn = styled(Link)`
+    text-decoration: none;
     font-family: GothamPro;
+    color: #FFFFFF;
     background: #840318;
     border-radius: 5px;
     margin-top: 140px;
@@ -90,7 +91,7 @@ const BlockType = (props) => {
             <ManifestBody>
                 <CheckInBlock>
                     <ManifestText>{props.manifest[1]}</ManifestText>
-                    <CheckIn>{props.manifest[2]}</CheckIn>
+                    <CheckIn to={'/registration'}>{props.manifest[2]}</CheckIn>
                 </CheckInBlock>
             </ManifestBody>
         )
@@ -123,9 +124,3 @@ const ManifestBlock = (props) => {
 };
 
 export default ManifestBlock;
-
-ManifestBlock.propTypes = {
-    blockBackgroundPath: PropTypes.string.isRequired,
-    height: PropTypes.string.isRequired,
-    manifest: PropTypes.arrayOf(PropTypes.string)
-};

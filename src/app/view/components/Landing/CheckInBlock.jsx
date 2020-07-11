@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
-import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const BlockWrapper = styled.div`
     width: 100%;
@@ -39,8 +38,10 @@ const Vector = styled.div`
     height: 336px;
 `;
 
-const CheckIn = styled.div`
+const CheckIn = styled(Link)`
+    text-decoration: none;
     font-family: GothamPro;
+    color: #FFFFFF;
     background: #840318;
     border-radius: 5px;
     display: flex;
@@ -94,7 +95,7 @@ const BlockType = (props) => {
                 <Logo landingLogoPath={props.landingLogoPath}/>
                 <Associate>{props.manifest[0]}</Associate>
                 <Play1>{props.manifest[1]}</Play1>
-                <CheckIn>{props.manifest[2]}</CheckIn>
+                <CheckIn to={'/registration'}>{props.manifest[2]}</CheckIn>
             </BlockWrapper>
         )
     }else{
@@ -104,7 +105,7 @@ const BlockType = (props) => {
                 height={props.height}>
                 <Vector landingLogoPath={props.landingLogoPath}/>
                 <Play2>{props.manifest[0]}</Play2>
-                <CheckIn>{props.manifest[1]}</CheckIn>
+                <CheckIn to={'/registration'}>{props.manifest[1]}</CheckIn>
             </BlockWrapper>
         )
     }
@@ -129,10 +130,3 @@ const CheckInBlock = (props) => {
 };
 
 export default CheckInBlock;
-
-CheckInBlock.propTypes = {
-    blockBackgroundPath: PropTypes.string.isRequired,
-    landingLogoPath: PropTypes.string.isRequired,
-    height: PropTypes.string.isRequired,
-    manifest: PropTypes.arrayOf(PropTypes.string)
-};
