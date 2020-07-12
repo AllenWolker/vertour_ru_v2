@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import Form from './Form';
 import normalizeFields from '../../../utils/formControl/normalizeFields';
-import normalizePhone from '../../../utils/formControl/normalizePhone';
 import submit from '../../../utils/submit/regFormSubmit';
 
 const FormWrapper = styled.div`
@@ -20,13 +19,13 @@ const RegForm = () => {
         titleComponent: 'Регистрация',
         fields: [
             {
-                name: 'name',
+                name: 'firstname',
                 label: 'Имя',
                 type: 'text',
                 normalize: [normalizeFields],
             },
             {
-                name: 'surname',
+                name: 'lastname',
                 label: 'Фамилия',
                 type: 'text',
                 normalize: [normalizeFields],
@@ -36,12 +35,6 @@ const RegForm = () => {
                 label: 'Email',
                 type: 'email',
                 normalize: [],
-            },
-            {
-                name: 'phone',
-                label: 'Телефон',
-                type: 'tel',
-                normalize:[normalizePhone]
             },
             {
                 name: 'login',

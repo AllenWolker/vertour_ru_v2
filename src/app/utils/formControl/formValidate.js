@@ -1,8 +1,8 @@
 export const validate = values => {
     const errors = {};
     const fields = [
-        'name',
-        'surname',
+        'firstname',
+        'lastname',
         'email',
         'phone',
         'login',
