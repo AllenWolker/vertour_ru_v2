@@ -19,9 +19,9 @@ const LoginForm = () => {
         titleComponent: 'Вход',
         fields: [
             {
-                name: 'login',
-                label: 'Логин',
-                type: 'text',
+                name: 'email',
+                label: 'Email',
+                type: 'email',
                 normalize: [],
             },
             {

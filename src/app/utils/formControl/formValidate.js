@@ -5,7 +5,6 @@ export const validate = values => {
         'lastname',
         'email',
         'phone',
-        'login',
         'password',
         'repeatPass'
     ];
@@ -30,10 +29,6 @@ export const validate = values => {
                     break;
 
                 case 4:
-                    errors[field] = 'Укажите логин!';
-                    break;
-
-                case 5:
                     errors[field] = 'Укажите пароль!';
                     break;
 
@@ -56,7 +51,7 @@ export const validate = values => {
                 : undefined;
         }
 
-        if (values[field] && index === 5) {
+        if (values[field] && index === 4) {
             errors[
                 field
                 ] = !/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).[0-9a-zA-Z!@#$%^&]/g.test(
@@ -72,7 +67,7 @@ export const validate = values => {
             }
         }
 
-        if(values[field] && index === 6){
+        if(values[field] && index === 5){
             errors[field] =
                 (values[field] !== values['password'])
                     ? 'Не совпадает с указанным в предыдущем поле'

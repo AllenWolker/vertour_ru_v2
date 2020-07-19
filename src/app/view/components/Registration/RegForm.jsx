@@ -37,12 +37,6 @@ const RegForm = () => {
                 normalize: [],
             },
             {
-                name: 'login',
-                label: 'Логин',
-                type: 'text',
-                normalize: [],
-            },
-            {
                 name: 'password',
                 label: 'Пароль',
                 type: 'password',
