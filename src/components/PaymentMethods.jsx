@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import styles from '../styles'
 import LeftMenu from "./LeftMenu";
 import {Link} from "react-router-dom";
+import MenuRoute from "./MenuRoute";
 
 export default class PaymentMethods extends Component {
     state = {
@@ -13,7 +14,8 @@ export default class PaymentMethods extends Component {
 
     render() {
         return (
-            <div className='flex'>
+            <div className='flex' style={PaymentMethodsStyles.BgContainer} >
+
                 <LeftMenu/>
                 <div className="paymentMethods-box flex" style={PaymentMethodsStyles.PaymentMethodsPageBox}>
                     <div className="title_payments" style={PaymentMethodsStyles.TitleWalletStyle}>Кошелек Vertour</div>
@@ -140,7 +142,7 @@ const BalanceBox = {
     marginLeft: '40px',
     marginRight: '40px',
 }
-
+const BgContainer = Object.assign({}, styles.ContainerLogin);
 
 const TitlePayments = Object.assign({}, styles.TitleFontFooter);
 TitlePayments.fontSize = '24px';
@@ -160,4 +162,5 @@ const PaymentMethodsStyles = {
     TitleWalletStyle: TitleWalletStyle,
     PaymentsBox:PaymentsBox,
     BalanceBox:BalanceBox,
+    BgContainer:BgContainer,
 };
