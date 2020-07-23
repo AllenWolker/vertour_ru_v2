@@ -7,4 +7,33 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face{
+
+  font-family: 'GothamPro';
+
+  src: url('./fonts/Gotham Pro/GothamPro.eot');
+
+  src: url('./fonts/Gotham Pro/GothamPro.eot?iefix') format('eot'),
+
+  url('./fonts/Gotham Pro/GothamPro.woff') format('woff'),
+
+  url('./fonts/Gotham Pro/GothamPro.ttf') format('truetype');
+
+  font-weight: normal;
+
+  font-style: normal;
+}
+
+@font-face{
+
+  font-family: 'Roboto';
+
+  src: url('./fonts/Roboto/Roboto.woff'),
+
+  url('./fonts/Roboto/Roboto.ttf') format('truetype');
+
+  font-weight: normal;
+
+  font-style: normal;
+}
 
