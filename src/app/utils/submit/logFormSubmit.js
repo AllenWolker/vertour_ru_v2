@@ -5,12 +5,13 @@ import { userData } from '../../store/actions/CurrentUserActions';
 async function logFormSubmit(values) {
     try{
         const response = await axios.post('https://dev.vertour.ru/api/auth/login', {
-            login: values.login,
+            email: values.email,
             password: values.password
         });
-        console.log('👉 Returned data:', response);
-        localStorage.setItem('token', response.data.jwt);
+        console.log('👉 Returned login data:', response);
+        localStorage.setItem('token', response.data.token);
         userData(response.data);
+        alert('Ура Регистрация!');
     } catch (e) {
         console.log(`😱 Axios request failed: ${e}`);
         throw new SubmissionError({
