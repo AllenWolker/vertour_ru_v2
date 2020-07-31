@@ -11,7 +11,7 @@ async function logFormSubmit(values) {
         console.log('👉 Returned data:', response);
         localStorage.setItem('token', response.data.token);
         userData(response.data);
-        console.log('УРА!!');
+        console.log('УРА!');
     } catch (e) {
         console.log(`😱 Axios request failed: ${e}`);
         throw new SubmissionError({
