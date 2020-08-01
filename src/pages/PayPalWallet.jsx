@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import styles from '../styles'
-import LeftMenu from "./LeftMenu";
+import LeftMenu from "../components/LeftMenu";
 import {Link} from "react-router-dom";
+import MenuRoute from "../components/MenuRoute";
+import Footer from "../components/Footer";
 
 export default class PayPalWallet extends Component {
     state = {
@@ -10,48 +12,53 @@ export default class PayPalWallet extends Component {
 
     render() {
         return (
-            <div className='flex'>
-                <LeftMenu/>
-                <div className="withdrawal-box flex " style={PayPalWalletStyles.PayPalWithdrawalMethodsPageBox}>
-                    <div className="flex flex-content-between" style={PayPalWalletStyles.TitleBox}>
-                        <div className="withdrawalTitle" style={PayPalWalletStyles.WithdrawalTitle}>Вывод средств
-                        </div>
-                        <div className="currBalance" style={PayPalWalletStyles.WithdrawalDecoration}><pre>Текущий
-                            баланс           {this.state.currBalance}</pre>
-                        </div>
-                    </div>
-                    <div className="flex">
-                        <div className="flex-column" style={PayPalWalletStyles.AnotherPaymentsBox}>
-                            <div className="logoQIWI" style={PayPalWalletStyles.LogoPayPal}/>
-                            <div className="flex-column" style={PayPalWalletStyles.InputPaymentBox}>
-                                <label htmlFor="numberWallet" style={PayPalWalletStyles.WithdrawalDecoration}>Номер счета или привязанного к счету номер телефона</label>
-                                <input id='numberWallet' type="text"
-                                       style={PayPalWalletStyles.InputDesign}/>
+            <div style={styles.ContainerLogin}>
+                <MenuRoute/>
+                <div className='flex'>
+                    <LeftMenu/>
+                    <div className="withdrawal-box flex " style={PayPalWalletStyles.PayPalWithdrawalMethodsPageBox}>
+                        <div className="flex flex-content-between" style={PayPalWalletStyles.TitleBox}>
+                            <div className="withdrawalTitle" style={PayPalWalletStyles.WithdrawalTitle}>Вывод средств
                             </div>
-                            <div className="flex-column" style={PayPalWalletStyles.InputPaymentBox}>
-                                <label htmlFor="total" style={PayPalWalletStyles.WithdrawalDecoration}>Сумма</label>
-                                <input id='total' type="text" placeholder='0,00 руб.'
-                                       style={PayPalWalletStyles.InputDesign}/>
+                            <div className="currBalance" style={PayPalWalletStyles.WithdrawalDecoration}><pre>Текущий
+                            баланс {this.state.currBalance}</pre>
                             </div>
-                            <div className="flex">
+                        </div>
+                        <div className="flex">
+                            <div className="flex-column" style={PayPalWalletStyles.AnotherPaymentsBox}>
+                                <div className="logoQIWI" style={PayPalWalletStyles.LogoPayPal}/>
                                 <div className="flex-column" style={PayPalWalletStyles.InputPaymentBox}>
-                                    <label htmlFor="toPay" style={PayPalWalletStyles.WithdrawalDecoration}>К
-                                        оплате</label>
-                                    <input id='toPay' type="text" placeholder='0,00 руб.'
+                                    <label htmlFor="numberWallet" style={PayPalWalletStyles.WithdrawalDecoration}>Номер
+                                        счета или привязанного к счету номер телефона</label>
+                                    <input id='numberWallet' type="text"
                                            style={PayPalWalletStyles.InputDesign}/>
                                 </div>
-                                <div className="includingСommission"
-                                     style={PayPalWalletStyles.IncludingComission}>С учетом комиссии
+                                <div className="flex-column" style={PayPalWalletStyles.InputPaymentBox}>
+                                    <label htmlFor="total" style={PayPalWalletStyles.WithdrawalDecoration}>Сумма</label>
+                                    <input id='total' type="text" placeholder='0,00 руб.'
+                                           style={PayPalWalletStyles.InputDesign}/>
                                 </div>
-                                <button className="toPay" style={PayPalWalletStyles.ButtonWithdrawal}>Оплатить</button>
+                                <div className="flex">
+                                    <div className="flex-column" style={PayPalWalletStyles.InputPaymentBox}>
+                                        <label htmlFor="toPay" style={PayPalWalletStyles.WithdrawalDecoration}>К
+                                            оплате</label>
+                                        <input id='toPay' type="text" placeholder='0,00 руб.'
+                                               style={PayPalWalletStyles.InputDesign}/>
+                                    </div>
+                                    <div className="includingСommission"
+                                         style={PayPalWalletStyles.IncludingComission}>С учетом комиссии
+                                    </div>
+                                    <button className="toPay" style={PayPalWalletStyles.ButtonWithdrawal}>Оплатить
+                                    </button>
+                                </div>
                             </div>
+
                         </div>
-
                     </div>
+
                 </div>
-
+                <Footer/>
             </div>
-
 
         );
     }

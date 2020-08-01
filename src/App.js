@@ -18,7 +18,7 @@ import QIWIWallet from "./pages/QIWIWallet";
 import YandexWallet from "./pages/YandexWallet";
 import PayPalWallet from "./pages/PayPalWallet";
 import TournamentHistory from "./pages/TournamentHistory";
-import Footer from "./pages/Footer";
+import Footer from "./components/Footer";
 import Landing from "./pages/Landing";
 import Registration from "./pages/Registration";
 import PrivateOffice from "./pages/PrivateOffice";

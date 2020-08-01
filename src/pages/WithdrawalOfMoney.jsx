@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import styles from '../styles'
-import LeftMenu from "./LeftMenu";
+import LeftMenu from "../components/LeftMenu";
 import {Link} from "react-router-dom";
+import MenuRoute from "../components/MenuRoute";
+import Footer from "../components/Footer";
 
 export default class WithdrawalOfMoney extends Component {
     state = {
@@ -10,44 +12,53 @@ export default class WithdrawalOfMoney extends Component {
 
     render() {
         return (
-            <div className='flex'>
-                <LeftMenu/>
-                <div className="withdrawal-box flex " style={WithdrawalMethodsStyles.WithdrawalMethodsPageBox}>
-                    <div className="flex flex-content-between" style={WithdrawalMethodsStyles.TitleBox}>
-                        <div className="withdrawalTitle" style={WithdrawalMethodsStyles.WithdrawalTitle}>Вывод средств
+            <div style={styles.ContainerLogin}>
+                <MenuRoute/>
+                <div className='flex'>
+                    <LeftMenu/>
+                    <div className="withdrawal-box flex " style={WithdrawalMethodsStyles.WithdrawalMethodsPageBox}>
+                        <div className="flex flex-content-between" style={WithdrawalMethodsStyles.TitleBox}>
+                            <div className="withdrawalTitle" style={WithdrawalMethodsStyles.WithdrawalTitle}>Вывод
+                                средств
+                            </div>
+                            <div className="currBalance" style={WithdrawalMethodsStyles.WithdrawalDecoration}>Текущий
+                                баланс {this.state.currBalance}</div>
                         </div>
-                        <div className="currBalance" style={WithdrawalMethodsStyles.WithdrawalDecoration}>Текущий
-                            баланс {this.state.currBalance}</div>
-                    </div>
 
-                    <div className="flex" style={WithdrawalMethodsStyles.PaymentBox} >
-                        <div className="flex-column withdrawalCreditCard" style={WithdrawalMethodsStyles.WithdrawalDecoration}>
-                            <div className="logoBankCard" style={WithdrawalMethodsStyles.LogoBankCard}/>
-                            <div className="inTheBankCard" >
-                                <Link to='/withdrawal' style={WithdrawalMethodsStyles.WithdrawalDecoration}>На банковскую карточку </Link>
+                        <div className="flex" style={WithdrawalMethodsStyles.PaymentBox}>
+                            <div className="flex-column withdrawalCreditCard"
+                                 style={WithdrawalMethodsStyles.WithdrawalDecoration}>
+                                <div className="logoBankCard" style={WithdrawalMethodsStyles.LogoBankCard}/>
+                                <div className="inTheBankCard">
+                                    <Link to='/withdrawal' style={WithdrawalMethodsStyles.WithdrawalDecoration}>На
+                                        банковскую карточку </Link>
+                                </div>
+                            </div>
+
+                            <div className="flex-column withdrawalAnotherWallet"
+                                 style={WithdrawalMethodsStyles.PaymentBox}>
+                                <div className="logoAnotherWallet" style={WithdrawalMethodsStyles.LogoAnotherWallet}/>
+                                <div className="anotherWallet">
+                                    <Link to='/another_withdrawal' style={WithdrawalMethodsStyles.WithdrawalDecoration}>Другой
+                                        кошелек</Link>
+                                </div>
                             </div>
                         </div>
 
-                        <div className="flex-column withdrawalAnotherWallet" style={WithdrawalMethodsStyles.PaymentBox}>
-                            <div className="logoAnotherWallet" style={WithdrawalMethodsStyles.LogoAnotherWallet}/>
-                            <div className="anotherWallet" >
-                                <Link to='/another_withdrawal' style={WithdrawalMethodsStyles.WithdrawalDecoration}>Другой кошелек</Link>
-                            </div>
+                        <div className="flex flex-column">
+                            <input type='text' className="numberCard" placeholder='Номер карты'
+                                   style={WithdrawalMethodsStyles.InputDesign}/>
+                            <input type='text' className="amount" placeholder='Сумма'
+                                   style={WithdrawalMethodsStyles.InputDesign}/>
+                            <button className="withdrawal" style={WithdrawalMethodsStyles.ButtonWithdrawal}>Вывести на
+                                карту
+                            </button>
                         </div>
                     </div>
 
-                    <div className="flex flex-column">
-                        <input type='text' className="numberCard" placeholder='Номер карты'
-                               style={WithdrawalMethodsStyles.InputDesign}/>
-                        <input  type='text' className="amount" placeholder='Сумма'
-                               style={WithdrawalMethodsStyles.InputDesign}/>
-                        <button className="withdrawal" style={WithdrawalMethodsStyles.ButtonWithdrawal}>Вывести на карту
-                        </button>
-                    </div>
                 </div>
-
+                <Footer/>
             </div>
-
 
         );
     }
@@ -131,6 +142,6 @@ const WithdrawalMethodsStyles = {
     TitleBox: TitleBox,
     WithdrawalDecoration: WithdrawalDecoration,
     PaymentBox: PaymentBox,
-    CreditCardBox:CreditCardBox,
+    CreditCardBox: CreditCardBox,
 
 };

@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
 import styles from '../styles'
-import LeftMenu from "./LeftMenu";
+import LeftMenu from "../components/LeftMenu";
 import {Link} from "react-router-dom";
 import PropTypes from 'prop-types';
+import MenuRoute from "../components/MenuRoute";
+import Footer from "../components/Footer";
+
 export default class AnotherWithdrawalOfMoney extends Component {
 
     state = {
@@ -11,54 +14,69 @@ export default class AnotherWithdrawalOfMoney extends Component {
 
     render() {
         return (
-            <div className='flex'>
+            <div className='flex' style={styles.ContainerLogin}>
+                <MenuRoute/>
                 <LeftMenu/>
-                <div className="withdrawal-box flex " style={AnotherWithdrawalMethodsStyles.AnotherWithdrawalMethodsPageBox}>
+                <div className="withdrawal-box flex "
+                     style={AnotherWithdrawalMethodsStyles.AnotherWithdrawalMethodsPageBox}>
                     <div className="flex flex-content-between" style={AnotherWithdrawalMethodsStyles.TitleBox}>
-                        <div className="withdrawalTitle" style={AnotherWithdrawalMethodsStyles.WithdrawalTitle}>Вывод средств
+                        <div className="withdrawalTitle" style={AnotherWithdrawalMethodsStyles.WithdrawalTitle}>Вывод
+                            средств
                         </div>
                         <div className="currBalance" style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>Текущий
                             баланс {this.state.currBalance}</div>
                     </div>
 
-                    <div className="flex" style={AnotherWithdrawalMethodsStyles.PaymentBox} >
-                        <div className="flex-column withdrawalCreditCard" style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>
+                    <div className="flex" style={AnotherWithdrawalMethodsStyles.PaymentBox}>
+                        <div className="flex-column withdrawalCreditCard"
+                             style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>
                             <div className="logoBankCard" style={AnotherWithdrawalMethodsStyles.LogoBankCard}/>
-                            <div className="inTheBankCard" >
-                                <Link to='/withdrawal' style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>На банковскую карточку </Link>
+                            <div className="inTheBankCard">
+                                <Link to='/withdrawal' style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>На
+                                    банковскую карточку </Link>
                             </div>
                         </div>
 
-                        <div className="flex-column withdrawalAnotherWallet" style={AnotherWithdrawalMethodsStyles.PaymentBox}>
-                            <div className="logoAnotherWallet" style={AnotherWithdrawalMethodsStyles.LogoAnotherWallet}/>
-                            <div className="anotherWallet" >
-                                <Link to='/another_withdrawal' style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>Другой кошелек</Link>
+                        <div className="flex-column withdrawalAnotherWallet"
+                             style={AnotherWithdrawalMethodsStyles.PaymentBox}>
+                            <div className="logoAnotherWallet"
+                                 style={AnotherWithdrawalMethodsStyles.LogoAnotherWallet}/>
+                            <div className="anotherWallet">
+                                <Link to='/another_withdrawal'
+                                      style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>Другой кошелек</Link>
                             </div>
                         </div>
                     </div>
-                <div className="flex">
-                    <div className="flex-column" style={AnotherWithdrawalMethodsStyles.AnotherPaymentsBox}>
-                        <Link to='/qiwi_wallet' style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>
-                            <div className="logoQIWI" style={AnotherWithdrawalMethodsStyles.LogoQIWI}/>
-                            <div className="textQIWI" style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>QIWI Кошелек</div>
-                        </Link>
+                    <div className="flex">
+                        <div className="flex-column" style={AnotherWithdrawalMethodsStyles.AnotherPaymentsBox}>
+                            <Link to='/qiwi_wallet' style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>
+                                <div className="logoQIWI" style={AnotherWithdrawalMethodsStyles.LogoQIWI}/>
+                                <div className="textQIWI"
+                                     style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>QIWI Кошелек
+                                </div>
+                            </Link>
 
-                    </div>
-                    <div className="flex-column" style={AnotherWithdrawalMethodsStyles.AnotherPaymentsBox}>
-                        <Link to='/yandex_wallet' style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>
-                        <div className="logoYandex" style={AnotherWithdrawalMethodsStyles.LogoYandex}/>
-                            <div className="textYandex" style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>Яндекс Деньги</div></Link>
-                    </div>
-                    <div className="flex-column" style={AnotherWithdrawalMethodsStyles.AnotherPaymentsBox}>
-                        <Link to='/paypal_wallet' style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>
-                        <div className="logoPayPal" style={AnotherWithdrawalMethodsStyles.LogoPayPal}/>
-                            <div className="textPayPal" style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>PayPal</div></Link>
+                        </div>
+                        <div className="flex-column" style={AnotherWithdrawalMethodsStyles.AnotherPaymentsBox}>
+                            <Link to='/yandex_wallet' style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>
+                                <div className="logoYandex" style={AnotherWithdrawalMethodsStyles.LogoYandex}/>
+                                <div className="textYandex"
+                                     style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>Яндекс Деньги
+                                </div>
+                            </Link>
+                        </div>
+                        <div className="flex-column" style={AnotherWithdrawalMethodsStyles.AnotherPaymentsBox}>
+                            <Link to='/paypal_wallet' style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>
+                                <div className="logoPayPal" style={AnotherWithdrawalMethodsStyles.LogoPayPal}/>
+                                <div className="textPayPal"
+                                     style={AnotherWithdrawalMethodsStyles.WithdrawalDecoration}>PayPal
+                                </div>
+                            </Link>
+                        </div>
                     </div>
                 </div>
-                </div>
-
+                <Footer/>
             </div>
-
 
         );
     }
@@ -157,8 +175,8 @@ WithdrawalDecoration.textDecoration = 'none';
 const AnotherWithdrawalMethodsStyles = {
     AnotherWithdrawalMethodsPageBox: AnotherWithdrawalMethodsPageBox,
     WithdrawalTitle: WithdrawalTitle,
-    LogoBankCard:LogoBankCard,
-    LogoAnotherWallet:LogoAnotherWallet,
+    LogoBankCard: LogoBankCard,
+    LogoAnotherWallet: LogoAnotherWallet,
     LogoQIWI: LogoQIWI,
     LogoYandex: LogoYandex,
     ButtonWithdrawal: ButtonWithdrawal,
@@ -166,7 +184,7 @@ const AnotherWithdrawalMethodsStyles = {
     TitleBox: TitleBox,
     WithdrawalDecoration: WithdrawalDecoration,
     PaymentBox: PaymentBox,
-    LogoPayPal:LogoPayPal,
-    AnotherPaymentsBox:AnotherPaymentsBox,
+    LogoPayPal: LogoPayPal,
+    AnotherPaymentsBox: AnotherPaymentsBox,
 
 };

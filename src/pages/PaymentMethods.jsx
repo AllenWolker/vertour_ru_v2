@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import styles from '../styles'
-import LeftMenu from "./LeftMenu";
+import LeftMenu from "../components/LeftMenu";
 import {Link} from "react-router-dom";
-import MenuRoute from "./MenuRoute";
+import MenuRoute from "../components/MenuRoute";
+import Footer from "../components/Footer";
 
 export default class PaymentMethods extends Component {
     state = {
@@ -14,90 +15,94 @@ export default class PaymentMethods extends Component {
 
     render() {
         return (
-            <div className='flex' style={PaymentMethodsStyles.BgContainer} >
+            <div style={styles.ContainerLogin}>
+                <MenuRoute/>
+                <div className='flex' style={PaymentMethodsStyles.BgContainer}>
 
-                <LeftMenu/>
-                <div className="paymentMethods-box flex" style={PaymentMethodsStyles.PaymentMethodsPageBox}>
-                    <div className="title_payments" style={PaymentMethodsStyles.TitleWalletStyle}>Кошелек Vertour</div>
-                    <div className='flex flex-column'>
-                        <div className='flex flex-content-between' style={PaymentMethodsStyles.BalanceBox}>
-                            <div className="curr_balance" style={PaymentMethodsStyles.PaymentDecoration}>Текущий
-                                баланс: {this.state.money}</div>
-                            <div className="withdrawal_funds" style={PaymentMethodsStyles.PaymentDecoration}>
-                                <Link to='/withdrawal'> Вывод средств </Link>
+                    <LeftMenu/>
+                    <div className="paymentMethods-box flex" style={PaymentMethodsStyles.PaymentMethodsPageBox}>
+                        <div className="title_payments" style={PaymentMethodsStyles.TitleWalletStyle}>Кошелек Vertour
+                        </div>
+                        <div className='flex flex-column'>
+                            <div className='flex flex-content-between' style={PaymentMethodsStyles.BalanceBox}>
+                                <div className="curr_balance" style={PaymentMethodsStyles.PaymentDecoration}>Текущий
+                                    баланс: {this.state.money}</div>
+                                <div className="withdrawal_funds" style={PaymentMethodsStyles.PaymentDecoration}>
+                                    <Link to='/withdrawal'> Вывод средств </Link>
+                                </div>
+                            </div>
+                            <div className='flex flex-content-between' style={PaymentMethodsStyles.PaymentsBox}>
+                                <div className="payment_methods"
+                                     style={PaymentMethodsStyles.TitlePayments}>Ваши способы оплаты
+                                </div>
+                                <div className="add_payment_method"
+                                     style={PaymentMethodsStyles.PaymentDecoration}>+ Добавить новый способ оплаты
+                                </div>
+                            </div>
+                            <div className='flex flex-wrap'>
+                                <div className="payment_method-box flex" style={PaymentMethodsStyles.PaymentMethodBox}>
+                                    <div className="logo_payment" style={PaymentMethodsStyles.LogoPayments}/>
+                                    <div className='flex flex-column'>
+                                        <div className="data_payment"
+                                             style={PaymentMethodsStyles.PaymentDecoration}>{this.state.dataPaymentMethod}</div>
+                                        <div className="date_payment"
+                                             style={PaymentMethodsStyles.PaymentDecoration}>{this.state.datePaymentMethod}</div>
+                                    </div>
+                                    <div className="curr_cash"
+                                         style={PaymentMethodsStyles.PaymentDecoration}>{this.state.currCash}</div>
+                                </div>
+                                <div className="payment_method-box flex" style={PaymentMethodsStyles.PaymentMethodBox}>
+                                    <div className="logo_payment" style={PaymentMethodsStyles.LogoPayments}/>
+                                    <div className='flex flex-column'>
+                                        <div className="data_payment"
+                                             style={PaymentMethodsStyles.PaymentDecoration}>{this.state.dataPaymentMethod}</div>
+                                        <div className="date_payment"
+                                             style={PaymentMethodsStyles.PaymentDecoration}>{this.state.datePaymentMethod}</div>
+                                    </div>
+                                    <div className="curr_cash"
+                                         style={PaymentMethodsStyles.PaymentDecoration}>{this.state.currCash}</div>
+                                </div>
+                                <div className="payment_method-box flex" style={PaymentMethodsStyles.PaymentMethodBox}>
+                                    <div className="logo_payment" style={PaymentMethodsStyles.LogoPayments}/>
+                                    <div className='flex flex-column'>
+                                        <div className="data_payment"
+                                             style={PaymentMethodsStyles.PaymentDecoration}>{this.state.dataPaymentMethod}</div>
+                                        <div className="date_payment"
+                                             style={PaymentMethodsStyles.PaymentDecoration}>{this.state.datePaymentMethod}</div>
+                                    </div>
+                                    <div className="curr_cash"
+                                         style={PaymentMethodsStyles.PaymentDecoration}>{this.state.currCash}</div>
+                                </div>
+                                <div className="payment_method-box flex" style={PaymentMethodsStyles.PaymentMethodBox}>
+                                    <div className="logo_payment" style={PaymentMethodsStyles.LogoPayments}/>
+                                    <div className='flex flex-column'>
+                                        <div className="data_payment"
+                                             style={PaymentMethodsStyles.PaymentDecoration}>{this.state.dataPaymentMethod}</div>
+                                        <div className="date_payment"
+                                             style={PaymentMethodsStyles.PaymentDecoration}>{this.state.datePaymentMethod}</div>
+                                    </div>
+                                    <div className="curr_cash"
+                                         style={PaymentMethodsStyles.PaymentDecoration}>{this.state.currCash}</div>
+                                </div>
+                                <div className="payment_method-box flex" style={PaymentMethodsStyles.PaymentMethodBox}>
+                                    <div className="logo_payment" style={PaymentMethodsStyles.LogoPayments}/>
+                                    <div className='flex flex-column'>
+                                        <div className="data_payment"
+                                             style={PaymentMethodsStyles.PaymentDecoration}>{this.state.dataPaymentMethod}</div>
+                                        <div className="date_payment"
+                                             style={PaymentMethodsStyles.PaymentDecoration}>{this.state.datePaymentMethod}</div>
+                                    </div>
+                                    <div className="curr_cash"
+                                         style={PaymentMethodsStyles.PaymentDecoration}>{this.state.currCash}</div>
+                                </div>
                             </div>
                         </div>
-                        <div className='flex flex-content-between' style={PaymentMethodsStyles.PaymentsBox}>
-                            <div className="payment_methods"
-                                 style={PaymentMethodsStyles.TitlePayments}>Ваши способы оплаты
-                            </div>
-                            <div className="add_payment_method"
-                                 style={PaymentMethodsStyles.PaymentDecoration}>+ Добавить новый способ оплаты
-                            </div>
-                        </div>
-                        <div className='flex flex-wrap'>
-                            <div className="payment_method-box flex" style={PaymentMethodsStyles.PaymentMethodBox}>
-                                <div className="logo_payment" style={PaymentMethodsStyles.LogoPayments}/>
-                                <div className='flex flex-column'>
-                                    <div className="data_payment"
-                                         style={PaymentMethodsStyles.PaymentDecoration}>{this.state.dataPaymentMethod}</div>
-                                    <div className="date_payment"
-                                         style={PaymentMethodsStyles.PaymentDecoration}>{this.state.datePaymentMethod}</div>
-                                </div>
-                                <div className="curr_cash"
-                                     style={PaymentMethodsStyles.PaymentDecoration}>{this.state.currCash}</div>
-                            </div>
-                            <div className="payment_method-box flex" style={PaymentMethodsStyles.PaymentMethodBox}>
-                                <div className="logo_payment" style={PaymentMethodsStyles.LogoPayments}/>
-                                <div className='flex flex-column'>
-                                    <div className="data_payment"
-                                         style={PaymentMethodsStyles.PaymentDecoration}>{this.state.dataPaymentMethod}</div>
-                                    <div className="date_payment"
-                                         style={PaymentMethodsStyles.PaymentDecoration}>{this.state.datePaymentMethod}</div>
-                                </div>
-                                <div className="curr_cash"
-                                     style={PaymentMethodsStyles.PaymentDecoration}>{this.state.currCash}</div>
-                            </div>
-                            <div className="payment_method-box flex" style={PaymentMethodsStyles.PaymentMethodBox}>
-                                <div className="logo_payment" style={PaymentMethodsStyles.LogoPayments}/>
-                                <div className='flex flex-column'>
-                                    <div className="data_payment"
-                                         style={PaymentMethodsStyles.PaymentDecoration}>{this.state.dataPaymentMethod}</div>
-                                    <div className="date_payment"
-                                         style={PaymentMethodsStyles.PaymentDecoration}>{this.state.datePaymentMethod}</div>
-                                </div>
-                                <div className="curr_cash"
-                                     style={PaymentMethodsStyles.PaymentDecoration}>{this.state.currCash}</div>
-                            </div>
-                            <div className="payment_method-box flex" style={PaymentMethodsStyles.PaymentMethodBox}>
-                                <div className="logo_payment" style={PaymentMethodsStyles.LogoPayments}/>
-                                <div className='flex flex-column'>
-                                    <div className="data_payment"
-                                         style={PaymentMethodsStyles.PaymentDecoration}>{this.state.dataPaymentMethod}</div>
-                                    <div className="date_payment"
-                                         style={PaymentMethodsStyles.PaymentDecoration}>{this.state.datePaymentMethod}</div>
-                                </div>
-                                <div className="curr_cash"
-                                     style={PaymentMethodsStyles.PaymentDecoration}>{this.state.currCash}</div>
-                            </div>
-                            <div className="payment_method-box flex" style={PaymentMethodsStyles.PaymentMethodBox}>
-                                <div className="logo_payment" style={PaymentMethodsStyles.LogoPayments}/>
-                                <div className='flex flex-column'>
-                                    <div className="data_payment"
-                                         style={PaymentMethodsStyles.PaymentDecoration}>{this.state.dataPaymentMethod}</div>
-                                    <div className="date_payment"
-                                         style={PaymentMethodsStyles.PaymentDecoration}>{this.state.datePaymentMethod}</div>
-                                </div>
-                                <div className="curr_cash"
-                                     style={PaymentMethodsStyles.PaymentDecoration}>{this.state.currCash}</div>
-                            </div>
-                        </div>
+
                     </div>
 
                 </div>
-
+                <Footer/>
             </div>
-
 
         );
     }
@@ -134,7 +139,7 @@ let TitleWalletStyle = {
     margin: '40px',
     marginRight: '0px',
 };
-const  PaymentsBox = {
+const PaymentsBox = {
     margin: '40px',
     marginTop: '80px',
 };
@@ -148,7 +153,7 @@ const TitlePayments = Object.assign({}, styles.TitleFontFooter);
 TitlePayments.fontSize = '24px';
 TitlePayments.fontWeight = '23px';
 
-TitleWalletStyle = Object.assign(TitleWalletStyle,TitlePayments);
+TitleWalletStyle = Object.assign(TitleWalletStyle, TitlePayments);
 
 const PaymentDecoration = Object.assign({}, styles.HrefDecoration);
 PaymentDecoration.fontSize = '16px';
@@ -160,7 +165,7 @@ const PaymentMethodsStyles = {
     PaymentDecoration: PaymentDecoration,
     PaymentMethodBox: PaymentMethodBox,
     TitleWalletStyle: TitleWalletStyle,
-    PaymentsBox:PaymentsBox,
-    BalanceBox:BalanceBox,
-    BgContainer:BgContainer,
+    PaymentsBox: PaymentsBox,
+    BalanceBox: BalanceBox,
+    BgContainer: BgContainer,
 };

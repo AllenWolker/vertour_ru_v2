@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import styles from '../styles'
-import LeftMenu from "./LeftMenu";
+import LeftMenu from "../components/LeftMenu";
 import {Link} from "react-router-dom";
+import MenuRoute from "../components/MenuRoute";
+import Footer from "../components/Footer";
 
 export default class YandexWallet extends Component {
     state = {
@@ -10,48 +12,53 @@ export default class YandexWallet extends Component {
 
     render() {
         return (
-            <div className='flex'>
-                <LeftMenu/>
-                <div className="withdrawal-box flex " style={YandexWalletStyles.YandexWithdrawalMethodsPageBox}>
-                    <div className="flex flex-content-between" style={YandexWalletStyles.TitleBox}>
-                        <div className="withdrawalTitle" style={YandexWalletStyles.WithdrawalTitle}>Вывод средств
-                        </div>
-                        <div className="currBalance" style={YandexWalletStyles.WithdrawalDecoration}><pre>Текущий
-                            баланс           {this.state.currBalance}</pre>
-                        </div>
-                    </div>
-                    <div className="flex">
-                        <div className="flex-column" style={YandexWalletStyles.AnotherPaymentsBox}>
-                            <div className="logoQIWI" style={YandexWalletStyles.LogoYandex}/>
-                            <div className="flex-column" style={YandexWalletStyles.InputPaymentBox}>
-                                <label htmlFor="numberWallet" style={YandexWalletStyles.WithdrawalDecoration}>Номер счета или привязанного к счету номер телефона</label>
-                                <input id='numberWallet' type="text"
-                                       style={YandexWalletStyles.InputDesign}/>
+            <div style={styles.ContainerLogin}>
+                <MenuRoute/>
+                <div className='flex'>
+                    <LeftMenu/>
+                    <div className="withdrawal-box flex " style={YandexWalletStyles.YandexWithdrawalMethodsPageBox}>
+                        <div className="flex flex-content-between" style={YandexWalletStyles.TitleBox}>
+                            <div className="withdrawalTitle" style={YandexWalletStyles.WithdrawalTitle}>Вывод средств
                             </div>
-                            <div className="flex-column" style={YandexWalletStyles.InputPaymentBox}>
-                                <label htmlFor="total" style={YandexWalletStyles.WithdrawalDecoration}>Сумма</label>
-                                <input id='total' type="text" placeholder='0,00 руб.'
-                                       style={YandexWalletStyles.InputDesign}/>
+                            <div className="currBalance" style={YandexWalletStyles.WithdrawalDecoration}><pre>Текущий
+                            баланс {this.state.currBalance}</pre>
                             </div>
-                            <div className="flex">
+                        </div>
+                        <div className="flex">
+                            <div className="flex-column" style={YandexWalletStyles.AnotherPaymentsBox}>
+                                <div className="logoQIWI" style={YandexWalletStyles.LogoYandex}/>
                                 <div className="flex-column" style={YandexWalletStyles.InputPaymentBox}>
-                                    <label htmlFor="toPay" style={YandexWalletStyles.WithdrawalDecoration}>К
-                                        оплате</label>
-                                    <input id='toPay' type="text" placeholder='0,00 руб.'
+                                    <label htmlFor="numberWallet" style={YandexWalletStyles.WithdrawalDecoration}>Номер
+                                        счета или привязанного к счету номер телефона</label>
+                                    <input id='numberWallet' type="text"
                                            style={YandexWalletStyles.InputDesign}/>
                                 </div>
-                                <div className="includingСommission"
-                                     style={YandexWalletStyles.IncludingComission}>С учетом комиссии
+                                <div className="flex-column" style={YandexWalletStyles.InputPaymentBox}>
+                                    <label htmlFor="total" style={YandexWalletStyles.WithdrawalDecoration}>Сумма</label>
+                                    <input id='total' type="text" placeholder='0,00 руб.'
+                                           style={YandexWalletStyles.InputDesign}/>
                                 </div>
-                                <button className="toPay" style={YandexWalletStyles.ButtonWithdrawal}>Оплатить</button>
+                                <div className="flex">
+                                    <div className="flex-column" style={YandexWalletStyles.InputPaymentBox}>
+                                        <label htmlFor="toPay" style={YandexWalletStyles.WithdrawalDecoration}>К
+                                            оплате</label>
+                                        <input id='toPay' type="text" placeholder='0,00 руб.'
+                                               style={YandexWalletStyles.InputDesign}/>
+                                    </div>
+                                    <div className="includingСommission"
+                                         style={YandexWalletStyles.IncludingComission}>С учетом комиссии
+                                    </div>
+                                    <button className="toPay" style={YandexWalletStyles.ButtonWithdrawal}>Оплатить
+                                    </button>
+                                </div>
                             </div>
+
                         </div>
-
                     </div>
+
                 </div>
-
+                <Footer/>
             </div>
-
 
         );
     }

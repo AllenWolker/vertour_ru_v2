@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import styles from '../styles'
-import LeftMenu from "./LeftMenu";
+import LeftMenu from "../components/LeftMenu";
 import {Link} from "react-router-dom";
+import MenuRoute from "../components/MenuRoute";
+import Footer from "../components/Footer";
 
 export default class QIWIWallet extends Component {
     state = {
@@ -10,49 +12,53 @@ export default class QIWIWallet extends Component {
 
     render() {
         return (
-            <div className='flex'>
-                <LeftMenu/>
-                <div className="withdrawal-box flex " style={QIWIWalletStyles.QIWIWithdrawalMethodsPageBox}>
-                    <div className="flex flex-content-between" style={QIWIWalletStyles.TitleBox}>
-                        <div className="withdrawalTitle" style={QIWIWalletStyles.WithdrawalTitle}>Вывод средств
-                        </div>
-                        <div className="currBalance" style={QIWIWalletStyles.WithdrawalDecoration}><pre>Текущий
-                            баланс           {this.state.currBalance}</pre>
-                        </div>
-                    </div>
-                    <div className="flex">
-                        <div className="flex-column" style={QIWIWalletStyles.AnotherPaymentsBox}>
-                            <div className="logoQIWI" style={QIWIWalletStyles.LogoQIWI}/>
-                            <div className="flex-column" style={QIWIWalletStyles.InputPaymentBox}>
-                                <label htmlFor="numberWallet" style={QIWIWalletStyles.WithdrawalDecoration}>Номер
-                                    кошелька</label>
-                                <input id='numberWallet' type="text" placeholder='Десять цифр после кода +7'
-                                       style={QIWIWalletStyles.InputDesign}/>
+            <div style={styles.ContainerLogin}>
+                <MenuRoute/>
+                <div className='flex'>
+                    <LeftMenu/>
+                    <div className="withdrawal-box flex " style={QIWIWalletStyles.QIWIWithdrawalMethodsPageBox}>
+                        <div className="flex flex-content-between" style={QIWIWalletStyles.TitleBox}>
+                            <div className="withdrawalTitle" style={QIWIWalletStyles.WithdrawalTitle}>Вывод средств
                             </div>
-                            <div className="flex-column" style={QIWIWalletStyles.InputPaymentBox}>
-                                <label htmlFor="total" style={QIWIWalletStyles.WithdrawalDecoration}>Сумма</label>
-                                <input id='total' type="text" placeholder='0,00 руб.'
-                                       style={QIWIWalletStyles.InputDesign}/>
+                            <div className="currBalance" style={QIWIWalletStyles.WithdrawalDecoration}><pre>Текущий
+                            баланс {this.state.currBalance}</pre>
                             </div>
-                            <div className="flex">
+                        </div>
+                        <div className="flex">
+                            <div className="flex-column" style={QIWIWalletStyles.AnotherPaymentsBox}>
+                                <div className="logoQIWI" style={QIWIWalletStyles.LogoQIWI}/>
                                 <div className="flex-column" style={QIWIWalletStyles.InputPaymentBox}>
-                                    <label htmlFor="toPay" style={QIWIWalletStyles.WithdrawalDecoration}>К
-                                        оплате</label>
-                                    <input id='toPay' type="text" placeholder='0,00 руб.'
+                                    <label htmlFor="numberWallet" style={QIWIWalletStyles.WithdrawalDecoration}>Номер
+                                        кошелька</label>
+                                    <input id='numberWallet' type="text" placeholder='Десять цифр после кода +7'
                                            style={QIWIWalletStyles.InputDesign}/>
                                 </div>
-                                <div className="includingСommission"
-                                     style={QIWIWalletStyles.IncludingComission}>С учетом комиссии
+                                <div className="flex-column" style={QIWIWalletStyles.InputPaymentBox}>
+                                    <label htmlFor="total" style={QIWIWalletStyles.WithdrawalDecoration}>Сумма</label>
+                                    <input id='total' type="text" placeholder='0,00 руб.'
+                                           style={QIWIWalletStyles.InputDesign}/>
                                 </div>
-                                <button className="toPay" style={QIWIWalletStyles.ButtonWithdrawal}>Оплатить</button>
+                                <div className="flex">
+                                    <div className="flex-column" style={QIWIWalletStyles.InputPaymentBox}>
+                                        <label htmlFor="toPay" style={QIWIWalletStyles.WithdrawalDecoration}>К
+                                            оплате</label>
+                                        <input id='toPay' type="text" placeholder='0,00 руб.'
+                                               style={QIWIWalletStyles.InputDesign}/>
+                                    </div>
+                                    <div className="includingСommission"
+                                         style={QIWIWalletStyles.IncludingComission}>С учетом комиссии
+                                    </div>
+                                    <button className="toPay" style={QIWIWalletStyles.ButtonWithdrawal}>Оплатить
+                                    </button>
+                                </div>
                             </div>
+
                         </div>
-
                     </div>
+
                 </div>
-
+                <Footer/>
             </div>
-
 
         );
     }

@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import styles from '../styles'
 import {Link} from "react-router-dom";
+import MenuRoute from "../components/MenuRoute";
+import Footer from "../components/Footer";
 
 export default class FAQ extends Component {
     constructor(props) {
@@ -12,28 +14,33 @@ export default class FAQ extends Component {
 
     render() {
         return (
-            <div className='faq flex' style={styless.faqBox}>
-                <div className="flex flex-column flex-center" style={styless.margin}>
-                    <div className='faq-title' style={styless.faqTitle}>F A Q</div>
-                    <div className='faq-paragraph' style={styles.RecoveryParagraph}>Вам нужна помощь? мы всегда на связи и готовы ответить на ваши вопросы</div>
-                    <div className="social-networks flex flex-center" style={styless.SocialNetwork}>
-                        <Link to='/FB' style={styles.HrefFooterRefer}>
-                            <i className="fab fa-facebook fa-4x"
-                               style={{margin: '5px'}}/>
-                        </Link>
-                        <Link to='/VK' style={styles.HrefFooterRefer}>
-                            <i className="fab fa-vk fa-4x"
-                               style={{margin: '5px'}}/>
-                        </Link>
-                        <Link to='/telegram' style={styles.HrefFooterRefer}>
-                            <i className="fab fa-telegram fa-4x"
-                               style={{margin: '5px'}}/>
-                        </Link>
+            <div style={styles.ContainerLogin}>
+                <MenuRoute/>
+                <div className='faq flex' style={styless.faqBox}>
+                    <div className="flex flex-column flex-center" style={styless.margin}>
+                        <div className='faq-title' style={styless.faqTitle}>F A Q</div>
+                        <div className='faq-paragraph' style={styles.RecoveryParagraph}>Вам нужна помощь? мы всегда на связи и готовы ответить на ваши вопросы</div>
+                        <div className="social-networks flex flex-center" style={styless.SocialNetwork}>
+                            <Link to='/FB' style={styles.HrefFooterRefer}>
+                                <i className="fab fa-facebook fa-4x"
+                                   style={{margin: '5px'}}/>
+                            </Link>
+                            <Link to='/VK' style={styles.HrefFooterRefer}>
+                                <i className="fab fa-vk fa-4x"
+                                   style={{margin: '5px'}}/>
+                            </Link>
+                            <Link to='/telegram' style={styles.HrefFooterRefer}>
+                                <i className="fab fa-telegram fa-4x"
+                                   style={{margin: '5px'}}/>
+                            </Link>
+                        </div>
                     </div>
-                </div>
 
-                <img className='faq-img-margin' style={styless.faqImg} src="/assets/faqImg.png" alt="Pubg"/>
+                    <img className='faq-img-margin' style={styless.faqImg} src="/assets/faqImg.png" alt="Pubg"/>
+                </div>
+                <Footer/>
             </div>
+
 
         );
     }
