@@ -14,7 +14,7 @@ async function logFormSubmit(values) {
     } catch (e) {
         console.log(`😱 Axios request failed: ${e}`);
         throw new SubmissionError({
-            _error: 'Неверно указаны логин или пароль!',
+            _error: `😱 ${e}. Неверно указаны логин или пароль!`,
         });
     }
 }
