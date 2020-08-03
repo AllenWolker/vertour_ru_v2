@@ -28,7 +28,7 @@ export default class Login extends Component {
                             <Link className="loginEnter" to='/confirm_recovery_email'
                                   style={styles.HrefDecoration}>Отправить</Link>
                         </button>
-                        <Link className="loginEnter" to='/login' style={styles.LinkRecoveryLogin}>или войти</Link>
+                        <Link className="loginEnter" to='/registration' style={styles.LinkRecoveryLogin}>или войти</Link>
                     </div>
                 </div>
                 <Footer/>
