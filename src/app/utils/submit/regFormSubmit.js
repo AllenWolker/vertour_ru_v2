@@ -12,7 +12,7 @@ async function regFormSubmit(values){
                 password: values.password
             });
         console.log('👉 Returned data:', response);
-        localStorage.setItem('token', response.data.jwt);
+        localStorage.setItem('token', response.data.token);
         userData(response.data);
     } catch (e) {
         throw new SubmissionError({
