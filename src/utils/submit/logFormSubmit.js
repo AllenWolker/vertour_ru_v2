@@ -1,10 +1,10 @@
 import { SubmissionError } from 'redux-form';
-import axios from 'axios';
+import API from '../API';
 import { userData } from '../../store/actions/CurrentUserActions';
 
 async function logFormSubmit(values) {
     try{
-        const response = await axios.post('https://dev.vertour.ru/api/auth/login', {
+        const response = await API.post('/auth/login', {
             email: values.email,
             password: values.password
         });
