@@ -83,6 +83,10 @@ const CheckIn = styled(Link)`
     font-size: calc( (100vw - 1366px)/(1920 - 1366) * (40 - 35) + 35px);
     letter-spacing: 0.03em;
     cursor: pointer;
+    
+    :hover {
+        color: #FFFFFF !important;
+    }
 `;
 
 const BlockType = (props) => {
