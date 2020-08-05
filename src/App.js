@@ -32,20 +32,19 @@ class App extends Component {
                     <Route exact path={'/'} component={Landing}/>
                     <Route path={'/registration'} component={Registration}/>
                     <Route path={'/privateOffice'} component={PrivateOffice}/>
-                    <Route path='/login' component={Login}/>
-                    <Route path='/recovery' component={PasswordRecovery}/>
-                    <Route path='/new_password' component={NewPassword}/>
-                    <Route path='/confirm_recovery_email' component={ConfirmSendRecoveryEmail}/>
-                    <Route path='/faq' component={FAQ}/>
-                    <Route path='/news' component={NewsPage}/>
-                    <Route path='/calendar' component={Calendary}/>
-                    <Route path='/payment_methods' component={PaymentMethods}/>
-                    <Route path='/withdrawal' component={WithdrawalOfMoney}/>
-                    <Route path='/another_withdrawal' component={AnotherWithdrawalOfMoney}/>
-                    <Route path='/qiwi_wallet' component={QIWIWallet}/>
-                    <Route path='/yandex_wallet' component={YandexWallet}/>
-                    <Route path='/paypal_wallet' component={PayPalWallet}/>
-                    <Route path='/tournament_history' component={TournamentHistory}/>
+                    <Route path={'/recovery'} component={PasswordRecovery}/>
+                    <Route path={'/new_password'} component={NewPassword}/>
+                    <Route path={'/confirm_recovery_email'} component={ConfirmSendRecoveryEmail}/>
+                    <Route path={'/faq'} component={FAQ}/>
+                    <Route path={'/news'} component={NewsPage}/>
+                    <Route path={'/calendar'} component={Calendary}/>
+                    <Route path={'/payment_methods'} component={PaymentMethods}/>
+                    <Route path={'/withdrawal'} component={WithdrawalOfMoney}/>
+                    <Route path={'/another_withdrawal'} component={AnotherWithdrawalOfMoney}/>
+                    <Route path={'/qiwi_wallet'} component={QIWIWallet}/>
+                    <Route path={'/yandex_wallet'} component={YandexWallet}/>
+                    <Route path={'/paypal_wallet'} component={PayPalWallet}/>
+                    <Route path={'/tournament_history'} component={TournamentHistory}/>
                     <Redirect to={'/registration'}/>
                 </Switch>
             </AppComponent>
