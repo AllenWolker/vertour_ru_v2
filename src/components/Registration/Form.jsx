@@ -34,9 +34,9 @@ const FirstNameInput = styled.input`
     font-weight: 300;
     font-size: 14px;
     line-height: 13px;
-    padding-left: 20px;
-    ::-moz-placeholder { color: ${props =>(props.hasError ? '#DC143C' : '#343434')}; };
-    ::-webkit-input-placeholder { color: ${props =>(props.hasError ? '#DC143C' : '#343434')}; };
+    padding-left: 5px;
+    ::-moz-placeholder { color: ${props =>(props.hasError ? '#DC143C' : '#343434')} !important; };
+    ::-webkit-input-placeholder { color: ${props =>(props.hasError ? '#DC143C' : '#343434')} !important; };
 `;
 
 const SecondNameInput = styled.input`
@@ -48,9 +48,9 @@ const SecondNameInput = styled.input`
     font-weight: 300;
     font-size: 14px;
     line-height: 13px;
-    padding-left: 20px;
-    ::-moz-placeholder { color: ${props =>(props.hasError ? '#DC143C' : '#343434')}; };
-    ::-webkit-input-placeholder { color: ${props =>(props.hasError ? '#DC143C' : '#343434')}; };
+    padding-left: 5px;
+    ::-moz-placeholder { color: ${props =>(props.hasError ? '#DC143C' : '#343434')} !important; };
+    ::-webkit-input-placeholder { color: ${props =>(props.hasError ? '#DC143C' : '#343434')} !important; };
 `;
 
 
@@ -64,7 +64,7 @@ const InputComponent = styled.input`
     font-weight: 300;
     font-size: 14px;
     line-height: 13px;
-    padding-left: 20px;
+    padding-left: 5px;
     ::-moz-placeholder { color: ${props =>(props.hasError ? '#DC143C' : '#343434')}; };
     ::-webkit-input-placeholder { color: ${props =>(props.hasError ? '#DC143C' : '#343434')}; };
 `;
