@@ -23,6 +23,15 @@ import Landing from "./pages/Landing";
 import Registration from "./pages/Registration";
 import PrivateOffice from "./pages/PrivateOffice";
 
+const AppComponent = styled.div`
+  font-family: GothamPro, monospace, sans-serif;
+  color:  #FFFFFF;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 0 0;
+  background-size: cover;
+`;
+
 
 class App extends Component {
     render() {
@@ -54,13 +63,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-const AppComponent = styled.div`
-  font-family: GothamPro, monospace, sans-serif;
-  color:  #FFFFFF;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 0 0;
-  background-size: cover;
-`;
