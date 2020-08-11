@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {connect, Provider} from 'react-redux';
+import { Provider} from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
-import configureStore, { history } from './store/configureStore';
+import configureStore, { history } from './app/store/configureStore';
 
 import './index.css';
 import App from './App';

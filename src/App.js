@@ -1,27 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import styles from "./styles";
-import {Route, Redirect, Switch} from 'react-router-dom';
 import styled from 'styled-components';
+import ViewRouter from './app/router/renderRoutes';
 
-import Login from "./pages/Login";
-import PasswordRecovery from "./pages/PasswordRecovery";
-import NewPassword from "./pages/NewPassword";
-import ConfirmSendRecoveryEmail from "./pages/ConfirmSendRecoveryEmail";
-import FAQ from "./pages/FAQ";
-import NewsPage from "./pages/NewsPage";
-import Calendary from "./pages/Calendar";
-import PaymentMethods from "./pages/PaymentMethods";
-import WithdrawalOfMoney from "./pages/WithdrawalOfMoney";
-import AnotherWithdrawalOfMoney from "./pages/AnotherWithdrawalOfMoney";
-import QIWIWallet from "./pages/QIWIWallet";
-import YandexWallet from "./pages/YandexWallet";
-import PayPalWallet from "./pages/PayPalWallet";
-import TournamentHistory from "./pages/TournamentHistory";
-import Footer from "./components/Footer";
-import Landing from "./pages/Landing";
-import Registration from "./pages/Registration";
-import PrivateOffice from "./pages/PrivateOffice";
+import Footer from "./app/components/Footer";
+
+
+
 
 const AppComponent = styled.div`
   font-family: GothamPro, monospace, sans-serif;
@@ -33,33 +19,14 @@ const AppComponent = styled.div`
 `;
 
 
-class App extends Component {
+export default class App extends React.Component {
     render() {
         return (
             <AppComponent>
-                <Switch>
-                    <Route exact path={'/'} component={Landing}/>
-                    <Route path={'/registration'} component={Registration}/>
-                    <Route path={'/privateOffice'} component={PrivateOffice}/>
-                    <Route path={'/recovery'} component={PasswordRecovery}/>
-                    <Route path={'/new_password'} component={NewPassword}/>
-                    <Route path={'/confirm_recovery_email'} component={ConfirmSendRecoveryEmail}/>
-                    <Route path={'/faq'} component={FAQ}/>
-                    <Route path={'/news'} component={NewsPage}/>
-                    <Route path={'/calendar'} component={Calendary}/>
-                    <Route path={'/payment_methods'} component={PaymentMethods}/>
-                    <Route path={'/withdrawal'} component={WithdrawalOfMoney}/>
-                    <Route path={'/another_withdrawal'} component={AnotherWithdrawalOfMoney}/>
-                    <Route path={'/qiwi_wallet'} component={QIWIWallet}/>
-                    <Route path={'/yandex_wallet'} component={YandexWallet}/>
-                    <Route path={'/paypal_wallet'} component={PayPalWallet}/>
-                    <Route path={'/tournament_history'} component={TournamentHistory}/>
-                    <Redirect to={'/registration'}/>
-                </Switch>
+                <React.Suspense fallback={<div className='preloader'>Загрузка...</div>}>
+                    <ViewRouter />
+                </React.Suspense>
             </AppComponent>
-        )
-            ;
+        );
     }
 }
-
-export default App;

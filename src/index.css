@@ -11,13 +11,13 @@ body {
 
   font-family: 'GothamPro';
 
-  src: url('./fonts/Gotham Pro/GothamPro.eot');
+  src: url('app/fonts/Gotham Pro/GothamPro.eot');
 
-  src: url('./fonts/Gotham Pro/GothamPro.eot?iefix') format('eot'),
+  src: url('app/fonts/Gotham Pro/GothamPro.eot?iefix') format('eot'),
 
-  url('./fonts/Gotham Pro/GothamPro.woff') format('woff'),
+  url('app/fonts/Gotham Pro/GothamPro.woff') format('woff'),
 
-  url('./fonts/Gotham Pro/GothamPro.ttf') format('truetype');
+  url('app/fonts/Gotham Pro/GothamPro.ttf') format('truetype');
 
   font-weight: normal;
 
@@ -28,9 +28,9 @@ body {
 
   font-family: 'Roboto';
 
-  src: url('./fonts/Roboto/Roboto.woff'),
+  src: url('app/fonts/Roboto/Roboto.woff'),
 
-  url('./fonts/Roboto/Roboto.ttf') format('truetype');
+  url('app/fonts/Roboto/Roboto.ttf') format('truetype');
 
   font-weight: normal;
 

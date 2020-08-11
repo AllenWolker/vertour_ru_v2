@@ -1,7 +1,7 @@
 const ButtonTextColor = 'white';
 const ButtonColor = '#840318';
 const fontColor = '#FFFFFF';
-const N = 30;
+//const N = 30;
 const ContainerLogin = {
     backgroundImage: 'url("/assets/background4.jpg")',
     backgroundRepeat: 'no-repeat',
