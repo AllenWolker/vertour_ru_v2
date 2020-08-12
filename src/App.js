@@ -2,7 +2,11 @@ import React from 'react';
 import './App.css';
 import styles from "./styles";
 import styled from 'styled-components';
-import ViewRouter from './app/router/renderRoutes';
+//import ViewRouter from './app/router/renderRoutes';
+import { Route, Switch, Redirect } from 'react-router-dom';
+
+import Registration from './app/pages/Registration';
+import Landing from './app/pages/Landing'
 
 import Footer from "./app/components/Footer";
 
@@ -23,9 +27,11 @@ export default class App extends React.Component {
     render() {
         return (
             <AppComponent>
-                <React.Suspense fallback={<div className='preloader'>Загрузка...</div>}>
-                    <ViewRouter />
-                </React.Suspense>
+                <Switch>
+                    <Route to={'/'} component={Landing}/>
+                    <Route to={'/registration'} component={Registration}/>
+                    <Redirect to={'/registration'}/>
+                </Switch>
             </AppComponent>
         );
     }

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { compose } from 'redux/index';
+import { compose } from 'redux';
 import { validate } from '../../utils/formControl/formValidate';
 
 const FormTitle = styled.div`

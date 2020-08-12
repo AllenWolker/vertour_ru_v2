@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import CheckInBlock from '../components/Landing/CheckInBlock';
@@ -10,7 +10,7 @@ const LandingWrapper = styled.div`
     height: auto
 `;
 
-export default class Landing extends PureComponent{
+export default class Landing extends Component{
     render() {
         const initialState = {
             landingBlocks: [
