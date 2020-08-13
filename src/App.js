@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Route, Redirect, Switch } from 'react-router-dom';
+//import { Route, Redirect, Switch } from 'react-router-dom';
+import ViewRouter from './app/router/renderRoutes';
 
-import PrivateOffice from './app/view/pages/PrivateOffice';
-import Landing from './app/view/pages/Landing';
-import Registration from './app/view/pages/Registration';
+//import PrivateOffice from './app/view/pages/PrivateOffice';
+//import Landing from './app/view/pages/Landing';
+//import Registration from './app/view/pages/Registration';
+//const Registration = React.lazy(() => import('./app/view/pages/Registration'));
 
 const AppComponent = styled.div`
   font-family: GothamPro, monospace, sans-serif;
@@ -20,12 +22,11 @@ class App extends Component{
     render() {
         return (
             <AppComponent>
-                <Switch>
-                    <Route exact path={'/'} component={Landing}/>
-                    <Route path={'/registration'}  component={Registration}/>
-                    <Route path={'/privateOffice'} component={PrivateOffice}/>
-                    <Redirect to={'/registration'} />
-                </Switch>
+                <React.Suspense fallback={<div className='preloader'>Загрузка...</div>}>
+
+                    <ViewRouter/>
+
+                </React.Suspense>
             </AppComponent>
         );
     }

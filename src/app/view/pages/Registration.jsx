@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import { Redirect } from 'react-router-dom';
 
 import RegHeader from '../components/Registration/RegHeader';
 //import Footer from '../components/Registration/Footer';
@@ -29,8 +30,11 @@ const FormsWrapper = styled.div`
     padding: 32px 114px 32px 121px;
 `;
 
-export default class Registration extends Component {
-    render() {
+const Registration =(props) => {
+    const { token } = props;
+    if(token) {
+        return <Redirect to={'/private_office'}/>
+    } else {
         return(
             <RegBody
                 imgUrl={process.env.PUBLIC_URL +'assets/reg-background.jpg'}
@@ -43,4 +47,7 @@ export default class Registration extends Component {
             </RegBody>
         )
     }
-}
+
+};
+
+export default Registration;
