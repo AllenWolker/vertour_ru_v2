@@ -32,6 +32,7 @@ const FormsWrapper = styled.div`
 
 const Registration =(props) => {
     const { token } = props;
+    console.log(token);
     if(token) {
         return <Redirect to={'/private_office'}/>
     } else {
