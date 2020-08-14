@@ -15,6 +15,7 @@ async function logFormSubmit(values) {
         configureStore().dispatch(userData(response.data));
         configureStore().dispatch(authSuccess(localStorage.getItem('token')));
         console.log('УРА!!');
+        document.location.href = '/private_office';
     } catch (e) {
         console.log(`😱 Axios request failed: ${e}`);
         throw new SubmissionError({

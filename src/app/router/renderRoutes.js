@@ -1,7 +1,9 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-//import routes from './routes';
+//import routes from './routes';  // массив всех роутов приложения,
+                                 // который должен быть преобразован при помощи
+                                 // стандартной функции map
 import PrivateRoute from './PrivateRoute';
 
 
@@ -41,6 +43,9 @@ export default connect(
     mapStateToProps
 )(renderRoutes);
 
+// функция, создающая переменную, содержащую массив всех роутов приложения,
+// которая должна быть помещена между тэгами Switch.
+// Массив создается, но роутинг почему-то отказывается работать. Причину не обнаружил.
 /*
            {
                routes.map((route, i) =>(
