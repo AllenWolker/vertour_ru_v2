@@ -5,8 +5,14 @@ import { connect } from 'react-redux';
 import PrivateRoute from './PrivateRoute';
 
 
-const PrivateOffice = React.lazy(() =>import('../view/pages/PrivateOffice'));
-const Landing = React.lazy(() => import('../view/pages/Landing'));
+const PrivateOffice = {
+    path: '/private_office',
+    component: React.lazy(() =>import('../view/pages/PrivateOffice'))
+};
+const Landing = {
+    path: '/',
+    component: React.lazy(() => import('../view/pages/Landing'))
+};
 const Registration = {
     path: '/registration',
     component: React.lazy(() => import('../view/pages/Registration'))
@@ -17,9 +23,9 @@ const renderRoutes = (props) => {
     const { authorize } = props;
     return(
         <Switch>
-            <Route exact path={'/'} component={Landing}/>
+            <Route exact path={Landing.path} component={Landing.component}/>
             <Route path={Registration.path}  render={pros =>(<Registration.component token={authorize.token} {...pros}/>)}/>
-            <PrivateRoute token={authorize.token} path={'/private_office'} component={PrivateOffice}/>
+            <PrivateRoute token={authorize.token} path={PrivateOffice.path} component={PrivateOffice.component}/>
             <Redirect to={'/registration'}/>
         </Switch>
     )
