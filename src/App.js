@@ -28,7 +28,7 @@ export default class App extends React.Component {
         return (
             <AppComponent>
                 <Switch>
-                    <Route to={'/'} component={Landing}/>
+                    <Route exact to={'/'} component={Landing}/>
                     <Route to={'/registration'} component={Registration}/>
                     <Redirect to={'/registration'}/>
                 </Switch>
