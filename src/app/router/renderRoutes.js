@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
                                  // который должен быть преобразован при помощи
                                  // стандартной функции map
 import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
 
 
 const PrivateOffice = {
@@ -26,7 +27,7 @@ const renderRoutes = (props) => {
     return(
         <Switch>
             <Route exact path={Landing.path} component={Landing.component}/>
-            <Route path={Registration.path}  render={pros =>(<Registration.component token={authorize.token} {...pros}/>)}/>
+            <PublicRoute token={authorize.token} path={Registration.path}  component={Registration.component}/>
             <PrivateRoute token={authorize.token} path={PrivateOffice.path} component={PrivateOffice.component}/>
             <Redirect to={'/registration'}/>
         </Switch>
