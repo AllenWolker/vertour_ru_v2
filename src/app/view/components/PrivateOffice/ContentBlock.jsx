@@ -13,6 +13,9 @@ import GamesList from './GamesList';
 import NewGames from './NewGames';
 import DelAccount from './DelAccount';
 
+import submit from '../../../utils/submit/userDataSubmit';
+import normalizePhone from "../../../utils/formControl/normalizePhone";
+
 
 const ContentBlockWrapper = styled.div`
     position: absolute;
@@ -51,25 +54,67 @@ const DisplayNoneBlock = styled.div`
 export default class ContentBlock extends Component {
     render() {
         const {
-            state,
-            team,
-            rating,
-            gamerImgPath,
-            starIconPath,
-            basketIconPath,
-            addText,
             hookUpNewGamesBlock,
             hookUpDeleteAccountBlock,
-            personalData,
-            handleSubmit,
             gamesOfPlayer,
             newGamesList,
             showNewGamesBlock,
             showDeleteAccountBlock,
             addNewGame,
             delGame,
-            initialValues
         } = this.props;
+
+        const contentBlock = {
+            state: 'Профи',
+            team: 'qwerty',
+            rating: 3,
+            gamerImgPath: 'assets/gamer1.png',
+            starIconPath: 'assets/star-icon.png',
+            basketIconPath: 'assets/basket-icon.png',
+            addText: [
+                '+ Добавить игру',
+                'Закрыть'
+            ]
+        };
+
+        const personalData = {
+            formName: 'gamerData',
+            formFields: [
+                {
+                    name: 'email',
+                    label: 'Почта',
+                    type: 'email',
+                    normalize: [],
+                    btnLabel: 'Изменить'
+                },
+
+                {
+                    name: 'phone',
+                    label: 'Телефон',
+                    type: 'tel',
+                    normalize: [normalizePhone],
+                    btnLabel: 'Изменить'
+                },
+
+                {
+                    name: 'password',
+                    label: 'Пароль',
+                    type: 'password',
+                    normalize: [],
+                    btnLabel: 'Изменить'
+                },
+
+                {
+                    name: 'payment',
+                    label: 'Кошелек Vertour',
+                    type: 'text',
+                    normalize: [],
+                    btnLabel: 'Способы оплаты'
+                }
+            ]
+        };
+
+        const handleSubmit = (values) => submit(values);
 
         const PopUpBlock = (props) => {
             if(props.hookUpNewGamesBlock){
@@ -98,33 +143,33 @@ export default class ContentBlock extends Component {
             <ContentBlockWrapper>
                 <ActionBlock>
                     <Status
-                        state={state}
-                        starIconPath={starIconPath}
+                        state={contentBlock.state}
+                        starIconPath={contentBlock.starIconPath}
                     />
 
-                    <TeamBlock team={team}/>
+                    <TeamBlock team={contentBlock.team}/>
 
-                    <PlaceBlock rating={rating}/>
+                    <PlaceBlock rating={contentBlock.rating}/>
 
                     <Gamer
-                        gamerImgPath={gamerImgPath}
-                        basketIconPath={basketIconPath}
-                        showDeleteAccountBlock={showDeleteAccountBlock}
+                        gamerImgPath={contentBlock.gamerImgPath}
+                        basketIconPath={contentBlock.basketIconPath}
+                        showDeleteAccountBlock={contentBlock.showDeleteAccountBlock}
                         hookUpDeleteAccountBlock={hookUpDeleteAccountBlock}
                         hookUpNewGamesBlock={hookUpNewGamesBlock}
                     />
 
                     <PersonalData
                         formFields={personalData.formFields}
+                        formName={personalData.formName}
                         handleSubmit={handleSubmit}
-                        initialValues={initialValues}
                     />
 
                     <AddGame
                         hookUpDeleteAccountBlock={hookUpDeleteAccountBlock}
                         showNewGamesBlock={showNewGamesBlock}
                         hookUpNewGamesBlock={hookUpNewGamesBlock}
-                        addText={addText}
+                        addText={contentBlock.addText}
                     />
 
                     <GamesList
@@ -144,22 +189,8 @@ export default class ContentBlock extends Component {
 }
 
 ContentBlock.propTypes = {
-    state: PropTypes.string.isRequired,
-    team: PropTypes.string.isRequired,
-    rating: PropTypes.number.isRequired,
-    gamerImgPath: PropTypes.string.isRequired,
-    basketIconPath: PropTypes.string.isRequired,
-    addText: PropTypes.array.isRequired,
     hookUpNewGamesBlock: PropTypes.bool.isRequired,
     hookUpDeleteAccountBlock: PropTypes.bool.isRequired,
-    formFields: PropTypes.arrayOf(PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        label: PropTypes.string.isRequired,
-        type: PropTypes.string.isRequired,
-        disabled:  PropTypes.bool.isRequired,
-        normalize: PropTypes.array.isRequired,
-        btnLabel: PropTypes.string.isRequired
-    })),
     gamesOfPlayer: PropTypes.arrayOf(PropTypes.shape({
         title: PropTypes.string.isRequired,
         icon: PropTypes.string.isRequired

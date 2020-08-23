@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import submit from '../../utils/submit/userDataSubmit';
 
 import Main from '../components/PrivateOffice/Main'
 import {
@@ -101,19 +100,9 @@ const UserIcon =styled.div`
 `;
 
 class PrivateOffice extends Component{
-    getInitialValues  = () => {
-        return {
-            "email": "vertour@gmail.com",
-            "phone": "+7 (978) 123 36 69",
-            "password": "dbkmZV13",
-            "payment": "532 руб."
-        }
-    };
-
     render(){
         const {
             contentBlock,
-            personalData,
             gamesList,
             newGamesList,
             showNewGamesBlockAction,
@@ -160,11 +149,8 @@ class PrivateOffice extends Component{
 
                 <Main
                     contentBlock={contentBlock}
-                    personalData={personalData}
-                    handleSubmit={submit}
                     gamesList={gamesList}
                     newGamesList={newGamesList}
-                    initialValues={this.getInitialValues()}
                     showNewGamesBlock={showNewGamesBlockAction}
                     showDeleteAccountBlock={showDeleteAccountBlockAction}
                     addNewGame={addNewGameAction}
@@ -178,7 +164,6 @@ class PrivateOffice extends Component{
 const mapStateToProps = (store) => {
     return {
         contentBlock: store.contentBlock,
-        personalData: store.personalData,
         gamesList: store.gamesList,
         newGamesList: store.newGamesList
     }

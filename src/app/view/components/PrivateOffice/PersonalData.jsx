@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
 import { validate } from '../../../utils/formControl/formValidate';
 
 import FormField from './FormField';
@@ -19,8 +21,14 @@ const InputFieldBlock = styled.div`
 const SubmitBtn = styled.button`
     display: none;
 `;
-
-
+const getInitialValues  = () => {
+    return {
+        "email": "vertour@gmail.com",
+        "phone": "+7 (978) 123 36 69",
+        "password": "dbkmZV13",
+        "payment": "532 руб."
+    }
+};
 
 const PersonalData = (props) => {
     const {
@@ -28,7 +36,6 @@ const PersonalData = (props) => {
         handleSubmit,
         pristine,
         submitting,
-        initialValues
     } = props;
 
     const fields = formFields.map((field, index) => {
@@ -48,7 +55,7 @@ const PersonalData = (props) => {
 
     return (
         <PersonalDataWrapper>
-            <form onSubmit={handleSubmit} initialvalues={initialValues}>
+            <form onSubmit={handleSubmit} initialvalues={getInitialValues}>
                 {fields}
                 <SubmitBtn
                     id={'subBtn'}
@@ -59,7 +66,11 @@ const PersonalData = (props) => {
     )
 };
 
-export default reduxForm({
-    form: 'gamerData',
-    validate
-})(PersonalData);
+const mapStateToProps = (state, ownProps) => ({
+    form: ownProps.formName,
+});
+
+export default compose(
+    connect(mapStateToProps),
+    reduxForm({ validate }),
+)(PersonalData);

@@ -46,15 +46,12 @@ export default class Main extends Component {
     render() {
         const {
             contentBlock,
-            personalData,
             gamesList,
             newGamesList,
             showNewGamesBlock,
             showDeleteAccountBlock,
             addNewGame,
             delGame,
-            handleSubmit,
-            initialValues
         } = this.props;
 
         const menuPoints = [
@@ -75,18 +72,8 @@ export default class Main extends Component {
                 </AsideWrapper>
 
                 <ContentBlock
-                    state={contentBlock.state}
-                    team={contentBlock.team}
-                    rating={contentBlock.rating}
-                    gamerImgPath={contentBlock.gamerImgPath}
-                    starIconPath={contentBlock.starIconPath}
-                    basketIconPath={contentBlock.basketIconPath}
-                    addText={contentBlock.addText}
                     hookUpNewGamesBlock={contentBlock.hookUpNewGamesBlock}
                     hookUpDeleteAccountBlock={contentBlock.hookUpDeleteAccountBlock}
-                    personalData={personalData}
-                    initialValues={initialValues}
-                    handleSubmit={handleSubmit}
                     gamesOfPlayer={gamesList.gamesOfPlayer}
                     newGamesList={newGamesList.newGamesList}
                     showNewGamesBlock={showNewGamesBlock}
