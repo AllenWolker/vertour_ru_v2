@@ -1,35 +1,33 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-//import routes from './routes';  // массив всех роутов приложения,
-                                 // который должен быть преобразован при помощи
-                                 // стандартной функции map
+import routes from './routes';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 
 
-const PrivateOffice = {
-    path: '/private_office',
-    component: React.lazy(() =>import('../view/pages/PrivateOffice'))
-};
-const Landing = {
-    path: '/',
-    component: React.lazy(() => import('../view/pages/Landing'))
-};
-const Registration = {
-    path: '/registration',
-    component: React.lazy(() => import('../view/pages/Registration'))
-};
-
-
 const renderRoutes = (props) => {
     const { authorize } = props;
+    const ViewRouter = routes.map((route, i) => {
+        if (route.path === '/'){
+            return <Route key={route.key || i} exact path={route.path} component={route.component}/>
+        }else {
+            if(route.path === 'redirect'){
+                return <Redirect key={route.key || i} to={'/registration'}/>
+            }else {
+                if(route.private){
+                    return <PrivateRoute key={route.key || i} token={authorize.token} path={route.path} component={route.component}/>
+                } else {
+                    return <PublicRoute key={route.key || i} token={authorize.token} path={route.path}  component={route.component}/>
+                }
+            }
+        }
+
+    });
+
     return(
         <Switch>
-            <Route exact path={Landing.path} component={Landing.component}/>
-            <PublicRoute token={authorize.token} path={Registration.path}  component={Registration.component}/>
-            <PrivateRoute token={authorize.token} path={PrivateOffice.path} component={PrivateOffice.component}/>
-            <Redirect to={'/registration'}/>
+            { ViewRouter }
         </Switch>
     )
 };
@@ -43,32 +41,3 @@ const mapStateToProps = (store) => {
 export default connect(
     mapStateToProps
 )(renderRoutes);
-
-// функция, создающая переменную, содержащую массив всех роутов приложения,
-// которая должна быть помещена между тэгами Switch.
-// Массив создается, но роутинг почему-то отказывается работать. Причину не обнаружил.
-/*
-           {
-               routes.map((route, i) =>(
-                   (route.private)?
-                       <PrivateRoute
-                           key={route.key || i}
-                           token={authorize.token}
-                           path={route.path}
-                           component={route.component}/> :
-                       (route.path === '/registration')?
-                           <Route
-                               key={route.key || i}
-                               path={route.path}
-                               render={props =>(<route.component token={authorize.token} {...prop}/>)}
-                           /> :
-                           <Route
-                               key={route.key || i}
-                               path={route.path}
-                               component={route.component}
-                           />
-
-               ))
-           }
-
-            */

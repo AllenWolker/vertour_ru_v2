@@ -115,6 +115,11 @@ const routes = [
         path: '/registration',
         component: Registration,
         private: false
+    },
+    {
+        path: 'redirect',
+        component: '',
+        private: false
     }
 ];
 
