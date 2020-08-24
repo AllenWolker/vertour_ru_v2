@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from '../../styles'
+import styles from '../../../styles';
 import {Link} from "react-router-dom";
 
 export default class LeftMenu extends Component {
