@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Redirect } from 'react-router-dom';
 
 import RegHeader from '../components/Registration/RegHeader';
-//import Footer from '../components/Registration/Footer';
+//import Footer from '../components/Footer';
 import RegForm from "../components/Registration/RegForm";
 import LoginForm from "../components/Registration/LoginForm";
 

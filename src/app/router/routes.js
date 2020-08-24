@@ -1,24 +1,24 @@
 import React from 'react';
 
 const PrivateOffice = React.lazy(() =>import('../view/pages/PrivateOffice'));
-//const PasswordRecovery = React.lazy(() => import('../pages/PasswordRecovery'));
-//const NewPassword = React.lazy(() => import('../pages/NewPassword'));
-//const ConfirmSendRecoveryEmail = React.lazy(() => import('../pages/ConfirmSendRecoveryEmail'));
-//const FAQ = React.lazy(() => import('../pages/FAQ'));
-//const PaymentMethods = React.lazy(() => import('../pages/PaymentMethods'));
-//const WithdrawalOfMoney = React.lazy(() => import('../pages/WithdrawalOfMoney'));
-//const AnotherWithdrawalOfMoney = React.lazy(() => import('../pages/AnotherWithdrawalOfMoney'));
-//const QIWIWallet = React.lazy(() => import('../pages/QIWIWallet'));
-//const YandexWallet = React.lazy(() => import('../pages/YandexWallet'));
-//const PayPalWallet = React.lazy(() => import('../pages/PayPalWallet'));
-//const TournamentHistory = React.lazy(() => import('../pages/TournamentHistory'));
+const PasswordRecovery = React.lazy(() => import('../view/pages/PasswordRecovery'));
+const NewPassword = React.lazy(() => import('../view/pages/NewPassword'));
+const ConfirmSendRecoveryEmail = React.lazy(() => import('../view/pages/ConfirmSendRecoveryEmail'));
+const PaymentMethods = React.lazy(() => import('../view/pages/PaymentMethods'));
+const WithdrawalOfMoney = React.lazy(() => import('../view/pages/WithdrawalOfMoney'));
+const AnotherWithdrawalOfMoney = React.lazy(() => import('../view/pages/AnotherWithdrawalOfMoney'));
+const QIWIWallet = React.lazy(() => import('../view/pages/QIWIWallet'));
+const YandexWallet = React.lazy(() => import('../view/pages/YandexWallet'));
+const PayPalWallet = React.lazy(() => import('../view/pages/PayPalWallet'));
+const TournamentHistory = React.lazy(() => import('../view/pages/TournamentHistory'));
+const Calendar = React.lazy(() => import('../view/pages/Calendar'));
 const Landing = React.lazy(() => import('../view/pages/Landing'));
 const Registration = React.lazy(() => import('../view/pages/Registration'));
-//const NewsPage = React.lazy(() => ('../pages/NewsPage'));
-//const Calendar = React.lazy(() => ('../pages/Calendar'));
+const NewsPage = React.lazy(() => import('../view/pages/NewsPage'));
+const FAQ = React.lazy(() => import('../view/pages/FAQ'));
+
 
 const routes = [
-    /*
     {
         path: '/private_office',
         component: PrivateOffice,
@@ -37,11 +37,6 @@ const routes = [
     {
         path: '/confirm_recovery_email',
         component: ConfirmSendRecoveryEmail,
-        private: true
-    },
-    {
-        path: '/faq',
-        component: FAQ,
         private: true
     },
     {
@@ -80,6 +75,11 @@ const routes = [
         private: true
     },
     {
+        path: '/calendar',
+        component: Calendar,
+        private: false
+    },
+    {
         path: '/',
         component: Landing,
         private: false
@@ -95,25 +95,8 @@ const routes = [
         private: false
     },
     {
-        path: '/calendar',
-        component: Calendar,
-        private: false
-    }
-
-     */
-    {
-        path: '/private_office',
-        component: PrivateOffice,
-        private: true
-    },
-    {
-        path: '/',
-        component: Landing,
-        private: false
-    },
-    {
-        path: '/registration',
-        component: Registration,
+        path: '/faq',
+        component: FAQ,
         private: false
     },
     {

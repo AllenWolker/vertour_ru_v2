@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const HeaderWrapper = styled.header`
@@ -26,7 +27,7 @@ const HeaderMenu = styled.div`
     padding-left: 79px;
 `;
 
-const MenuPoint = styled.div`
+const MenuPoint = styled(Link)`
     box-sizing: border-box;
     height: 100px;
     padding: 36px 25px 47px;
@@ -37,6 +38,8 @@ const MenuPoint = styled.div`
     line-height: 17px;
     cursor: pointer;
     text-align: center;
+    text-decoration: none;
+    color: #C4C4C4;
     
     :hover {
         background: rgba(67, 67, 67, 0.6);
@@ -68,17 +71,29 @@ const RegHeader = () => {
         headerLogoPath: 'assets/vertour-logo.png',
 
         headerMenuPoints: [
-            'Главная',
-            'PRO',
-            'Новости',
-            'Поддержка'
+            {
+                title: 'Главная',
+                path: ''
+            },
+            {
+                title: 'PRO',
+                path: ''
+            },
+            {
+                title: 'Новости',
+                path: '/news'
+            },
+            {
+                title: 'Поддержка',
+                path: ''
+            }
         ],
 
         doing: ['Вход', 'Регистрация']
     };
 
     const points = initialState.headerMenuPoints.map((point, index) => {
-        return <MenuPoint key={index}>{point}</MenuPoint>
+        return <MenuPoint key={index} to={point.path}>{point.title}</MenuPoint>
     });
 
     return(
