@@ -4,6 +4,7 @@ import LeftMenu from "../components/LeftMenu";
 import {Link} from "react-router-dom";
 import MenuRoute from "../components/MenuRoute";
 import Footer from "../components/Footer";
+import styled from 'styled-components';
 
 export default class PaymentMethods extends Component {
     state = {
@@ -110,43 +111,42 @@ export default class PaymentMethods extends Component {
 
 
 //Style
-const PaymentMethodsPageBox = {
-    maxWidth: '960px',
-    height: '600px',
-    marginTop: '1%',
-    marginLeft: '15%',
-    background: 'rgba(0, 0, 0, 0.65)',
-    flexDirection: 'column',
-    marginBottom: '90px',
-};
-const LogoPayments = {
-    width: '48px',
-    height: '48px',
-    backgroundImage: 'url("/assets/payments_icon/Visa.png")',
-};
-const PaymentMethodBox = {
-    width: '325px',
-    height: '80px',
-    border: '1px solid white',
-    borderRadius: '10px',
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
-    marginLeft: '40px',
-    marginTop: '15px',
-
-};
-let TitleWalletStyle = {
-    margin: '40px',
-    marginRight: '0px',
-};
-const PaymentsBox = {
-    margin: '40px',
-    marginTop: '80px',
-};
-const BalanceBox = {
-    marginLeft: '40px',
-    marginRight: '40px',
-}
+const PaymentMethodsPageBox = styled.div`
+    maxWidth: 960px;
+    height: 600px;
+    marginTop: 1%;
+    marginLeft: 15%;
+    background: rgba(0, 0, 0, 0.65);
+    flexDirection: column;
+    marginBottom: 90px;
+`;
+const LogoPayments = styled.div`
+    width: 48px;
+    height: 48px;
+    backgroundImage: url("/assets/payments_icon/Visa.png");
+`;
+const PaymentMethodBox = styled.div`
+    width: 325px;
+    height: 80px';
+    border: 1px solid white;
+    borderRadius: 10px;
+    justifyContent: space-evenly;
+    alignItems: center;
+    marginLeft: 40px;
+    marginTop: 15px;
+`;
+let TitleWalletStyle = styled.div`
+    margin: 40px;
+    marginRight: 0px;
+`;
+const PaymentsBox = styled.div`
+    margin: 40px;
+    marginTop: 80px;
+`;
+const BalanceBox = styled.div`
+    marginLeft: 40px;
+    marginRight: 40px;
+`;
 const BgContainer = Object.assign({}, styles.ContainerLogin);
 
 const TitlePayments = Object.assign({}, styles.TitleFontFooter);

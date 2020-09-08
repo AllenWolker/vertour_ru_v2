@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import PropTypes from 'prop-types';
 import MenuRoute from "../components/MenuRoute";
 import Footer from "../components/Footer";
+import styled from 'styled-components';
 
 export default class AnotherWithdrawalOfMoney extends Component {
 
@@ -84,88 +85,87 @@ export default class AnotherWithdrawalOfMoney extends Component {
 
 
 //Style
-const AnotherWithdrawalMethodsPageBox = {
-    width: '960px',
-    height: '600px',
-    marginTop: '1%',
-    marginLeft: '15%',
-    background: 'rgba(0, 0, 0, 0.65)',
-    flexDirection: 'column',
-    marginBottom: '90px',
-};
-const LogoBankCard = {
-    width: '65px',
-    height: '50px',
-    backgroundImage: 'url("/assets/payments_icon/creditcard.png")',
-    backgroundRepeat: 'no-repeat',
-    marginLeft: '17px',
-    marginBottom: '24px',
-};
-const LogoAnotherWallet = {
-    width: '60px',
-    height: '58px',
-    backgroundImage: 'url("/assets/payments_icon/wallet.png")',
-    backgroundRepeat: 'no-repeat',
-    marginBottom: '24px',
-};
-const LogoQIWI = {
-    width: '121px',
-    height: '121px',
-    backgroundImage: 'url("/assets/payments_icon/QIWI.png")',
-    backgroundRepeat: 'no-repeat',
-    marginLeft: '17px',
-    marginBottom: '24px',
-};
-const LogoYandex = {
-    width: '121px',
-    height: '121px',
-    backgroundImage: 'url("/assets/payments_icon/YANDEX.png")',
-    backgroundRepeat: 'no-repeat',
-    marginBottom: '24px',
-};
-const LogoPayPal = {
-    width: '121px',
-    height: '121px',
-    backgroundImage: 'url("/assets/payments_icon/PayPal.png")',
-    backgroundRepeat: 'no-repeat',
-    marginBottom: '24px',
-};
-const ButtonWithdrawal = {
-    width: ' 280px',
-    height: '60px',
-    background: '#840318',
-    borderRadius: '5px',
-    border: '1px solid #840318',
-    color: '#FFFFFF',
-    marginLeft: '40px',
-    marginTop: '65px',
-};
-const InputDesign = {
-    height: '40px',
-    border: '0px',
-    borderTop: '1px solid #C4C4C4',
-    borderBottom: '1px solid #C4C4C4',
-    background: 'rgba(0, 0, 0, 0.65)',
-    marginLeft: '40px',
-    marginRight: '40px',
-    color: 'white',
-
-};
-const TitleBox = {
-    marginTop: '40px',
-    marginLeft: '40px',
-    marginBottom: '50px',
-    marginRight: '100px',
-};
-const PaymentBox = {
-    width: '120px',
-    height: '140px',
-    marginLeft: '70px',
-    marginBottom: '40px',
-};
-const AnotherPaymentsBox = {
-    marginLeft: '40px',
-}
+const AnotherWithdrawalMethodsPageBox = styled.div`
+    width: 960px;
+    height: 600px;
+    marginTop: 1%;
+    marginLeft: 15%;
+    background: rgba(0, 0, 0, 0.65);
+    flexDirection: column;
+    marginBottom: 90px;
+`;
+const LogoBankCard = styled.div`
+    width: 65px;
+    height: 50px;
+    backgroundImage: url("/assets/payments_icon/creditcard.png");
+    backgroundRepeat: no-repeat;
+    marginLeft: 17px;
+    marginBottom: 24p;
+`;
+const LogoAnotherWallet = styled.div`
+    width: 60px;
+    height: 58px;
+    backgroundImage: url("/assets/payments_icon/wallet.png");
+    backgroundRepeat: no-repeat;
+    marginBottom: 24px;
+`;
+const LogoQIWI = styled.div`
+    width: 121px;
+    height: 121px;
+    backgroundImage: url("/assets/payments_icon/QIWI.png")
+    backgroundRepeat: no-repeat;
+    marginLeft: 17px;
+    marginBottom: 24px;
+`;
+const LogoYandex = styled.div`
+    width: 121px;
+    height: 121px;
+    backgroundImage: url("/assets/payments_icon/YANDEX.png");
+    backgroundRepeat: no-repeat;
+    marginBottom: 24px;
+`;
+const LogoPayPal = styled.div`
+    width: 121px;
+    height: 121px;
+    backgroundImage: url("/assets/payments_icon/PayPal.png");
+    backgroundRepeat: no-repeat;
+    marginBottom: 24px;
+`;
+const ButtonWithdrawal = styled.div`
+    width: 280px;
+    height: 60px;
+    background: #840318;
+    borderRadius: 5px;
+    border: 1px solid #840318;
+    color: #FFFFFF;
+    marginLeft: 40px;
+    marginTop: 65px;
+`;
+const InputDesign = styled.input`
+    height: 40px;
+    border: 0px;
+    borderTop: 1px solid #C4C4C4;
+    borderBottom: 1px solid #C4C4C4;
+    background: rgba(0, 0, 0, 0.65);
+    marginLeft: 40px;
+    marginRight: 40px;
+    color: white;
+`;
+const TitleBox = styled.div`
+    marginTop: 40px;
+    marginLeft: 40px;
+    marginBottom: 50px;
+    marginRight: 100px;
+`;
+const PaymentBox = styled.div`
+    width: 120px;
+    height: 140px;
+    marginLeft: 70px;
+    marginBottom: 40px;
+`;
+const AnotherPaymentsBox = styled.div`
+    marginLeft: 40px;
+`;
 const WithdrawalTitle = Object.assign({}, styles.TitleFontFooter);
 const WithdrawalDecoration = Object.assign({}, styles.HrefDecoration);
 WithdrawalDecoration.fontSize = '16px';

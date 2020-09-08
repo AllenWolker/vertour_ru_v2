@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styles from '../../../styles';
 import {Link} from "react-router-dom";
+import styled from 'styled-components';
 
 export default class LeftMenu extends Component {
     constructor(props) {
@@ -27,23 +28,22 @@ export default class LeftMenu extends Component {
 
 
 //Styles
-const LeftMenuFlex = {
-    flexDirection: 'column',
-    maxWidth: '300px',
-    maxHeight: '900px',
-    minHeight: '600px',
-    background: 'rgba(0, 0, 0, 0.65)',
+const LeftMenuFlex = styled.div`
+    flexDirection: column;
+    maxWidth: 300px;
+    maxHeight: 900px;
+    minHeight: 600px;
+    background: rgba(0, 0, 0, 0.65);
+`;
 
-};
-
-const LHrefMenu = {
-    position: 'relative',
-    width: '150px',
-    height: '40px',
-    marginLeft: '45px',
-    marginTop: '40px',
-    top: '36px',
-};
+const LHrefMenu = styled.div`
+    position: relative;
+    width: 150px;
+    height: 40px;
+    marginLeft: 45px;
+    marginTop: 40px;
+    top: 36px;
+`;
 
 const LHrefDecoration = Object.assign({}, styles.HrefDecoration);
 LHrefDecoration.fontSize = '16px';

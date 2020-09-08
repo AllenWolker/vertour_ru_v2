@@ -253,7 +253,7 @@ export default class Login extends Component {
             }
         }
 
-        const LoginBox = {
-            display: 'flex',
-            justifyContent: 'flex-end',
-        }
+        const LoginBox = styled.div`
+            display: flex;
+            justifyContent: flex-end;
+        `;

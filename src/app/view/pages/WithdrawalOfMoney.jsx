@@ -4,6 +4,7 @@ import LeftMenu from "../components/LeftMenu";
 import {Link} from "react-router-dom";
 import MenuRoute from "../components/MenuRoute";
 import Footer from "../components/Footer";
+import styled from 'styled-components';
 
 export default class WithdrawalOfMoney extends Component {
     state = {
@@ -66,66 +67,65 @@ export default class WithdrawalOfMoney extends Component {
 
 
 //Style
-const WithdrawalMethodsPageBox = {
-    width: '960px',
-    height: '600px',
-    marginTop: '1%',
-    marginLeft: '15%',
-    background: 'rgba(0, 0, 0, 0.65)',
-    flexDirection: 'column',
-    marginBottom: '90px',
-};
-const LogoBankCard = {
-    width: '65px',
-    height: '50px',
-    backgroundImage: 'url("/assets/payments_icon/creditcard.png")',
-    backgroundRepeat: 'no-repeat',
-    marginLeft: '17px',
-    marginBottom: '24px',
-};
-const LogoAnotherWallet = {
-    width: '60px',
-    height: '58px',
-    backgroundImage: 'url("/assets/payments_icon/wallet.png")',
-    backgroundRepeat: 'no-repeat',
-    marginBottom: '24px',
-};
-const ButtonWithdrawal = {
-    width: ' 280px',
-    height: '60px',
-    background: '#840318',
-    borderRadius: '5px',
-    border: '1px solid #840318',
-    color: '#FFFFFF',
-    marginLeft: '40px',
-    marginTop: '65px',
-};
-const InputDesign = {
-    height: '40px',
-    border: '0px',
-    borderTop: '1px solid #C4C4C4',
-    borderBottom: '1px solid #C4C4C4',
-    background: 'rgba(0, 0, 0, 0.65)',
-    marginLeft: '40px',
-    marginRight: '40px',
-    color: 'white',
-
-};
-const TitleBox = {
-    marginTop: '40px',
-    marginLeft: '40px',
-    marginBottom: '50px',
-    marginRight: '100px',
-};
-const PaymentBox = {
-    width: '120px',
-    height: '140px',
-    marginLeft: '70px',
-    marginBottom: '40px',
-};
-const CreditCardBox = {
-    marginLeft: '70px',
-};
+const WithdrawalMethodsPageBox = styled.div`
+    width: 960px;
+    height: 600px;
+    marginTop: 1%;
+    marginLeft: 15%;
+    background: rgba(0, 0, 0, 0.65);
+    flexDirection: column;
+    marginBottom: 90px;
+`;
+const LogoBankCard = styled.div`
+    width: 65px;
+    height: 50px;
+    backgroundImage: url("/assets/payments_icon/creditcard.png");
+    backgroundRepeat: no-repeat;
+    marginLeft: 17px;
+    marginBottom: 24px;
+`;
+const LogoAnotherWallet = styled.div`
+    width: 60px;
+    height: 58px;
+    backgroundImage: url("/assets/payments_icon/wallet.png");
+    backgroundRepeat: no-repeat;
+    marginBottom: 24px;
+`;
+const ButtonWithdrawal = styled.button`
+    width: 280px;
+    height: 60px;
+    background: #840318;
+    borderRadius: 5px;
+    border: 1px solid #840318;
+    color: #FFFFFF;
+    marginLeft: 40px;
+    marginTop: 65px;
+`;
+const InputDesign = styled.input`
+    height: 40px;
+    border: 0px;
+    borderTop: 1px solid #C4C4C4;
+    borderBottom: 1px solid #C4C4C4;
+    background: rgba(0, 0, 0, 0.65);
+    marginLeft: 40px;
+    marginRight: 40px;
+    color: white;
+`;
+const TitleBox = styled.div`
+    marginTop: 40px;
+    marginLeft: 40px;
+    marginBottom: 50px;
+    marginRight: 100px;
+`;
+const PaymentBox = styled.div`
+    width: 120px;
+    height: 140px;
+    marginLeft: 70px;
+    marginBottom: 40px;
+`;
+const CreditCardBox = styled.div`
+    marginLeft: 70px;
+`;
 const WithdrawalTitle = Object.assign({}, styles.TitleFontFooter);
 const WithdrawalDecoration = Object.assign({}, styles.HrefDecoration);
 WithdrawalDecoration.fontSize = '16px';

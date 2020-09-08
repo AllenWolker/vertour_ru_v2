@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import styles from '../../../styles';
 import Calendar from 'react-calendar';
 import LeftMenu from "../components/LeftMenu";
+import styled from 'styled-components';
 
 export default class Calendary extends Component {
     //constructor(props) {
@@ -33,21 +34,20 @@ export default class Calendary extends Component {
 
 
 //Style
-const calendarPageBox = {
-    minWidth: '550px',
-    maxHeight: '350px',
-    marginTop: '10%',
-    marginLeft: '20%',
-    background: 'rgba(0, 0, 0, 0.65)',
-}
-const Box = {
-    marginTop: '40px',
-    background: 'white',
-    maxWidth: '500px',
-    maxHeight: '350px',
-    marginLeft: '25px'
-}
-
+const calendarPageBox = styled.div`
+    minWidth: 550px;
+    maxHeight: 350px;
+    marginTop: 10%;
+    marginLeft: 20%;
+    background: rgba(0, 0, 0, 0.65);
+`;
+const Box = styled.div`
+    marginTop: 40px;
+    background: white;
+    maxWidth: 500px;
+    maxHeight: 350px;
+    marginLeft: 25px;
+`;
 const calendarStyles = {
     calendarPageBox:calendarPageBox,
     Box:Box,

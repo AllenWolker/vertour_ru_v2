@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 //import {Menu} from 'semantic-ui-react'
 import styles from '../../../styles'
+import styled from 'styled-components';
 
 export default class MenuRoute extends Component {
     render() {
@@ -34,8 +35,8 @@ export default class MenuRoute extends Component {
 }
 
 //Styles
-const MenuBox = {
-    display: 'flex',
-    justifyContent: 'center',
-    marginLeft: '40px',
-}
+const MenuBox = styled.div`
+    display: flex;
+    justifyContent: center'
+    marginLeft: 40px'
+`;

@@ -3,6 +3,7 @@ import styles from '../../../styles'
 import {Link} from "react-router-dom";
 import MenuRoute from "../components/MenuRoute";
 import Footer from "../components/Footer";
+import styled from 'styled-components';
 
 export default class FAQ extends Component {
     constructor(props) {
@@ -45,44 +46,44 @@ export default class FAQ extends Component {
         );
     }
 }
-const styless = {
+const styless = styled.div`
 
-    faqBox: {
+    faqBox {
 
         //    position: 'relative',
-        width: '670px',
-        height: '367px',
-        marginLeft: '625px',
-        marginTop: '165px',
-        marginBottom: '165px',
-        backgroundColor: '#F0F1F3',
-        boxShadow: '0px 6px 12px rgba(0, 0, 0, 0.1)',
-        borderRadius: '5px',
-    },
-    faqTitle: {
-        fontFamily: 'Gotham Pro',
-        fontStyle: 'normal',
-        fontWeight: 'normal',
-        fontSize: '30px',
-        lineHeight: '29px',
-        color: 'black',
-    },
-    SocialNetwork: {
-        height: '83px',
-        width: '247px',
-        fontFamily: 'Gotham Pro',
-        fontStyle: 'normal',
-        fontWeight: 'normal',
-        fontSize: '16px',
-        lineHeight: '15px',
-        color: '#FFFFFF',
-    },
-    faqImg: {
-        width: ' 334px',
-        height: '403px',
-    },
-    margin:{
-        height: '400px',
-      marginLeft: '90px',
-    },
-};
+        width: 670px;
+        height: 367px;
+        marginLeft: 625px;
+        marginTop: 165px;
+        marginBottom: 165px;
+        backgroundColor: #F0F1F3;
+        boxShadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+        borderRadius: 5px;
+    }
+    faqTitle {
+        fontFamily: Gotham Pro;
+        fontStyle: normal;
+        fontWeight: normal;
+        fontSize: 30px;
+        lineHeight: 29px;
+        color: black;
+    }
+    SocialNetwork {
+        height: 83px;
+        width: 247px;
+        fontFamily: Gotham Pro;
+        fontStyle: normal;
+        fontWeight: normal;
+        fontSize: 16px;
+        lineHeight: 15px;
+        color: #FFFFFF;
+    }
+    faqImg {
+        width: 334px;
+        height: 403px;
+    }
+    margin {
+        height: 400px;
+        marginLeft: 90px;
+    }
+`;

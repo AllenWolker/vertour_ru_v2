@@ -7,7 +7,7 @@ import ManifestBlock from '../components/Landing/ManifestBlock';
 const LandingWrapper = styled.div`
     background-color: #0A000D;
     width: 100%;
-    height: auto
+    height: auto;
 `;
 
 export default class Landing extends PureComponent{
@@ -18,7 +18,7 @@ export default class Landing extends PureComponent{
                     blockBackgroundPath: 'assets/background6.png',
                     landingLogoPath: 'assets/vertour-logo.png',
                     manifest: [
-                        'Присоединяйся к Vertour!',
+                        'Присоединяйся к Vertour',
                         'Играй в игры, выигрывай призы!',
                         'Регистрируйся'
                     ],
@@ -60,6 +60,10 @@ export default class Landing extends PureComponent{
                 }
             ]
         };
+    
+    
+    
+        
 
         const blocks = initialState.landingBlocks.map((block, index) => {
             if(index<1 || index>3){
@@ -80,6 +84,8 @@ export default class Landing extends PureComponent{
             }
         });
 
+
         return <LandingWrapper>{blocks}</LandingWrapper>
     }
 }
+

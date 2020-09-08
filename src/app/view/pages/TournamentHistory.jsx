@@ -4,6 +4,7 @@ import LeftMenu from "../components/LeftMenu";
 import {Link} from "react-router-dom";
 import MenuRoute from "../components/MenuRoute";
 import Footer from "../components/Footer";
+import styled from 'styled-components';
 
 export default class TournamentHistory extends Component {
     state = {
@@ -77,30 +78,29 @@ export default class TournamentHistory extends Component {
 
 
 //Style
-const TournamentPageBox = {
-    width: '960px',
-    height: '600px',
-    marginTop: '1%',
-    marginLeft: '15%',
-    background: 'rgba(0, 0, 0, 0.65)',
-    marginBottom: '90px',
-
-};
-const TournamentBox = {
-    width: '960px',
-    height: '50px',
-    background: 'rgba(0, 0, 0, 0.65)',
-    justifyContent: 'space-around',
-    marginTop: '2px',
-    alignItems: 'flex-end',
-};
-const LogoTourn = {
-    width: '52px',
-    height: '24px',
-    backgroundImage: 'url("/assets/tournament_img/tournLogo.png")',
-    backgroundRepeat: 'no-repeat',
-    marginBottom: '15px',
-};
+const TournamentPageBox = styled.div`
+    width: 960px;
+    height: 600px;
+    marginTop: 1%;
+    marginLeft: 15%;
+    background: rgba(0, 0, 0, 0.65);
+    marginBottom: 90px;
+`;
+const TournamentBox = styled.div`
+    width: 960px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.65);
+    justifyContent: space-around;
+    marginTop: 2px;
+    alignItems: flex-end;
+`;
+const LogoTourn = styled.div`
+    width: 52px;
+    height: 24px;
+    backgroundImage: url("/assets/tournament_img/tournLogo.png");
+    backgroundRepeat: no-repeat;
+    marginBottom: 15px;
+`;
 const PlayerImg = Object.assign({}, LogoTourn);
 PlayerImg.marginBottom = '0px';
 PlayerImg.marginLeft = '5px';
