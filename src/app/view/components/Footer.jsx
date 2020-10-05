@@ -5,61 +5,123 @@ import {Link} from "react-router-dom";
 export default class Footer extends Component {
     render() {
         return (
-            <div className="footer" style={styles.FooterStyle}>
-                <div className="companyLogo">
-                    <Link to='/' style={styles.HrefDecoration}>
-                    <img src={process.env.PUBLIC_URL + "/assets/vertour-logo.png"} alt="JScorp"
-                         style={styles.VertourFooterLogo}/>
-                    </Link>
-                </div>
-                <div className='footerMenu' style={{display: 'flex'}}>
-                    <div className="information-menu" style={styles.InformationMenu}>
-                        <div style={styles.TitleFontFooter}>Информация</div>
-                        <div className='main-page'>
-                            <Link to='/' style={styles.HrefDecoration}>Главная</Link>
-                        </div>
-                        <div className='pro'>
-                            <Link to='/pro' style={styles.HrefDecoration}>PRO</Link>
-                        </div>
+            <styles.FooterStyle>
+                <div className="footer">
+                    <div className="companyLogo">
+                        <styles.HrefDecoration>
+                            <a href='/'>
+                                <styles.VertourFooterLogo>
+                                    <img src={process.env.PUBLIC_URL + "/assets/vertour-logo.png"} alt="JScorp"/>
+                                </styles.VertourFooterLogo>
+                            </a>
+                        </styles.HrefDecoration>
                     </div>
-                    <div className="news-menu" style={styles.NewsMenu}>
-                        <div style={styles.TitleFontFooter}>Новости</div>
-                        <div className='support' style={{paddingBottom: '12px'}}>
-                            <Link to='/support' style={styles.HrefDecoration}>Поддержка</Link>
-                        </div>
-                        <div className='contacts' style={{paddingBottom: '12px'}}>
-                            <Link to='/contacts' style={styles.HrefDecoration}>Контакты</Link>
-                        </div>
-                    </div>
-                </div>
-                <div className="payment-method" style={styles.PaymentMethod}>
-                    <div>Способы оплаты</div>
-                    <div >
-                        <Link to='/visa' style={styles.HrefFooterRefer}><i className="fab fa-cc-visa fa-2x" style={{margin: '5px'}}/></Link>
-                        <Link to='/mastercard' style={styles.HrefFooterRefer}><i className="fab fa-cc-mastercard fa-2x" style={{margin: '5px'}}/></Link>
-                    </div>
-                </div>
-                <div className="social-networks" style={styles.SocialNetwork}>
-                    <div>Следите за нами</div>
-                    <Link to='/FB' style={styles.HrefFooterRefer}><i className="fab fa-facebook fa-2x" style={{margin: '5px'}}/></Link>
-                    <Link to='/VK' style={styles.HrefFooterRefer}> <i className="fab fa-vk fa-2x" style={{margin: '5px'}}/></Link>
-                    <Link to='/telegram' style={styles.HrefFooterRefer}><i className="fab fa-telegram fa-2x" style={{margin: '5px'}}/></Link>
-                </div>
-                <div className="bottom-footer" style={{display:'flex'}}>
-                    <div className="copyright" style={styles.Copyright}>&copy; 2019 vertour LLC. Все права защищены</div>
-                    <div className="confidential-politic" style={styles.ConfidentialPolitics}>
-                        <div className='politic'>
-                            <Link to='/confidential' style={styles.HrefFooter}>Политика конфиденциальности</Link>
-                        </div>
-                        <div className='terms-use'>
-                            <Link to='/terms_use' style={styles.HrefFooter}>Условия использования</Link>
-                        </div>
-                    </div>
-                    <div className="referents-company" style={styles.ReferenceFooterCompany}>Разработано
-                        <Link to='/jscorp' style={styles.HrefFooterRefer}>  JS Corporation</Link></div>
-                </div>
+                    <div className='footerMenu' style={{display: 'flex'}}>
+                        <styles.InformationMenu>
+                            <div className="information-menu">
+                                <styles.TitleFontFooter>
+                                    <div>Информация</div>
+                                </styles.TitleFontFooter>
 
-            </div>
+                                <div className='main-page'>
+                                    <styles.HrefDecoration>
+                                        <a href='/'>Главная</a>
+                                    </styles.HrefDecoration>
+                                </div>
+                                <div className='pro'>
+                                    <styles.HrefDecoration>
+                                        <a href='/'>PRO</a>
+                                    </styles.HrefDecoration>
+                                </div>
+                            </div>
+                        </styles.InformationMenu>
+                        <styles.NewsMenu>
+                            <div className="news-menu">
+                                <styles.TitleFontFooter>
+                                    <div>Новости</div>
+                                </styles.TitleFontFooter>
+
+                                <div className='support' style={{paddingBottom: '12px'}}>
+                                    <styles.HrefDecoration>
+                                        <a href='/'>Поддержка</a>
+                                    </styles.HrefDecoration>
+                                </div>
+                                <div className='contacts' style={{paddingBottom: '12px'}}>
+                                    <styles.HrefDecoration>
+                                        <a href='/'>Контакты</a>
+                                    </styles.HrefDecoration>
+                                </div>
+                            </div>
+                        </styles.NewsMenu>
+                    </div>
+                    <styles.PaymentMethod>
+                        <div className="payment-method">
+                            <div>Способы оплаты</div>
+                            <div>
+                                <styles.HrefFooterRefer>
+                                    <a href='/visa' //style={styles.HrefFooterRefer}
+                                    ><i className="fab fa-cc-visa fa-2x" style={{margin: '5px'}}/></a>
+                                </styles.HrefFooterRefer>
+                                <styles.HrefFooterRefer>
+                                    <a href='/mastercard' //style={styles.HrefFooterRefer}
+                                    ><i className="fab fa-cc-mastercard fa-2x" style={{margin: '5px'}}/></a>
+                                </styles.HrefFooterRefer>
+                            </div>
+                        </div>
+                    </styles.PaymentMethod>
+                    <styles.SocialNetwork>
+                        <div className="social-networks">
+                            <div>Следите за нами</div>
+                            <styles.HrefFooterRefer>
+                                <a href='/FB'
+                                ><i className="fab fa-facebook fa-2x" style={{margin: '5px'}}/></a>
+                            </styles.HrefFooterRefer>
+                            <styles.HrefFooterRefer>
+                                <a href='/VK'
+                                > <i className="fab fa-vk fa-2x" style={{margin: '5px'}}/></a>
+                            </styles.HrefFooterRefer>
+                            <styles.HrefFooterRefer>
+                                <a href='/telegram'
+                                ><i className="fab fa-telegram fa-2x" style={{margin: '5px'}}/></a>
+                            </styles.HrefFooterRefer>
+
+                        </div>
+                    </styles.SocialNetwork>
+
+                    <div className="bottom-footer" style={{display: 'flex'}}>
+                        <styles.Copyright>
+                            <div className="copyright">&copy; 2019 vertour LLC. Все права защищены</div>
+                        </styles.Copyright>
+                        <styles.ConfidentialPolitics>
+                            <div className="confidential-politic"
+                            >
+                                <div className='politic'>
+                                    <styles.HrefFooter>
+                                        <a href='/confidential' //style={styles.HrefFooter}
+                                        >Политика конфиденциальности</a>
+                                    </styles.HrefFooter>
+                                </div>
+                                <div className='terms-use'>
+                                    <styles.HrefFooter>
+                                        <a href='/terms_use' //style={styles.HrefFooter}
+                                        >Условия использования</a>
+                                    </styles.HrefFooter>
+                                </div>
+                            </div>
+                        </styles.ConfidentialPolitics>
+                        <styles.ReferenceFooterCompany>
+                            <div className="referents-company">Разработано
+                                <styles.HrefFooterRefer>
+                                    <a href='/jscorp'> JS Corporation</a>
+                                </styles.HrefFooterRefer>
+                            </div>
+                        </styles.ReferenceFooterCompany>
+
+                    </div>
+
+                </div>
+            </styles.FooterStyle>
+
         )
     }
 }

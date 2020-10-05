@@ -141,7 +141,7 @@ const JScorpFooterLogo = styled.img`
     top: 140px;
 `;
 
-const VertourFooterLogo = styled.img`
+const VertourFooterLogo = styled.div`
     position: relative;
     width: 154px;
     height: 52px;

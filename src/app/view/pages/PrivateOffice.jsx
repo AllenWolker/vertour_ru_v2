@@ -99,6 +99,7 @@ const UserIcon =styled.div`
 `;
 
 class PrivateOffice extends Component{
+
     render(){
         const {
             contentBlock,

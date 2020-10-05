@@ -73,11 +73,11 @@ const RegHeader = () => {
         headerMenuPoints: [
             {
                 title: 'Главная',
-                path: ''
+                path: '/'
             },
             {
                 title: 'PRO',
-                path: ''
+                path: '/faq'
             },
             {
                 title: 'Новости',

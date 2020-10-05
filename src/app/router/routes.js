@@ -1,5 +1,5 @@
 import React from 'react';
-
+import FAQ from '../view/pages/FAQ';
 const PrivateOffice = React.lazy(() =>import('../view/pages/PrivateOffice'));
 const PasswordRecovery = React.lazy(() => import('../view/pages/PasswordRecovery'));
 const NewPassword = React.lazy(() => import('../view/pages/NewPassword'));
@@ -15,7 +15,7 @@ const Calendar = React.lazy(() => import('../view/pages/Calendar'));
 const Landing = React.lazy(() => import('../view/pages/Landing'));
 const Registration = React.lazy(() => import('../view/pages/Registration'));
 const NewsPage = React.lazy(() => import('../view/pages/NewsPage'));
-const FAQ = React.lazy(() => import('../view/pages/FAQ'));
+
 
 
 const routes = [

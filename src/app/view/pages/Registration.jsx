@@ -32,7 +32,9 @@ const FormsWrapper = styled.div`
 
 const Registration =(props) => {
     const { token } = props;
-    console.log(token);
+    console.log('token',token);
+
+
     if(token) {
         return <Redirect to={'/private_office'}/>
     } else {
@@ -40,6 +42,7 @@ const Registration =(props) => {
             <RegBody
                 imgUrl={process.env.PUBLIC_URL +'assets/reg-background.jpg'}
             >
+
                 <RegHeader/>
                 <FormsWrapper>
                     <RegForm/>
