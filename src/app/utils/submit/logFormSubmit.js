@@ -1,6 +1,8 @@
 import { SubmissionError } from 'redux-form';
 import API from '../API';
 import { userData } from '../../store/actions/CurrentUserActions';
+import { authSuccess } from '../../store/actions/AuthorizeActions';
+import configureStore from '../../store/configureStore';
 
 async function logFormSubmit(values) {
     try{
@@ -10,8 +12,10 @@ async function logFormSubmit(values) {
         });
         console.log('👉 Returned data:', response);
         localStorage.setItem('token', response.data.token);
-        userData(response.data);
+        configureStore().dispatch(userData(response.data));
+        configureStore().dispatch(authSuccess(localStorage.getItem('token')));
         console.log('УРА!!');
+        document.location.href = '/private_office';
     } catch (e) {
         console.log(`😱 Axios request failed: ${e}`);
         throw new SubmissionError({

@@ -370,22 +370,35 @@ html{
 /** Start dev styles **/
 @font-face {
   font-family: 'Gotham Pro';
-  src: url('app/fonts/Gotham Pro/GothamPro.eot');
-  src: url('app/fonts/Gotham Pro/GothamPro.eot?#iefix') format('embedded-opentype'),
-  url('app/fonts/Gotham Pro/GothamPro.woff') format('woff'),
-  url('app/fonts/Gotham Pro/GothamPro.ttf') format('truetype');
+  src: url('./app/fonts/Gotham Pro/GothamPro.eot');
+  src: url('./app/fonts/Gotham Pro/GothamPro.eot?#iefix') format('embedded-opentype'),
+  url('./app/fonts/Gotham Pro/GothamPro.woff') format('woff'),
+  url('./app/fonts/Gotham Pro/GothamPro.ttf') format('truetype');
   font-weight: normal;
   font-style: normal
 }
 
 @font-face {
   font-family: 'Gotham Pro Bold';
-  src: url('app/fonts/Gotham Pro/GothamPro-Bold.eot');
-  src: url('app/fonts/Gotham Pro/GothamPro-Bold.eot?#iefix') format('embedded-opentype'),
-  url('app/fonts/Gotham Pro/GothamPro-Bold.woff') format('woff'),
-  url('app/fonts/Gotham Pro/GothamPro-Bold.ttf') format('truetype');
+  src: url('./app/fonts/Gotham Pro/GothamPro-Bold.eot');
+  src: url('./app/fonts/Gotham Pro/GothamPro-Bold.eot?#iefix') format('embedded-opentype'),
+  url('./app/fonts/Gotham Pro/GothamPro-Bold.woff') format('woff'),
+  url('./app/fonts/Gotham Pro/GothamPro-Bold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal
+}
+
+@font-face {
+
+  font-family: 'Roboto';
+
+  src: url('./app/fonts/Roboto/Roboto.woff'),
+
+  url('./app/fonts/Roboto/Roboto.ttf') format('truetype');
+
+  font-weight: normal;
+
+  font-style: normal;
 }
 
 /** Placeholder **/
@@ -426,47 +439,15 @@ html{
   font-size: 14px;
   line-height: 13px;
 }
-.recovery {
-  display: flex;
-}
-.flex {
-  display: flex;
-}
-.flex-column{
-  display: flex;
-  flex-direction: column;
-}
-.flex-content-between{
-  justify-content: space-between;
-}
-.flex-wrap{
-  flex-wrap: wrap;
-}
-.flex-center{
-  justify-content: space-around;
-  align-self: center;
-  text-align: center;
-  align-items: center;
-}
-.faq-img-margin{
-  margin-right: -130px;
-  margin-top: -37px;
-}
-div a:hover{
-  color: #840318 !important;
-}
-.add_payment_method:hover, .withdrawal_funds:hover, .payment_method-box:hover {
-  cursor: pointer;
-  color: #4680C2 !important;
-}
-.withdrawalCreditCard:hover, .withdrawalAnotherWallet:hover {
-  cursor: pointer;
-  border-bottom: 1px solid #840318;
-  transition-duration: 0.5s;
-}
 
 /*цвет placeholder  */
 input[type="text"]::-webkit-input-placeholder { color: gray; }
 input[type="text"]:-ms-input-placeholder { color: gray; }
 input[type="text"]::-ms-input-placeholder { color: gray; }
 input[type="text"]::placeholder { color: gray; }
+
+
+body {
+  font-family: GothamPro, monospace, sans-serif;
+  color:  #FFFFFF;
+}

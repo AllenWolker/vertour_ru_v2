@@ -18,7 +18,7 @@ const QIWIWallet = React.lazy(() => import('../pages/QIWIWallet'));
 const YandexWallet = React.lazy(() => import('../pages/YandexWallet'));
 const PayPalWallet = React.lazy(() => import('../pages/PayPalWallet'));
 const TournamentHistory = React.lazy(() => import('../pages/TournamentHistory'));
-const Landing = React.lazy(() => import('../pages/Landing'));
+const Landing = React.lazy(() => import('../pages/MainPage/Landing'));
 const Registration = React.lazy(() => import('../pages/Registration'));
 const NewsPage = React.lazy(() => import('../pages/NewsPage'));
 const Calendar = React.lazy(() => import('../pages/Calendar'));

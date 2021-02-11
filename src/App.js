@@ -1,17 +1,6 @@
-import React from 'react';
-import './App.css';
-import styles from "./styles";
+import React, { Component } from 'react';
 import styled from 'styled-components';
-//import ViewRouter from './app/router/renderRoutes';
-import { Route, Switch, Redirect } from 'react-router-dom';
-
-import Registration from './app/pages/Registration';
-import Landing from './app/pages/Landing'
-
-import Footer from "./app/components/Footer";
-
-
-
+import ViewRouter from './app/router/renderRoutes';
 
 const AppComponent = styled.div`
   font-family: GothamPro, monospace, sans-serif;
@@ -23,16 +12,16 @@ const AppComponent = styled.div`
 `;
 
 
-export default class App extends React.Component {
+class App extends Component{
     render() {
         return (
             <AppComponent>
-                <Switch>
-                    <Route exact to={'/'} component={Landing}/>
-                    <Route to={'/registration'} component={Registration}/>
-                    <Redirect to={'/registration'}/>
-                </Switch>
+                <React.Suspense fallback={<div className='preloader'>Загрузка...</div>}>
+                    <ViewRouter/>
+                </React.Suspense>
             </AppComponent>
         );
     }
 }
+
+export default App;

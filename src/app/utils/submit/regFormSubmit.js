@@ -18,10 +18,11 @@ async function regFormSubmit(values){
         localStorage.setItem('token', response.data.token);
         configureStore().dispatch(userData(response.data));
         configureStore().dispatch(authSuccess(localStorage.getItem('token')));
+        document.location.href = '/private_office';
     } catch (e) {
-       let error = (~`${e}`.indexOf('500'))?
-           '😱 Пользователь с таким email уже зарегистрирован!' : `😱 ${e}. Registration failed!`;
-       console.log(e.status);
+        let error = (~`${e}`.indexOf('500'))?
+            '😱 Пользователь с таким email уже зарегистрирован!' : `😱 ${e}. Registration failed!`;
+        console.log(e.status);
         throw new SubmissionError({
             _error: error,
         });
