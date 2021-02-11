@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import styles from '../../../styles';
+import styles from '../../../../styles';
 import Calendar from 'react-calendar';
-import LeftMenu from "../components/LeftMenu";
+import LeftMenu from "../../components/LeftMenu";
 import styled from 'styled-components';
 
 export default class Calendary extends Component {

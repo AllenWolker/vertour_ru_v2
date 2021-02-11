@@ -1,20 +1,20 @@
 import React from 'react';
-import FAQ from '../view/pages/FAQ';
-const PrivateOffice = React.lazy(() =>import('../view/pages/PrivateOffice'));
-const PasswordRecovery = React.lazy(() => import('../view/pages/PasswordRecovery'));
-const NewPassword = React.lazy(() => import('../view/pages/NewPassword'));
-const ConfirmSendRecoveryEmail = React.lazy(() => import('../view/pages/ConfirmSendRecoveryEmail'));
-const PaymentMethods = React.lazy(() => import('../view/pages/PaymentMethods'));
-const WithdrawalOfMoney = React.lazy(() => import('../view/pages/WithdrawalOfMoney'));
-const AnotherWithdrawalOfMoney = React.lazy(() => import('../view/pages/AnotherWithdrawalOfMoney'));
-const QIWIWallet = React.lazy(() => import('../view/pages/QIWIWallet'));
-const YandexWallet = React.lazy(() => import('../view/pages/YandexWallet'));
-const PayPalWallet = React.lazy(() => import('../view/pages/PayPalWallet'));
-const TournamentHistory = React.lazy(() => import('../view/pages/TournamentHistory'));
-const Calendar = React.lazy(() => import('../view/pages/Calendar'));
-const Landing = React.lazy(() => import('../view/pages/Landing'));
-const Registration = React.lazy(() => import('../view/pages/Registration'));
-const NewsPage = React.lazy(() => import('../view/pages/NewsPage'));
+import FAQ from '../view/pages/FAQ/FAQ';
+const PrivateOffice = React.lazy(() =>import('../view/pages/Trash/PrivateOffice'));
+const PasswordRecovery = React.lazy(() => import('../view/pages/Trash/PasswordRecovery'));
+const NewPassword = React.lazy(() => import('../view/pages/Trash/NewPassword'));
+const ConfirmSendRecoveryEmail = React.lazy(() => import('../view/pages/Trash/ConfirmSendRecoveryEmail'));
+const PaymentMethods = React.lazy(() => import('../view/pages/Trash/PaymentMethods'));
+const WithdrawalOfMoney = React.lazy(() => import('../view/pages/Trash/WithdrawalOfMoney'));
+const AnotherWithdrawalOfMoney = React.lazy(() => import('../view/pages/Trash/AnotherWithdrawalOfMoney'));
+const QIWIWallet = React.lazy(() => import('../view/pages/Trash/QIWIWallet'));
+const YandexWallet = React.lazy(() => import('../view/pages/Trash/YandexWallet'));
+const PayPalWallet = React.lazy(() => import('../view/pages/Trash/PayPalWallet'));
+const TournamentHistory = React.lazy(() => import('../view/pages/Trash/TournamentHistory'));
+const Calendar = React.lazy(() => import('../view/pages/Trash/Calendar'));
+const Landing = React.lazy(() => import('../view/pages/Landing/Landing'));
+const Registration = React.lazy(() => import('../view/pages/Registration/Registration'));
+const NewsPage = React.lazy(() => import('../view/pages/Trash/NewsPage'));
 
 
 

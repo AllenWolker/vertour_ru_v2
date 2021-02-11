@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Button} from 'semantic-ui-react/index'
-import styles from '../../../styles';
+import styles from '../../../../styles';
 import {Link} from "react-router-dom";
 
 

@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import Main from '../components/PrivateOffice/Main'
+import Main from '../../components/PrivateOffice/Main'
 import {
     showDeleteAccountBlock,
     showNewGamesBlock
-} from '../../store/actions/ContentBlockActions';
+} from '../../../store/actions/ContentBlockActions';
 
 import {
     addNewGame,
     delGame
-} from '../../store/actions/GamesListActions';
+} from '../../../store/actions/GamesListActions';
 
 const Body = styled.div`
     background-image: url(${(props)=>props.imgUrl});

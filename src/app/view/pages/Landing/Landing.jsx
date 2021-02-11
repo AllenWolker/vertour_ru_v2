@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 
-import CheckInBlock from '../components/Landing/CheckInBlock';
-import ManifestBlock from '../components/Landing/ManifestBlock';
+import CheckInBlock from '../../components/Landing/CheckInBlock';
+import ManifestBlock from '../../components/Landing/ManifestBlock';
 
 const LandingWrapper = styled.div`
     background-color: #0A000D;
@@ -60,10 +60,10 @@ export default class Landing extends PureComponent{
                 }
             ]
         };
-    
-    
-    
-        
+
+
+
+
 
         const blocks = initialState.landingBlocks.map((block, index) => {
             if(index<1 || index>3){

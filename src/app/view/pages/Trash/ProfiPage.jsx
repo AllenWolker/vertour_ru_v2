@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import styles from '../../../styles';
+import styles from '../../../../styles';
 import {Link} from "react-router-dom";
-import MenuRoute from "../components/MenuRoute";
-import Footer from "../components/Footer";
+import MenuRoute from "../../components/MenuRoute";
+import Footer from "../../components/Footer";
 import styled from 'styled-components';
 
 export default class ProfiPage extends Component {

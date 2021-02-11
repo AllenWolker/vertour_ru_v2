@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { Redirect } from 'react-router-dom';
 
-import RegHeader from '../components/Registration/RegHeader';
+import RegHeader from '../../components/Registration/RegHeader';
 //import Footer from '../components/Footer';
-import RegForm from "../components/Registration/RegForm";
-import LoginForm from "../components/Registration/LoginForm";
+import RegForm from "../../components/Registration/RegForm";
+import LoginForm from "../../components/Registration/LoginForm";
 
 const RegBody = styled.div`
     background-image: url(${(props)=>props.imgUrl});
@@ -21,7 +21,7 @@ const FormsWrapper = styled.div`
     position: absolute;
     width: 540px;
     height: auto;
-    box-sizing: border-box;.
+    box-sizing: border-box;
     top: 0;
     right: 20vw;
     background: #FFFFFF;
