@@ -1,9 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 import styles from '../../../styles'
 import {Link} from "react-router-dom";
 
 const Footer = () => {
         return (
+
             <styles.FooterStyle>
                 <div className="footer">
                     <div className="companyLogo">

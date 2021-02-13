@@ -1,6 +1,6 @@
 import React from 'react';
-import CheckInBlock from "../LandingItem/CheckInBlock";
-import ManifestBlock from "../LandingItem/ManifestBlock";
+import CheckInBlock from "../LandingItems/CheckInBlock";
+import ManifestBlock from "../LandingItems/ManifestBlock";
 
 const LandingList = (props) =>{
 
