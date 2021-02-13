@@ -114,6 +114,7 @@ const CheckIn = styled(Link)`
 `;
 
 const BlockType = (props) => {
+
     if(props.manifest.length === 3) {
         return(
             <ManifestBody>
