@@ -12,7 +12,7 @@ const YandexWallet = React.lazy(() => import('../view/pages/Trash/YandexWallet')
 const PayPalWallet = React.lazy(() => import('../view/pages/Trash/PayPalWallet'));
 const TournamentHistory = React.lazy(() => import('../view/pages/Trash/TournamentHistory'));
 const Calendar = React.lazy(() => import('../view/pages/Trash/Calendar'));
-const Landing = React.lazy(() => import('../view/pages/Landing/Landing'));
+const Landing = React.lazy(() => import('../view/pages/Landing/landing'));
 const Registration = React.lazy(() => import('../view/pages/Registration/Registration'));
 const NewsPage = React.lazy(() => import('../view/pages/Trash/NewsPage'));
 

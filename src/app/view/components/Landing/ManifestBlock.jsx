@@ -20,7 +20,6 @@ const BlockWrapper = styled.div`
     padding-top: 122px;
     padding-left: calc( (100vw - 1366px)/(1920 - 1366) * (160 - 120) + 120px);
     padding-right: calc( (100vw - 1366px)/(1920 - 1366) * (160 - 120) + 120px);
-   
 `;
 
 const Manifest = styled.div`
@@ -36,7 +35,7 @@ const Manifest = styled.div`
 
 const ManifestHeader = styled.div`
     background: #0A000D;
-    font-family: GothamPro;
+    font-family: GothamPro,sans-serif;
     padding-top: 34px;
     padding-bottom: 35px;
     text-align: center;
@@ -57,19 +56,16 @@ const ManifestBody = styled.div`
    
     @media (max-width: 860px){
         padding: 30px 124px 30px 123px;
-        
     } 
     @media (max-width: 647px){
         padding: 30px 50px;
         text-align: center;
     }
     @media (max-width: 465px){
-       padding: 30px; 
-        
+       padding: 30px;
     }
     @media (max-width: 419px){
-        padding: 15px; 
-         
+        padding: 15px;
      }
 `;
 
@@ -78,26 +74,23 @@ const CheckInBlock = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    
 `;
 
 const ManifestText = styled.p`
     height: auto;
     text-align: left;
-    font-family: Roboto;
+    font-family: Roboto,sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: calc( (100vw - 1366px)/(1920 - 1366) * (36 - 28) + 28px);
     @media (max-width: 860px){
         font-size: 20px
-        
     }
-    
 `;
 
 const CheckIn = styled(Link)`
     text-decoration: none;
-    font-family: GothamPro;
+    font-family: GothamPro,sans-serif;
     color: #FFFFFF;
     background: #840318;
     border-radius: 5px;
@@ -114,11 +107,9 @@ const CheckIn = styled(Link)`
     cursor: pointer;
     @media (max-width: 518px){
         width: 350px;
-        
     }
     @media (max-width: 431px){
         width: 300px
-        
     }
 `;
 
@@ -159,9 +150,6 @@ const ManifestBlock = (props) => {
         </BlockWrapper>
     )
 };
-
-const WindowSize = window.innerWidth;
-
 
 
 

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import ViewRouter from './app/router/renderRoutes';
 
@@ -12,8 +12,8 @@ const AppComponent = styled.div`
 `;
 
 
-class App extends Component{
-    render() {
+const App = () => {
+
         return (
             <AppComponent>
                 <React.Suspense fallback={<div className='preloader'>Загрузка...</div>}>
@@ -21,7 +21,6 @@ class App extends Component{
                 </React.Suspense>
             </AppComponent>
         );
-    }
 }
 
 export default App;

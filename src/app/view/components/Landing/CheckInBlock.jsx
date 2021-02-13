@@ -50,14 +50,12 @@ const Vector = styled.div`
         margin-top: 30px;
         margin-bottom: 30px;
         width: 300px
-    } 
-    
-
+    }
 `;
 
 const CheckIn = styled(Link)`
     text-decoration: none;
-    font-family: GothamPro;
+    font-family: GothamPro,serif;
     color: #FFFFFF;
     background: #840318;
     border-radius: 5px;
@@ -75,7 +73,7 @@ const CheckIn = styled(Link)`
         padding: 20px 5px
     }   
     @media (max-width: 500px){
-        font-size 40px
+        font-size: 40px
     }
     @media (max-width: 417px){
         font-size: 25px;
@@ -85,7 +83,7 @@ const CheckIn = styled(Link)`
 `;
 
 const Associate = styled.div`
-    font-family: Roboto;
+    font-family: Roboto,serif;
     font-style: normal;
     font-weight: normal;
     font-size: calc( (100vw - 1366px)/(1920 - 1366) * (48 - 40) + 50px);
@@ -97,7 +95,7 @@ const Associate = styled.div`
 `;
 
 const Play1 = styled.div`
-    font-family: Roboto;
+    font-family: Roboto,serif;
     font-style: normal;
     text-align: center;
     margin-top: 38px;
@@ -113,7 +111,7 @@ const Play1 = styled.div`
 `;
 
 const Play2 = styled.div`
-    font-family: Roboto;
+    font-family: Roboto,serif;
     font-style: normal;
     text-align: center;
     margin-top: 38px;
@@ -151,8 +149,6 @@ const BlockType = (props) => {
         )
     }
 };
-
-const WindowSize = window.innerWidth;
 
 const CheckInBlock = (props) => {
     const {
