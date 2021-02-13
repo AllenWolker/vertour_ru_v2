@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import styles from '../../../styles'
 import {Link} from "react-router-dom";
 
-export default class Footer extends Component {
-    render() {
+const Footer = () => {
         return (
             <styles.FooterStyle>
                 <div className="footer">
@@ -123,5 +122,8 @@ export default class Footer extends Component {
             </styles.FooterStyle>
 
         )
-    }
 }
+export default Footer;
+
+
+

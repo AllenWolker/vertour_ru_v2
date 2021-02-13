@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import CheckInBlock from "../LandingItem/CheckInBlock";
 import ManifestBlock from "../LandingItem/ManifestBlock";
 
@@ -9,7 +8,7 @@ const LandingList = (props) =>{
         if(index<1 || index>3){
             return <CheckInBlock
                 key={index}
-                blockBackgroundPath={block.blockBackgroundPath}
+                backgroundImagePath={block.backgroundImagePath}
                 landingLogoPath={block.landingLogoPath}
                 manifest={block.manifest}
                 height={block.height}
@@ -17,7 +16,7 @@ const LandingList = (props) =>{
         }else{
             return <ManifestBlock
                 key={index}
-                blockBackgroundPath={block.blockBackgroundPath}
+                backgroundImagePath={block.backgroundImagePath}
                 manifest={block.manifest}
                 height={block.height}
             />
@@ -27,7 +26,6 @@ return(<>
         {Blocks}
     </>
 )
-
 }
 
 export default LandingList;

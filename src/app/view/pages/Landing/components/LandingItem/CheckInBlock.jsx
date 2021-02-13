@@ -10,7 +10,7 @@ const BlockWrapper = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-image: url(${props => props.blockBackgroundPath});
+    background-image: url(${props => props.backgroundImagePath});
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -129,7 +129,7 @@ const BlockType = (props) => {
     if(props.manifest.length === 3) {
         return(
             <BlockWrapper
-                blockBackgroundPath={props.blockBackgroundPath}
+                backgroundImagePath={props.backgroundImagePath}
                 height={props.height}>
                 <Logo landingLogoPath={props.landingLogoPath}/>
                 <Associate>{props.manifest[0]}</Associate>
@@ -140,7 +140,7 @@ const BlockType = (props) => {
     }else{
         return(
             <BlockWrapper
-                blockBackgroundPath={props.blockBackgroundPath}
+                backgroundImagePath={props.backgroundImagePath}
                 height={props.height}>
                 <Vector landingLogoPath={props.landingLogoPath}/>
                 <Play2>{props.manifest[0]}</Play2>
@@ -152,7 +152,7 @@ const BlockType = (props) => {
 
 const CheckInBlock = (props) => {
     const {
-        blockBackgroundPath,
+        backgroundImagePath,
         landingLogoPath,
         manifest,
         height
@@ -162,7 +162,7 @@ const CheckInBlock = (props) => {
         <BlockType
             landingLogoPath={process.env.PUBLIC_URL + landingLogoPath}
             manifest={manifest}
-            blockBackgroundPath={process.env.PUBLIC_URL + blockBackgroundPath}
+            backgroundImagePath={process.env.PUBLIC_URL + backgroundImagePath}
             height={height}
         />
     )

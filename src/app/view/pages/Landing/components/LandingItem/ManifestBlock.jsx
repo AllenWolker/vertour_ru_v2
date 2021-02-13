@@ -12,7 +12,7 @@ const BlockWrapper = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    background-image: url(${props => props.blockBackgroundPath});
+    background-image: url(${props => props.backgroundImagePath});
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -135,14 +135,14 @@ const BlockType = (props) => {
 
 const ManifestBlock = (props) => {
     const {
-        blockBackgroundPath,
+        backgroundImagePath,
         manifest,
         height
     } = props;
 
     return(
         <BlockWrapper
-            blockBackgroundPath={process.env.PUBLIC_URL + blockBackgroundPath}
+            backgroundImagePath={process.env.PUBLIC_URL + backgroundImagePath}
             height={height}>
             <Manifest>
                 <ManifestHeader>{manifest[0]}</ManifestHeader>
